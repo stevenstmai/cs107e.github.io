@@ -7,6 +7,7 @@ int main(void)
     int (*c)[2] = a;
     int (*d)[2][2] = &a;
 
+
     printf("a = %08x\n", (unsigned)a );
     printf("&a[0][0] = %08x\n", (unsigned)(&a[0][0]) );
     printf("&a[0][1] = %08x\n", (unsigned)(&a[0][1]) );
@@ -19,6 +20,12 @@ int main(void)
     printf("c+1 = %08x\n", (unsigned)(c+1) );
     printf("d = %08x\n", (unsigned)d );
     printf("d+1 = %08x\n", (unsigned)(d+1) );
+
+    //uncomment this code, what happens?
+    //int (*e)[2] = { {0, 1}, {2, 3}};
+    //printf("e = %08x\n", (unsigned)e );
+    //printf("e[0] = %08x\n", (unsigned)e[0] );
+    //printf("e[1] = %08x\n", (unsigned)e[1] );
 
     int a1[] = { 0, 1 };
     int a2[] = { 2, 3, 4 }; 

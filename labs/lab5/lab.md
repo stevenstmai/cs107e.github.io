@@ -210,6 +210,13 @@ Compile this code using `make`.
 This will generate an executable that runs on your laptop.
 Run the code and interpret the results.
 
+Now add the following code to the above example:
+
+        int (*e)[2] = { {0, 1}, {2, 3}};
+        printf("e = %08x\n", (unsigned)e );
+        printf("e[0] = %08x\n", (unsigned)e[0] );
+        printf("e[1] = %08x\n", (unsigned)e[1] );
+
 What is the difference between the following two declarations?
 
         int *p[2];
