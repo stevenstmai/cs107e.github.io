@@ -10,6 +10,7 @@ title: Assignments
 - [Assignment 2: Clock](assign2)
 - [Assignment 3: String Formatting & Printing](assign3)
 - [Assignment 4: Backtrace, Redzones, & STABS](assign4)
+- [Assignment 5: Graphics Library & Console](assign5)
 
 ### Frequently asked questions about assignments
 
