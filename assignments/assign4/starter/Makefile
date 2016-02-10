@@ -41,7 +41,7 @@ define objcopy_sect_flags
 endef
 
 define prepend_size_to
-	./libs/get_bytes.sh $$(wc -c $(1) | awk '{print $$1}') | cat - $(1) > $(1).tmp
+	./libs/get_bytes.py $$(wc -c $(1) | awk '{print $$1}') | cat - $(1) > $(1).tmp
 	mv $(1).tmp $(1)
 endef
 
@@ -68,6 +68,7 @@ install: $(NAME).bin
 	$(OBJCOPY) $< $(call objcopy_sect_flags,.stabstr) $*.stabstr
 	$(call prepend_size_to,$*.stabstr)
 	$(OBJCOPY) $< -O binary $*.text
+	dd if=/dev/zero bs=1 count=$$(./libs/pad_bytes.py $< $*.text) >> $*.text
 	cat $*.text $*.stab $*.stabstr > $@
 
 # This pattern rule produces 'name.list' assembly listing by disassembling 'name.o'
