@@ -4,8 +4,6 @@
 #define FB_SINGLEBUFFER 0
 #define FB_DOUBLEBUFFER 1
 
-typedef unsigned color;
-
 void fb_init(unsigned width, unsigned height, unsigned depth,
              unsigned doublebuffer);
 
@@ -17,7 +15,5 @@ unsigned char* fb_get_draw_buffer(void);
 unsigned char* fb_get_front_buffer(void);
 unsigned char* fb_get_back_buffer(void);
 void fb_swap_buffer(void);
-
-void fb_clear(color c);
 
 #endif

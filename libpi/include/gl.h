@@ -28,6 +28,8 @@ void gl_init(unsigned width, unsigned height, unsigned mode);
 #define GL_GREEN 0xFF00FF00
 #define GL_BLUE  0xFFFF0000
 
+typedef unsigned color;
+
 color gl_color( unsigned char r, unsigned char g, unsigned char b );
 
 unsigned gl_get_width(void);
@@ -43,6 +45,10 @@ void gl_draw_string( int x, int y, char* string, color c);
 
 unsigned gl_get_char_height(void);
 unsigned gl_get_char_width(void);
+
+void gl_draw_line( int x1, int y1, int x2, int y2, color c);
+
+void gl_draw_triangle( int x1, int y1, int x2, int y2, int x3, int y3, color c);
 
 void gl_swap_buffer(void);
 
