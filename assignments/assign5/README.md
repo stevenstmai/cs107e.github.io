@@ -104,7 +104,7 @@ the processor much more efficiently.
       the rectangle defining the framebuffer.
 
     * `void gl_draw_rect(int x, int y, int w, int h, color c)`:
-      draw a rectangle starting at (x, y) and with size (w, h)
+      draw a solid rectangle starting at (x, y) and with size (w, h)
       with color `c`.
       Again, make sure that pixels are only drawn inside the 
       the framebuffer.
@@ -165,7 +165,7 @@ the processor much more efficiently.
 
     When processing characters, interpret the following special characters:
 
-    * `'\n'`: move to the next line
+    * `'\n'`: move to the next line and return to the beginning of the line
 
     * `'\r'`: return to the beginning of the line
 
