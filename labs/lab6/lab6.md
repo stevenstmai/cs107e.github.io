@@ -87,8 +87,6 @@ and pin 14 for GND.
 We will use the Saleae Logic Analyzer to examine the signals 
 being sent by the keyboard.
 
-![Saleae Logic Pro 8](images/logic-pro-8.jpg)
-
 First, familiarize yourself with the logic analyzer.
 It is contained in a small, red anodized aluminum enclosure.
 On one side is a USB port, and on the other side are the jumpers. 
@@ -105,6 +103,11 @@ ground line for a channel is directly underneath its signal wire.
 You need to ground each channel to the Raspberry Pi to complete the circuit.
 Connect the Saleae USB cable to the USB port of your computer.
 
+This is what it looks like wired up. 
+
+![wired up](images/logic.JPG)
+
+
 Third, download and install the `Logic` application 
 from the Saleae web site.
 This application runs on Windows, Linux and Mac OS.
@@ -120,6 +123,8 @@ to the following.
 ![Saleae Startup](images/logic.png)
 
 Fourth, configure the logic analyzer to acquire the signal.
+
+![Saleae Startup](images/saleae.png)
 
 Click the up/down arrow button to the right of the green "Start" 
 button to access the setup options. Use a sampling rate of at least 1 MS (megasample)
