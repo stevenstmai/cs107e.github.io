@@ -12,6 +12,7 @@ title: Labs
 - [Lab 5: Framebuffer](lab5)
 - [Lab 6: Keyboard](lab6)
 
+
 ### Lab schedule
 
 Labs are Tue or Wed evenings from 7-9pm.
