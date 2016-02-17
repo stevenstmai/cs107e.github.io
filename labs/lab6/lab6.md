@@ -71,6 +71,7 @@ Insert each jumper into the corresponding pin of the mini-din connector.
 It takes a bit of fiddling to jam all four of the jumpers inside the connector.
 If you are having trouble, use a needlenose pliers.
 
+Here is what the connecter looks like with the jumpers. We use different colors so ignore the colors. 
 ![6-pin mini-din cable with jumpers](images/ps2wires.JPG)
 
 We use female-female jumpers so that you can plug the other
@@ -165,7 +166,7 @@ As a reminder, here are the pin outs on the GPIO header.
 And here is what it should look like if everything is connected
 up properly.
 
-![Keyboard plugged into the Raspberry Pi](images/ps2pi.jpg)
+![Keyboard plugged into the Raspberry Pi](images/ps2pi.JPG)
 
 At this point, you should have a keyboard connected to the Raspberry Pi.
 Let's test it using the program showed in class.
