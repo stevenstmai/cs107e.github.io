@@ -1,0 +1,70 @@
+PBCOPY(1)                                                            PBCOPY(1)
+
+
+
+NNAAMMEE
+       ppbbccooppyy,  ppbbppaassttee  -  provide copying and pasting to the pasteboard (the
+       Clipboard) from command line
+
+SSYYNNOOPPSSIISS
+       ppbbccooppyy [--hheellpp] [--ppbbooaarrdd {ggeenneerraall | rruulleerr | ffiinndd | ffoonntt}]
+
+       ppbbppaassttee [--hheellpp] [--ppbbooaarrdd {ggeenneerraall | rruulleerr | ffiinndd | ffoonntt}] [--PPrreeffeerr {ttxxtt
+       | rrttff | ppss}]
+
+DDEESSCCRRIIPPTTIIOONN
+       ppbbccooppyy  takes  the standard input and places it in the specified paste-
+       board. If no pasteboard is specified, the general  pasteboard  will  be
+       used  by  default.  The input is placed in the pasteboard as plain text
+       data unless it begins  with  the  Encapsulated  PostScript  (EPS)  file
+       header  or  the Rich Text Format (RTF) file header, in which case it is
+       placed in the pasteboard as one of those data types.
+
+       ppbbppaassttee removes the data from the pasteboard and writes it to the stan-
+       dard output.  It normally looks first for plain text data in the paste-
+       board and writes that to the standard output; if no plain text data  is
+       in  the  pasteboard  it looks for Encapsulated PostScript; if no EPS is
+       present it looks for Rich Text.  If none of those types is  present  in
+       the pasteboard, ppbbppaassttee produces no output.
+
+       * Encoding:
+
+       ppbbccooppyy  and  ppbbppaassttee  use locale environment variables to determine the
+       encoding to be used for input and output.  For  example,  absent  other
+       locale settings, setting the environment variable LANG=en_US.UTF-8 will
+       cause ppbbccooppyy and ppbbppaassttee to use UTF-8 for  input  and  output.   If  an
+       encoding  cannot be determined from the locale, the standard C encoding
+       will be used.  Use of UTF-8 is recommended.  Note that by  default  the
+       Terminal application uses the UTF-8 encoding and automatically sets the
+       appropriate locale environment variable.
+
+OOPPTTIIOONNSS
+       --ppbbooaarrdd {{ggeenneerraall || rruulleerr || ffiinndd || ffoonntt}}
+              specifies which pasteboard to copy to  or  paste  from.   If  no
+              pasteboard  is  given,  the  general  pasteboard will be used by
+              default.
+
+       --PPrreeffeerr {{ttxxtt || rrttff || ppss}}
+              tells ppbbppaassttee what type of data to look for  in  the  pasteboard
+              first.   As stated above, ppbbppaassttee normally looks first for plain
+              text data; however,  by  specifying  --PPrreeffeerr  ppss  you  can  tell
+              ppbbppaassttee to look first for Encapsulated PostScript.  If you spec-
+              ify --PPrreeffeerr rrttff, ppbbppaassttee looks first for Rich Text  format.   In
+              any  case,  ppbbppaassttee looks for the other formats if the preferred
+              one is not found.  The txt option replaces the deprecated  ascii
+              option,  which continues to function as before.  Both indicate a
+              preference for plain text.
+
+SSEEEE AALLSSOO
+       AADDCC RReeffeerreennccee LLiibbrraarryy::
+       Cocoa > Interapplication Communication > Copying and Pasting
+       Carbon > Interapplication Communication > Pasteboard  Manager  Program-
+       ming Guide
+       Carbon > Interapplication Communication > Pasteboard Manager Reference
+
+BBUUGGSS
+       There is no way to tell ppbbppaassttee to get _o_n_l_y a specified data type.
+
+
+
+Apple Computer, Inc.           January 12, 2005                      PBCOPY(1)

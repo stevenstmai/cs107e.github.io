@@ -1,0 +1,1 @@
+cstart.o: cstart.c
