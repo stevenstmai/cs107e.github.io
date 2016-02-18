@@ -110,8 +110,8 @@ In this assignment, you will
     enabled until caps lock is pressed again. If you press shift while caps
     lock is enabled, characters should be lower case.
 
-[PS2 Packet Format]: images/ps2.png
-[PS2 Scancodes]: images/scancode.gif
+    [PS2 Packet Format]: images/ps2.png
+    [PS2 Scancodes]: images/scancode.gif
 
 6.  **Implement a simple shell.**
 
