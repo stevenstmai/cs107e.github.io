@@ -11,6 +11,7 @@ title: Assignments
 - [Assignment 3: String Formatting & Printing](assign3)
 - [Assignment 4: Backtrace, Redzones, & STABS](assign4)
 - [Assignment 5: Graphics Library & Console](assign5)
+- [Assignment 6: From Keyboard to Screen](assign6)
 
 ### Frequently asked questions about assignments
 
