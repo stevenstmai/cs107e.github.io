@@ -74,7 +74,7 @@ static const char shift_char_from_scan[] = {
   ' ',
   ' ', // 0x40
   '<',
-  'L',
+  'K',
   'I',
   'O',
   ')',
