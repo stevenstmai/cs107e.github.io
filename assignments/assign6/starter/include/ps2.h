@@ -6,7 +6,6 @@
 #define KEYBOARD_CODE_SHIFTL          0x12
 #define KEYBOARD_CODE_SHIFTR          0x59
 #define KEYBOARD_CODE_CAPS_LOCK       0x58
-#define KEYBOARD_CODE_ENTER           0x1C
 
 static const char shift_char_from_scan[] = {
   ' ', // 0x00
