@@ -11,7 +11,7 @@ title: Labs
 - [Lab 4: Linking and Loading](lab4)
 - [Lab 5: Framebuffer](lab5)
 - [Lab 6: Keyboard](lab6)
-
+- [Lab 7: Interrupts](lab7)
 
 ### Lab schedule
 
