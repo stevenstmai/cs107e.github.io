@@ -1,16 +1,16 @@
-#ifndef TIMER_H_INCLUDED
-#define TIMER_H_INCLUDED
+#ifndef ARMTIMER_H
+#define ARMTIMER_H
 
 /* Hardware abstraction functions for a Raspberry Pi timer.
  * Author: Philip Levis <pal@cs.stanford.edu>
  * Date: August 14 2014
  */ 
 
-void timer_init();
-unsigned int timer_gettime();
-void timer_wait_until(unsigned int time);
-void timer_wait_for(unsigned int microseconds);
-void timer_wait_interval(unsigned int microseconds);
+void armtimer_init();
+unsigned int armtimer_gettime();
+void armtimer_wait_until(unsigned int time);
+void armtimer_wait_for(unsigned int microseconds);
+void armtimer_wait_interval(unsigned int microseconds);
 
 #endif
 

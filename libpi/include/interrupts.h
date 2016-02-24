@@ -1,7 +1,7 @@
-#ifndef _INTERRUPTS_H_
-#define _INTERRUPTS_H_
+#ifndef INTERRUPTS_H
+#define INTERRUPTS_H
 
-extern interrupts_enable( void );
-extern interrupts_disable( void );
+extern void interrupts_enable(void);
+extern void interrupts_disable(void);
 
 #endif

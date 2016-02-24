@@ -10,13 +10,11 @@ extern void PUT16 ( unsigned addr, unsigned word );
 extern unsigned GET8 ( unsigned addr );
 extern void PUT8 ( unsigned addr, unsigned word );
 
-extern unsigned GETPC ( void );
-
 extern void memory_read_barrier( void );
 extern void memory_write_barrier( void );
 
-extern void memory_cache_enable( void );
-extern void memory_cache_disable( void );
+extern void memory_l1_cache_enable( void );
+extern void memory_l1_cache_disable( void );
 
 /*
  * Data memory barrier

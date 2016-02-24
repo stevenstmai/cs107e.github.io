@@ -108,6 +108,7 @@ extern void gpio_detect_async_falling_edge(unsigned pin);
 extern void gpio_detect_high_level(unsigned pin);
 extern void gpio_detect_low_level(unsigned pin);
 extern unsigned gpio_check_event(unsigned pin);
+extern void gpio_clear_event(unsigned pin);
 extern unsigned gpio_check_and_clear_event(unsigned pin);
 
 extern void gpio_write( unsigned pin, unsigned val );
