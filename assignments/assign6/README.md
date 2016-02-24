@@ -216,7 +216,7 @@ In this assignment, you will
     and `include/strtol.h`, to convert a numeric string to a C integer. The
     Makefile already takes care to compile and link in `strtol.c`. It's [man
     page](http://linux.die.net/man/3/strtoul) has more information on its usage.
-    You should use the ``char **endptr` parameter to check if the passed in
+    You should use the `char **endptr` parameter to check if the passed in
     string was a valid number. You should also use `0` as the base. If a number
     is invalid, `peek` should print an error message.
 
