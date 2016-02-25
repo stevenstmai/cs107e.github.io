@@ -6,8 +6,6 @@ permalink: /assignments/assign7/
 
 **Due: Tuesday, March 1, 2016 at 7:00PM**
 
-## Assignment 7: Full Console
-
 ![Google Console](images/google.png)
 
 In this assignment, you'll complete your console. After this assignment, you
