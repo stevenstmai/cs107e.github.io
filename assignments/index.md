@@ -12,6 +12,7 @@ title: Assignments
 - [Assignment 4: Backtrace, Redzones, & STABS](assign4)
 - [Assignment 5: Graphics Library & Console](assign5)
 - [Assignment 6: From Keyboard to Screen](assign6)
+- [Assignment 7: Full Console](assign7)
 
 ### Frequently asked questions about assignments
 
