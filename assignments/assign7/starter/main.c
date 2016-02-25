@@ -1,16 +1,27 @@
+#include "proto.h"
+#include "gpio.h"
+#include "timer-int.h"
+#include "circular.h"
 #include "keyboard.h"
 #include "console.h"
 
-#define NROWS = 1024
-#define NCOLS = 1280
+#define NROWS 512
+#define NCOLS 640
+
+// This function should not be called.
+void impossible_vector(unsigned pc) {
+  printf("impossible exception at pc=%x\n", pc);
+  reboot();
+}
 
 void interrupt_vector(unsigned pc) {
-  /* Fill this in to call your keyboard interrupt handler */
+  // FIXME: Handle interrupts.
 }
 
 void main(void) {
-  console_init(NROWS, NCOLS);  
+  uart_init();
   keyboard_init();
+  console_init(NROWS, NCOLS);
 
   while (1) {
     char c = keyboard_read();
@@ -18,4 +29,6 @@ void main(void) {
       console_putc(c);
     }
   }
+
+  reboot();
 }

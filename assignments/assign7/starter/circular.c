@@ -11,7 +11,9 @@ int cir_empty() {
 
 /* Returns 1 if the buffer is full (no more elements could fit), 0 otherwise */
 int cir_full() {
+  int result = 0;
   // TODO: Fill me in.
+  return result;
 }
 
 /* Add a byte to the buffer */

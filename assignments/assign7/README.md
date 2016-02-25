@@ -6,6 +6,8 @@ permalink: /assignments/assign7/
 
 **Due: Tuesday, March 1, 2016 at 7:00PM**
 
+## Assignment 7: Full Console
+
 ![Google Console](images/google.png)
 
 In this assignment, you'll complete your console. After this assignment, you
@@ -35,7 +37,7 @@ In this assignment, you will
 2.  **Set Up PS/2 Clock Interrupts.** Modify `keyboard.c` so that
     `keyboard_init` sets up your system to trigger interrupts when there is a
     falling edge on GPIO pin 23. This is essentially the code you wrote for
-    lab 7.
+    lab 7, which we've copied into lab7.c for your convenience.
 
 3.  **Handle PS/2 Clock Interrupts.** Add a new `keyboard_int_handler` function
     in your keyboard driver, `keyboard.c`. This will be the keyboard's
@@ -66,7 +68,7 @@ In this assignment, you will
 5.  **Create a Circular Buffer.** Write the code for a circular buffer of size
     128 in `circular.c`, following the pseudocode. Fill in functions to check
     if the buffer is full and to push and pop bytes onto the circular buffer.
-    Remember that all head and tail increments should be modulo CAPACITY so
+    Remember that all head and tail increments should be modulo `CAPACITY` so
     that the indices are always within the buffer.
 
 6.  **Push Keyboard Bytes onto Circular Buffer.** Modify your interrupt handler
@@ -88,55 +90,54 @@ In this assignment, you will
 
 Commit your code to your repository.
 
-### Extension
+### Extension: Console Debugger
 
-1. __Console debugger__.
+1.  **Intro.** Normally, the console will be reading characters and printing
+    them to the screen as in the basic part. However, if the user presses the
+    `ESC` key, the console will go into debugging mode. In debugging mode, the
+    console is waiting for debug commands, similar to the tiny shell in
+    assignment 6. In debugging mode, you will be able to peek or poke memory
+    addresses, observe a backtrace of your function calls, and profile your
+    code to observe where it is spending the most time.
 
-   Normally, the console will be reading characters and printing them to the
-   screen as in the basic part. However, if the user presses the `ESC` key,
-   the console will go into debugging mode. In debugging mode, the console is
-   waiting for debug commands, similar to the tiny shell in assignment 6.
-   In debugging mode, you will be able to peek or poke memory addresses, 
-   observe a bactrace of your function calls, and profile your code to observe
-   where it is spending the most time.
+2.  **Debugging Mode.** Modify your main function to detect the `ESC` key and
+    shift to debugging mode. Each line in debugging mode should be interpreted
+    as a command that it executes when the user presses return.
 
-   Modify your main function to detect the `ESC` key and shift to debugging mode,
-   where it interprets each line as a command that it executes when the user
-   presses return.
+    Add the commands code from assignment 6 so that you can peek or poke any
+    memory address when in debugging mode. Add the `quit` command, which will
+    take you out of debugging mode and back to the regular console.
 
-   Add the commands code from assignment 6 so that you can peek or poke any
-   memory address when in debugging mode. Add the `quit`
-   command, which will take you out of debugging mode and back to the regular
-   console.
+3.  **Profiling.** You'll now add profiling support to your console. You'll
+    recall from lecture that this involves handling timer interrupts and
+    recording the current PC inside the timer interrupt handler. For this part,
+    you will incorporate and modify code from lecture and add an additional
+    command to your shell.
 
-   Now add the command `bt`, which should
-   call your backtrace function from assignment 4 (modified to print to the
-   console instead of over uart).
+    We have included the profiler from lecture in `gprof.{h,c}`. We have also
+    included `timer-int.{h,c}` from lecture. This will be used to handle timer
+    interrupts. You will need to implement `timer_int_handler` to record the
+    event in the profiler. Call `timer_int_handler` when there is a timer
+    interrupt. To do so, you will need to differentiate between GPIO and timer
+    interrupts in `interrupt_vector` in `main.c`. You can do this by checking
+    the return value of `gpio_check_and_clear_event`. If it is `1`, then the
+    interrupt was caused by the GPIO pin that was checked. Otherwise, the
+    interrupt was caused by the timer.
 
-   For the profiler, you will need to incorporate and modify code from lecture
-   and add an additional command. Look through the files mentioned below and
-   make sure you understand what they do before jumping in.
+    The `gprof_init` function from `grof.c` allocates space to store counts for
+    each address in the text (code) segment. `gprof_add_sample` can be used to
+    increment the count for the current program counter each time there is a
+    timer interrupt. `gprof_dump` can be called to print the counts. It
+    currently prints over UART, so you will need to modify this to print to your
+    console.
 
-   We have included the profiler from lecture in `grof.h/c`. `gprof_init`
-   allocates space to store counts for each address in the text (code)
-   segment. Then `gprof_add_sample` can be used to increment the count for the
-   current program counter each time there is a timer interrupt. `gprof_dump`
-   can be called to print the counts. It currently prints over uart, you
-   will need to modify this to print to your console.
+    Once this is working, add the command `profile [on | off | status |
+    results]` to your debugger commands. `profile on` should initialize or
+    zero-out all profile counts and start profiling (enable timer interrupts).
+    `profile off` should stop the profiling (disable timer interrupts).
+    `profile status` should print `Status: on` or `Status: off`, depending on
+    whether the profiler is on or off, respectively. `profile results` should
+    print current (if status is on) or most recent (if status is off) counts to
+    the debugger console using the `gprof_dump` function.
 
-   We have also included `timer-int.h/c` from lecture. This will be used to 
-   handle timer interrupts. You will need to call `timer_int_handler` when 
-   there is a timer interrupt and implement `timer_int_handler` to record the
-   event in the profiler. In `interrupt_vector` in main.c, you will need to
-   differentiate between gpio and timer interrupts so you can call the
-   appropriate handler.
-
-   Add the command `profile [on | off | status | results]` to your debugger
-   commands. `profile on` should intialize or zero-out all profile counts and
-   start profiling (enable timer interrupts). `profile off` should stop the
-   profiling (disable timer interrupts). `profile status` should print
-   `Status: on` or `Status: off`. `profile results` should print current (if
-   status is on) or most recent (if status is off) counts to
-   the debugger console.
-
-   You now have a mini debugger!
+    You now have a mini debugger!
