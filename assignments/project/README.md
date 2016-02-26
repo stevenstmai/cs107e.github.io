@@ -1,4 +1,8 @@
-## Project
+---
+layout: page
+title: 'Project'
+permalink: /assignments/project/
+---
 
 The final assignment is a project of your own choosing. 
 The goal of the project is to consolidate 
