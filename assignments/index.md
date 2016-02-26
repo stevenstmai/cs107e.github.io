@@ -13,6 +13,7 @@ title: Assignments
 - [Assignment 5: Graphics Library & Console](assign5)
 - [Assignment 6: From Keyboard to Screen](assign6)
 - [Assignment 7: Full Console](assign7)
+- [Final Project](project)
 
 ### Frequently asked questions about assignments
 
@@ -127,5 +128,5 @@ guides, or FAQs on the hardware and software used in the course.
 
 **What is the final project?**
 
-More on the final project soon.
+See the [Final Project](project) page.
 
