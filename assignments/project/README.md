@@ -19,7 +19,10 @@ There are three important deliverables:
   Send Isabel (ibush@stanford.edu) email with who's on your team.
   She will then set up a github repository for your project.
 
-  Note the markdown file Proposal.md in that repo.
+  It will be empty at first. Follow the GitHub instructions to 'create
+  a new repository on the command line' and push it there.
+
+  Now add a markdown file PROPOSAL.md in that repo.
   This file is for your project proposal.
   Edit that file and push it to github.
 
