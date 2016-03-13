@@ -1,0 +1,1 @@
+cp `arm-none-eabi-gcc -print-libgcc-file-name` .
