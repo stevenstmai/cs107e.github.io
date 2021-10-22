@@ -3,4 +3,4 @@ extern int k;
 extern int l;
 extern const int n;
 
-void tricky();
+void tricky(int);
