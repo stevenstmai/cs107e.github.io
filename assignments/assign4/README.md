@@ -54,11 +54,12 @@ $ git checkout dev
 $ git pull --allow-unrelated-histories starter-code assign4-starter
 ```
 
-The final setup step is to change the symbolic link to point `Makefile` to the `assign4/makefile`.
+The final setup step is to change the symbolic link to point `Makefile` to the `assign4/makefile`, and (**important**) *run `make clean && make`* to build fresh object files with embedded function names (as you will see when you work on the backtrace part of the assignemnt).
 
 ```console
 $ cd ~/cs107e_home/assignments
 $ ln -sf makefiles/assign4.makefile Makefile
+$ make clean && make
 ```
 
 You can edit the `MY_MODULES` list in the `assign4.makefile` to choose which modules of yours to build on. (See instructions for [use of MY_MODULES](/assignments/assign3/#mymodules) in assignment 3.)

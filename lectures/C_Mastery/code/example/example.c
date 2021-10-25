@@ -16,9 +16,9 @@ void strings(void)
     char matrix[2][4];
 
     // which of these memory locations are valid to write?
-    *a = 'A';
+    *a = 'A'; // a[0] = 'A'
     *b = 'B';
-    *(char *)c = 'C';
+    *(char *)c = 'C'; // ?
     *d = 'D';
     all[1][1] = 'E';
     matrix[1][1] = 'F';
