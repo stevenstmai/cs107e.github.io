@@ -54,7 +54,7 @@ $ git checkout dev
 $ git pull --allow-unrelated-histories starter-code assign4-starter
 ```
 
-The final setup step is to change the symbolic link to point `Makefile` to the `assign4/makefile`, and (**important**) *run `make clean && make`* to build fresh object files with embedded function names (as you will see when you work on the backtrace part of the assignemnt).
+The final setup step is to change the symbolic link to point `Makefile` to the `assign4/makefile`, and (**important**) *run `make clean && make`* to build fresh object files with embedded function names (which you will work with when you write the backtrace part of the assignment).
 
 ```console
 $ cd ~/cs107e_home/assignments
