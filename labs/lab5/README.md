@@ -27,7 +27,7 @@ __To prep for lab5:__
 ## Goals
 
 In your next assignment, you will write a PS/2 keyboard driver for your Pi. The
-goal of this lab is to set up the keyboard so that you can immediately start on
+primary goal of this lab is to set up the keyboard so that you can start on
 the assignment.
 
 During this lab you will:
