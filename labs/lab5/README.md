@@ -62,7 +62,8 @@ To prepare for lab, do the following:
     - __Logic analyzer__ 
         ![hiletgo](images/hiletgo.png){: .zoom .w-25}
     - __PS/2 connector__
-        ![connector](images/connector.png){: .zoom .w-50}
+        ![connector](images/connector.png){: .zoom .w-25}
+
 ## Lab exercises
 
 ### 1. Install your PS/2 keyboard connector (10m)
@@ -141,7 +142,7 @@ Connect the white CLK jumper to channel 0
 on your analyzer and connect the yellow DATA jumper to channel 1.
 From left to right, the colors are red, black, white, yellow.
 
-![wire order](images/connector_wiring.jpg){: .zoom .w-75}
+![wire order](images/connector_wiring.jpg){: .zoom .w-25}
 
 
 *Add a second white jumper to CLK and a second yellow jumper to DATA.*
