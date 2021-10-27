@@ -62,7 +62,7 @@ To prepare for lab, do the following:
     - __Logic analyzer__ 
         ![hiletgo](images/hiletgo.png){: .zoom .w-25}
     - __PS/2 connector__
-        ![connector](images/connector.png)
+        ![connector](images/connector.png){: .zoom .w-50}
 ## Lab exercises
 
 ### 1. Install your PS/2 keyboard connector (10m)
