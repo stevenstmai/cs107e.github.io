@@ -74,17 +74,15 @@ Get your keyboard kit: it includes a keyboard, a USB-to-PS/2
 connector, a logic analyzer, and a small board that makes it
 easy to plug your keyboard into a breadboard.
 
-Most modern keyboards use the Universal Serial Bus (USB).  
-Unfortunately, as we saw in lecture, the USB
-protocol is complicated: a typical USB driver for a keyboard is 2,000 
-lines of code.  Instead, we will
-interface with a PS/2 keyboard, which uses a simple serial protocol
-that is easy to decode.  The PS/2 keyboard appeared on the original
-IBM PC. Computers have long since stopped including a PS/2 port as standard
-equipment so we will wire a direct connection from the PS/2 connector to the
-GPIO pins on the Raspberry Pi. The keyboard in your kit is a USB keyboard that
-can also operate in PS/2 mode.  The keyboard is wired with a USB plug and
-includes a USB to PS/2 plug adapter.
+Most modern keyboards use the Universal Serial Bus (USB).  Unfortunately, as we
+saw in lecture, the USB protocol is complicated: a typical USB driver for a
+keyboard is 2,000 lines of code.  Instead, we will interface with a PS/2
+keyboard, which uses a simple serial protocol that is easy to decode.  The PS/2
+keyboard appeared on the original IBM PC.  Computers have long since stopped
+including a PS/2 port as standard equipment so we will wire a direct connection
+from the PS/2 connector to the GPIO pins on the Raspberry Pi. The keyboard in
+your kit is a USB keyboard that can also operate in PS/2 mode.  The keyboard is
+wired with a USB plug and includes a USB to PS/2 plug adapter.
 
 There are two common PS/2 devices: a keyboard and a mouse.  PS/2
 devices connect to a PC using a 6-pin
