@@ -56,7 +56,8 @@ To prepare for lab, do the following:
   Print a copy of this [PS/2 key code chart](images/scancode.gif) and have it on
   hand.
 
-- Extra supplies needed in lab this week:
+- Extra supplies needed in lab this week. You must return these supplies
+  at the end of the quarter: don't lose them!
     - __PS/2 keyboard__ (including __USB to PS/2 plug adapter__)
         ![keyboard](images/v7keyboard.png){: .zoom .w-50}
     - __Logic analyzer__ 
