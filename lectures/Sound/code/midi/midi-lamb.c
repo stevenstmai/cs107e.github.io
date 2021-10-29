@@ -61,7 +61,6 @@ void main() {
   gpio_init();
   timer_init();
   midi_init();
-
   while (1) {
     unsigned i;
     unsigned len = sizeof(notes) / sizeof(press_t);

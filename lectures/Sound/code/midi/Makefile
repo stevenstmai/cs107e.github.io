@@ -1,5 +1,6 @@
-NAME = midi-beat
+#NAME = midi-beat
 #NAME = midi-lamb
+NAME = midi-song
 
 OBJECTS =  midi.o
 
@@ -28,8 +29,8 @@ all : $(NAME).bin
 %.list: %.o
 	arm-none-eabi-objdump -d $< > $@
 
-install: $(NAME).bin
-	rpi-install.py -p $<
+run: $(NAME).bin
+	rpi-run.py -p $<
 
 test: test.bin
 	rpi-install.py -p $<
