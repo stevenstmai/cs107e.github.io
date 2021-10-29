@@ -4,22 +4,24 @@
 #include "pwm.h"
 #include "audio.h"
 
+/* Modified by Chris Gregg, Oct. 2021 */
+
 /*
    Initialize the pwm for audio.
-
    - base clock is 9600000
-   - pwm range is 256  for a sample clock rate of 37500 Khz
-   - writing a 256 sample waveform will repeat sound at 37500/256 = 146.5 Hz
+   - pwm range is base clock / sample_freq to give correct sample clock rate
 */
-void audio_init(void) 
+void audio_init(int sample_freq) 
 {
     gpio_set_function( 40, GPIO_FUNC_ALT0 );
     gpio_set_function( 45, GPIO_FUNC_ALT0 );
     timer_delay_ms(2);
 
     pwm_init();
+    int clock_rate = 19200000 / 2; // 9600000 Hz
+    int range = clock_rate / sample_freq;
 
-    pwm_set_clock( 19200000/2 ); // 9600000 Hz
+    pwm_set_clock( clock_rate );
     timer_delay_ms(2);
 
     pwm_set_mode( 0, PWM_SIGMADELTA ); 
@@ -31,9 +33,11 @@ void audio_init(void)
     pwm_enable( 0 ); 
     pwm_enable( 1 );
 
-    // pwm range is 256 cycles
-    pwm_set_range( 0, 0x100 );
-    pwm_set_range( 1, 0x100 );
+    pwm_set_range( 0, range );
+    pwm_set_width( 0, range / 2);
+    pwm_set_range( 1, range );
+    pwm_set_width( 1, range / 2);
+
     timer_delay_ms(2);
 }
 
@@ -58,51 +62,55 @@ void audio_init(void)
    Setting dphase=(2<<24) will skip one sample per interval,
    and will double the frequency of the output to 293Hz.
    
-   These functions do not return.
+   If repeat is true, the functions will not return.
 */
 
-void audio_write_u8(const uint8_t waveform[], unsigned dphase) 
+void audio_write_u8(const uint8_t waveform[], unsigned num_samples, int repeat) 
 {
-    unsigned phase = 0;
-    while(1) {
-        unsigned status = pwm_get_status();
-        if (!(status & PWM_FULL1)) {
-            unsigned angle = phase >> 24;
-            uint8_t pcm = waveform[angle];
+    while (1) {
+        for (unsigned int sample = 0; sample < num_samples; sample++) {
+            unsigned status = pwm_get_status();
+            while (status & PWM_FULL1) {
+                status = pwm_get_status();
+            }
+            uint8_t pcm = waveform[sample];
+            // mono
             pwm_write( pcm ); // output to channel 0
             pwm_write( pcm ); // output to channel 1
-            phase += dphase; 
         }
+        if (!repeat) break;
     }
 }
 
-void audio_write_u16(const uint16_t waveform[], unsigned dphase) 
+void audio_write_u16(const uint16_t waveform[], unsigned num_samples, int repeat) 
 {
-    unsigned phase = 0;
-    while(1) {
-        unsigned status = pwm_get_status();
-        if (!(status & PWM_FULL1)) {
-            unsigned angle = phase >> 24;
-            uint8_t pcm = waveform[angle] >> 8;
+    while (1) {
+        for (unsigned int sample = 0; sample < num_samples; sample++) {
+            unsigned status = pwm_get_status();
+            while (status & PWM_FULL1) {
+                status = pwm_get_status();
+            }
+            uint8_t pcm = waveform[sample] >> 8;
             pwm_write( pcm ); // output to channel 0
             pwm_write( pcm ); // output to channel 1
-            phase += dphase; 
         }
+        if (!repeat) break;
     }
 }
 
-void audio_write_i16(const int16_t waveform[], unsigned dphase) 
+void audio_write_i16(const int16_t waveform[], unsigned num_samples, int repeat) 
 {
-    unsigned phase = 0;
-    while(1) {
-        unsigned status = pwm_get_status();
-        if (!(status & PWM_FULL1)) {
-            unsigned angle = phase >> 24;
-            unsigned wave = waveform[angle] - INT16_MIN;
+    while (1) {
+        for (unsigned int sample = 0; sample < num_samples; sample++) {
+            unsigned status = pwm_get_status();
+            while (status & PWM_FULL1) {
+                status = pwm_get_status();
+            }
+            unsigned wave = waveform[sample] - INT16_MIN;
             uint8_t pcm = wave>>8;
             pwm_write( pcm ); // output to channel 0
             pwm_write( pcm ); // output to channel 1
-            phase += dphase; 
         }
+        if (!repeat) break;
     }
 }

@@ -3,10 +3,11 @@
 
 #include <stdint.h>
 
-void audio_init(void);
+void audio_init(int sample_freq);
 
-void audio_write_u8 (const uint8_t  waveform[], unsigned dphase);
-void audio_write_u16(const uint16_t waveform[], unsigned dphase);
-void audio_write_i16(const  int16_t waveform[], unsigned dphase);
+// these functions do not return if repeat is true
+void audio_write_u8 (const uint8_t  waveform[], unsigned num_samples, int repeat);
+void audio_write_u16(const uint16_t waveform[], unsigned num_samples, int repeat);
+void audio_write_i16(const  int16_t waveform[], unsigned num_samples, int repeat);
 
 #endif

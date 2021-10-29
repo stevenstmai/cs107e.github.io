@@ -62,6 +62,8 @@ void pwm_init(void)
 
 /*
  * pwm frequency in Hz = 19 200 000 Hz / pwmClock / pwmRange
+ * pwmClock is really a divider (e.g., if we want a divider of 16, we
+ * should pass in a freq of 19 200 000 / 16)
  */
 void pwm_set_clock(int freq) {
     int timer = F_OSC;
@@ -89,8 +91,8 @@ void pwm_set_clock(int freq) {
         timer = F_OSC;
     }
 
-    int divisor  = timer / freq;
-    int fraction = (timer % freq) * 4096 / freq;
+    int divisor  = timer / freq; // for freq=16, divisor = 1.2e6
+    int fraction = (timer % freq) * 4096 / freq; // fraction = 0
     int mash = fraction ? CM_MASH1 : CM_MASH0;
 
     if(      mash == CM_MASH0 && divisor < 1 )
