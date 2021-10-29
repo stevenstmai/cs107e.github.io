@@ -34,9 +34,7 @@ void audio_init(int sample_freq)
     pwm_enable( 1 );
 
     pwm_set_range( 0, range );
-    pwm_set_width( 0, range / 2);
     pwm_set_range( 1, range );
-    pwm_set_width( 1, range / 2);
 
     timer_delay_ms(2);
 }

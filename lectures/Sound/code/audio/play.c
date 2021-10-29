@@ -13,8 +13,6 @@ void main ()
     pwm_init();
     audio_init(sample_freq);
 
-    // audio_write_u8(sinewave, PHASE);
-    int repeat = 1;
     while (1) {
         printf("starting play\n");
         if (bits_per_sample == 8) {

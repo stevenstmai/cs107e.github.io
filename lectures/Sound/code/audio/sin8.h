@@ -4,6 +4,7 @@
 //     print(hex(int((math.sin(i * 2 * math.pi/256) + 1)*128)))
 #include <stdint.h>
 
+const int repeat = 1;
 const int sample_freq = 120000;
 const int bits_per_sample = 8;
 const uint8_t  wav_data[] =
