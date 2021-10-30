@@ -304,7 +304,13 @@ and rather than replicate code, we suggest you define a private helper function
 `read_bit`. The helper waits until observes the transition from high to low on
 the clock line and then reads a bit from the data line. Unifying repeated code
 into a shared helper aids readability and maintainability; this is a good habit
-to adopt.
+to adopt. 
+
+> If you need a refresher on how to correctly wait for a clock edge, take a
+> look at the [Keyboard lecture ps2 sample
+> code](/lectures/Keyboard/code/ps2/ps2.c). This application prints out
+> the raw bits of a scan code.
+{: .callout-info}
 
 A scancode transmission consists of 11 bits: a start bit (always low), 8 data
 bits, a parity bit, and a stop bit (always high).  To synchronize with the keyboard,
