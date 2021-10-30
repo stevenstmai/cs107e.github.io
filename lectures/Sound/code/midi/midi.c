@@ -19,7 +19,6 @@ void midi_init() {
 
 // Need inversion: a logical 1 is a high signal
 inline void send_bit(uint8_t val) {
-  ///gpio_write(MIDI_PIN, val == 0);
   gpio_write(MIDI_PIN, val);
   timer_delay_us(DELAY);
 }
@@ -86,24 +85,46 @@ void midi_print(uint8_t* cmd, unsigned len) {
 void play_midi(uint8_t *data, unsigned int length, int tempo) {
    for (int i = 0; i < length; i++) {
        // read time
-       int dt = data[i]; // will work for simple programs (need to read var length, eventually)
+       int bytes_read;
+       unsigned int dt = read_variable_num(data + i, &bytes_read);
+       i += bytes_read;
        printf("delay: %d\n", dt);
-       timer_delay_us(dt * tempo / 200);
+       timer_delay_us(dt * tempo / 250);
        // read message type
-       uint8_t msg_type = data[i + 1];
+       uint8_t msg_type = data[i];
        if ((msg_type >> 4) == 0x9 || 
            (msg_type >> 4) == 0x8 ||
            (msg_type >> 4) == 0xb ||
            (msg_type >> 4) == 0xe) {
            // two argument message
-           midi_send(data + i + 1, 3); 
-           midi_print(data + i + 1, 3); 
-           i += 3;
+           midi_send(data + i, 3); 
+           midi_print(data + i, 3); 
+           i += 2;
        } else if ((msg_type >> 4) == 0xc) {
            // one argument message
-           midi_send(data + i + 1, 2);
-           midi_print(data + i + 1, 2);
-           i+=2;
+           midi_send(data + i, 2);
+           midi_print(data + i, 2);
+           i++;
        }
    } 
 }
+
+unsigned int read_variable_num(uint8_t *data, int *bytes_read) {
+    unsigned int value;
+    *bytes_read = 1; // we will read at least one byte
+    value = data[0]; 
+    printf("v0: 0x%x, ",value);
+    if(value & 0x80) {
+        value &= 0x7f;
+        while (1) {
+            uint8_t c = data[*bytes_read];
+            (*bytes_read)++;
+            printf("0x%x, ", c);
+            value = (value << 7) + (c & 0x7f);
+            if (!(c & 0x80)) break;
+        } 
+    }
+    printf("\n");
+    return(value);
+}
+

@@ -2,8 +2,9 @@
 #include "timer.h"
 #include "midi.h"
 #include "pi.h"
-#include "twinkle.h"
-//#include "song2.h"
+// #include "twinkle.h"
+// #include "song2.h"
+#include "born-in-the-usa.h"
 
 #define CHANNEL_KEY    0
 #define CHANNEL_BEATS  9

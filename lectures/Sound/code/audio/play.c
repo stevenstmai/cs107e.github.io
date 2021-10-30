@@ -3,9 +3,9 @@
 #include "audio.h"
 #include "printf.h"
 #include "timer.h"
-#include "sin8.h"
+// #include "sin8.h"
 // #include "sound2.h"
-// #include "sound3.h"
+#include "sound3.h"
 
 void main ()
 {

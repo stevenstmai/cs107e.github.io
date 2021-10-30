@@ -24,8 +24,8 @@ void main ( void )
     pwm_enable( 1 );
 
     int left_width = FREQ/LEFT_HZ; // 1.2M / 440 = 2727
-    pwm_set_range( 0, left_width ); // 2727 
-    pwm_set_width( 0, left_width/2 );  // 681
+    //pwm_set_range( 0, left_width ); // 2727 
+    //pwm_set_width( 0, left_width/2 );  // 681
 
     int right_width = FREQ/RIGHT_HZ; // 1.2M / 523 = 2294
     pwm_set_range( 1, right_width ); 
