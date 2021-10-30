@@ -105,6 +105,32 @@ void play_midi(uint8_t *data, unsigned int length, int tempo) {
            midi_send(data + i, 2);
            midi_print(data + i, 2);
            i++;
+       } else if (msg_type == 0xff) {
+           // meta message, which can be tempo 
+           // we will ignore everything but the tempo
+           uint8_t event = data[i++];
+           unsigned int length = read_variable_num(data + i, &bytes_read);
+           i += bytes_read;
+           if (event == 0x51) {
+                // length number of bytes, in big-endian format, provide the tempo
+                // in microseconds per MIDI quarter-note
+                // (see here: http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html#BM3_)
+                int new_tempo = 0;
+                for (int j = 0; j < length; j++) {
+                    new_tempo += (new_tempo << 8) + data[i + j];
+                }
+                printf("new tempo: %d\n", new_tempo);
+                tempo = new_tempo;
+           }
+           // skip over message
+           i += length
+       } else if (msg_type == 0xf0) {
+           // "sysex" message, which we can ignore
+           uint8_t event = data[i++];
+           unsigned int length = read_variable_num(data + i, &bytes_read);
+           i += bytes_read;
+           // ignore
+           i += length;
        }
    } 
 }
