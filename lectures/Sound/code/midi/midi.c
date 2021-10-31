@@ -82,14 +82,54 @@ void midi_print(uint8_t* cmd, unsigned len) {
     printf("\n");
 }
 
-void play_midi(uint8_t *data, unsigned int length, int tempo) {
-   for (int i = 0; i < length; i++) {
+void play_midi(uint8_t *data, int tempo) {
+   // read headers
+   // first four bytes should be "MThd"
+   if (data[0] != 'M' || data[1] != 'T' || data[2] != 'h' || data[3] != 'd') {
+       printf("Not recognized as MIDI data (no 'MThd' at start). :(\n");
+       return;
+   }
+   // the next four bytes is the big-endian number 6
+   if (data[4] != 0 || data[5] != 0 || data[6] != 0 || data[7] != 6) {
+       printf("Not recognized as MIDI data (magic number 6 missing). :(\n");
+       return;
+   }
+
+   // there are three 16-bit words to follow
+   // 1. format (we can only handle type 0)
+   if (data[8] != 0 || data[9] != 0) {
+       printf("Not a type-0 MIDI file. There are converstion tools available online.\n");
+       return;
+   }
+
+   // 2. number of tracks (must be 1)
+   if (data[10] != 0 || data[11] != 1) {
+       printf("The file does not seem to have only one track.\n");
+       return;
+   }
+
+   // 3. division (for timing -- we will ignore the next two bytes, data[12,13]
+    
+   // The next four bytes should be 'MTrk' 
+   if (data[14] != 'M' || data[15] != 'T' || data[16] != 'r' || data[17] != 'k') {
+       printf("No track found (no 'MTrk'). :(\n");
+       return;
+   }
+   // The length of the remaining data is a 4-byte, big-endian number
+   unsigned int length = 0;
+   for (int i = 0; i < 4; i++) {
+      length = (length << 8) + data[18 + i];
+   } 
+
+   // now we can start reading MIDI info 
+
+   for (int i = 22; i < length; i++) {
        // read time
        int bytes_read;
        unsigned int dt = read_variable_num(data + i, &bytes_read);
        i += bytes_read;
-       printf("delay: %d\n", dt);
-       timer_delay_us(dt * tempo / 250);
+       // printf("delay: %d\n", dt);
+       timer_delay_us(dt * tempo / 195);
        // read message type
        uint8_t msg_type = data[i];
        if ((msg_type >> 4) == 0x9 || 
@@ -98,17 +138,18 @@ void play_midi(uint8_t *data, unsigned int length, int tempo) {
            (msg_type >> 4) == 0xe) {
            // two argument message
            midi_send(data + i, 3); 
-           midi_print(data + i, 3); 
+           // midi_print(data + i, 3); 
            i += 2;
        } else if ((msg_type >> 4) == 0xc) {
            // one argument message
            midi_send(data + i, 2);
-           midi_print(data + i, 2);
+           // midi_print(data + i, 2);
            i++;
        } else if (msg_type == 0xff) {
            // meta message, which can be tempo 
            // we will ignore everything but the tempo
-           uint8_t event = data[i++];
+           uint8_t event = data[++i];
+           i++;
            unsigned int length = read_variable_num(data + i, &bytes_read);
            i += bytes_read;
            if (event == 0x51) {
@@ -117,20 +158,21 @@ void play_midi(uint8_t *data, unsigned int length, int tempo) {
                 // (see here: http://www.music.mcgill.ca/~ich/classes/mumt306/StandardMIDIfileformat.html#BM3_)
                 int new_tempo = 0;
                 for (int j = 0; j < length; j++) {
-                    new_tempo += (new_tempo << 8) + data[i + j];
+                    new_tempo = (new_tempo << 8) + data[i + j];
                 }
-                printf("new tempo: %d\n", new_tempo);
+                // printf("new tempo: %d\n", new_tempo);
                 tempo = new_tempo;
            }
            // skip over message
-           i += length
+           i += length - 1;
        } else if (msg_type == 0xf0) {
            // "sysex" message, which we can ignore
-           uint8_t event = data[i++];
            unsigned int length = read_variable_num(data + i, &bytes_read);
            i += bytes_read;
            // ignore
            i += length;
+       } else {
+           printf("Unknown message type! (0x%x)\n", msg_type);
        }
    } 
 }
@@ -139,18 +181,18 @@ unsigned int read_variable_num(uint8_t *data, int *bytes_read) {
     unsigned int value;
     *bytes_read = 1; // we will read at least one byte
     value = data[0]; 
-    printf("v0: 0x%x, ",value);
+    // printf("v[0]: 0x%x, ", value); 
     if(value & 0x80) {
         value &= 0x7f;
         while (1) {
             uint8_t c = data[*bytes_read];
             (*bytes_read)++;
-            printf("0x%x, ", c);
+            // printf("0x%x, ", c);
             value = (value << 7) + (c & 0x7f);
             if (!(c & 0x80)) break;
         } 
     }
-    printf("\n");
+    // printf("\n");
     return(value);
 }
 

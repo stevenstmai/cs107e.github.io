@@ -12,7 +12,7 @@ void midi_test();
 
 void midi_set_channel(unsigned ch);
 unsigned midi_channel();
-void play_midi(uint8_t *data, unsigned int length, int tempo);
+void play_midi(uint8_t *data, int tempo);
 void midi_reset();
 unsigned int read_variable_num(uint8_t *data, int *bytes_read);
 

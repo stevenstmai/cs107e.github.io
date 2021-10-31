@@ -22,106 +22,102 @@ def main():
     parse_data(track_data)
 
 def parse_header(data):
-    print('/*')
     # first 4 bytes should be "MThd"
     description = data[:4]
     if description != b'MThd':
         print("Not a midi file.")
         quit()
     
+    print("uint8_t midi_data[] = {\n")
+    print("    // preamble")
+    comma_bytes(data[:4], 0)
     # size of chunk is 4 bytes
     chunksize = int.from_bytes(data[4:8], byteorder='big')
-    print(f"chunk size: {chunksize}")
+    # print(f"chunk size: {chunksize}")
+    comma_bytes(data[4:8], 4)
 
     # format (probably 0) 
     midiformat = int.from_bytes(data[8:10], byteorder="big")
-    print(f"midi format: {midiformat}")
+    comma_bytes(data[8:10], 8)
+    # print(f"midi format: {midiformat}")
     
     # tracks (probably 1) 
     num_tracks = int.from_bytes(data[10:12], byteorder="big")
-    print(f"number of tracks: {num_tracks}")
+    comma_bytes(data[10:12], 10)
+    # print(f"number of tracks: {num_tracks}")
     
     # division, if bit 15 is low, we have ticks per quarter note
     division = int.from_bytes(data[12:14], byteorder="big")
-    if division >> 15 == 0:
-        ticks_per_quarter_note = division
-        print(f"Ticks per quarter note: {ticks_per_quarter_note}")
+    comma_bytes(data[12:14], 12)
 
     mtrk = data[14:18]
     if mtrk != b'MTrk':
         print("No tracks.")
         quit()
-    
+    comma_bytes(data[14:18], 14)
+
     # size of chunk is 4 bytes
     chunksize = int.from_bytes(data[18:22], byteorder='big')
-    print(f"chunk size: {chunksize}")
-    track_data = data[22:]
-    print('*/')
+    comma_bytes(data[18:22], 18)
+    # print(f"chunk size: {chunksize}")
     print()
+    track_data = data[22:]
     return track_data 
 
 def parse_data(data):
-    print("uint8_t midi_data[] = {\n")
+    print("\n    // Data:")
     while len(data) > 0:
-        print_bytes = True
         # read an event
         delta_time, time_bytes_read, data = read_var_num(data)
+        comma_bytes(time_bytes_read, 0);
+        print(f" // delta-time ({delta_time})")
         desc = data[0]
         if desc == 0xff:
-            print_bytes = False
             # meta data
             meta_type = data[1]
             length, bytes_read, data = read_var_num(data[2:])
-            message = data[:length]
-            if meta_type == 0x51:
-                # tempo
-                tempo = int.from_bytes(message, byteorder='big')
-                # print(f"    const int tempo = {tempo};")
-            else:
-                print(f"    // meta {{type: {hex(meta_type)}, data: {message}}}")
+            message = [desc, meta_type] + bytes_read + list(data[:length])
             data = data[length:]
+            print("    // meta data")
+            comma_bytes(message, 0)
+            print()
         elif desc == 0xf0:
-            print_bytes = False
             # sysex event
             length, bytes_read, data = read_var_num(data[2:])
-            message = data[:length]
-            print(f"    // sysex event {{{message}}}")
+            message = [desc] + bytes_read + data[:length]
             data = data[length:]
+            print("    // sysex")
+            comma_bytes(message, 0)
+            print()
         elif (desc >> 4) == 0x9 or (desc >> 4) == 0x8:
             # note on/off
             note = data[1]
             velocity = data[2]
-            message = (f"    {hex(desc)}, {hex(note)}, {hex(velocity)}, // note on/off")
+            print(f"    {hex(desc)}, {hex(note)}, {hex(velocity)}, // note on/off")
             data = data[3:]
         elif (desc >> 4) == 0xb:
             # control change
             ctrl_num = data[1]
             new_val = data[2]
-            message = (f"    {hex(desc)}, {hex(ctrl_num)}, {hex(new_val)}, // control change")
+            print(f"    {hex(desc)}, {hex(ctrl_num)}, {hex(new_val)}, // control change")
             data = data[3:]
         elif (desc >> 4) == 0xc:
             # program change
             new_prog_num = data[1]
-            message = (f"    {hex(desc)}, {hex(new_prog_num)}, // program change")
+            print(f"    {hex(desc)}, {hex(new_prog_num)}, // program change")
             data = data[2:]
         elif (desc >> 4) == 0xe:
             # Pitch Wheel
             part1 = data[1]
             part2 = data[2]
-            message = (f"    {hex(desc)}, {hex(part1)}, {hex(part2)}, // pitch wheel")
+            print(f"    {hex(desc)}, {hex(part1)}, {hex(part2)}, // pitch wheel")
             data = data[3:]
         else:
-            printBytes = False
             print('    ', end='')
             print(f"    // unknown message: {hex(desc)}")
             data = data[1:]
-        if print_bytes:
-            print(f"    {', '.join([hex(x) for x in time_bytes_read])}, // delta time {(delta_time)}")
-            print(message)
-
+        print()
     print('\n};\n')
-    if tempo:
-        print(f"const int tempo = {tempo};")
 
 def read_var_num(data):
     # returns the num, the bytes read for the num, and the remaining data
@@ -137,5 +133,18 @@ def read_var_num(data):
             break
     return num, bytes_read, data[pos:]
 
+def comma_bytes(data, start_pos):
+    # print comma-separated bytes with
+    # four spaces at start_pos % 8 == 0,
+    # and a newline after (start_pos + 1) % 8 == 0
+    pos = start_pos
+    for b in data:
+        if pos % 8 == 0:
+            print('    ', end='')
+        print(f'{hex(b)}, ', end='')
+        if (pos + 1) % 8 == 0:
+            print()
+        pos += 1
+         
 if __name__ == "__main__":
     main()
