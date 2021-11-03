@@ -182,7 +182,7 @@ tricky -- it can seem like it's working, but might have subtle bugs that you
 only find when you're deep in your graphics assignment. So call a TA over 
 to read over your `mailbox_read` to check that it's right.
 
-You're ready to answer the check-in questions about framebuffers: [^2] [^3].
+You're ready to answer the check-in question about framebuffers: [^2].
 
 ### 4. Multi-dimensional arrays (30m)
 
@@ -215,7 +215,7 @@ To start, here is a quick self-test:
 Inspect the code in `code/pointers/pointers.c`. Compile the program using
 `make`, run it on your Pi, and interpret the results. Ask questions about
 anything that doesn't make sense to you and check-in with us to confirm your
-understanding. [^4]
+understanding. [^3]
 
 ### 5. Fonts (15m)
 
@@ -303,7 +303,7 @@ follow the instructions marked `TODO:` to fix this issue. Compile and run and
 you'll get an ascii banner that prints letters to the terminal using your Pi's
 font - neat!
 
-You're ready to answer the final check-in [^5].
+You're ready to answer the final check-in [^4].
 
 ## Check in with TA
 
@@ -315,14 +315,12 @@ responses, please ask us about it too!
 
 [^2]: What happens if `mailbox_t mailbox` is not tagged as `volatile`?
 
-[^3]: Show off your memory map diagram! Where does the stack sit, relative to the framebuffer? Where do the GPIO registers sit relative to the mailbox? 
-
-[^4]: What is the difference between the following two lines of code?
+[^3]: What is the difference between the following two lines of code?
     ```c
 char *a  = "Hello, world\n";
 char b[] = "Hello, world\n";
     ```
-[^5]: Show the declaration for `img` needed for the `banner.c` program.
+[^4]: Show the declaration for `img` needed for the `banner.c` program.
 
 
 
