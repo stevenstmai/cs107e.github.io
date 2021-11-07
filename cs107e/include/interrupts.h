@@ -52,6 +52,26 @@ void interrupts_global_enable(void);
 void interrupts_global_disable(void);
 
 /*
+ * `interrupts_enable_source``
+ *
+ * Enable a particular interrupt source. The source itself must still
+ * be configured to generate interrupts (and global interrupts must be
+ * enabled) for a registered handler to be called. The source should be
+ * a value from the INTERRUPTS enum below.
+ */
+void interrupts_enable_source(unsigned int source);
+
+/*
+ * `interrupts_disable_source`
+ *
+ * Disable a particular interrpt source. Interrupts for this source
+ * will not trigger a handler and will remain pending (until cleared).
+ * The source should be a value from the INTERRUPTS enum below.
+ */
+void interrupts_disable_source(unsigned int source);
+
+
+/*
  * `handler_fn_t`
  *
  * This typedef gives a nickname to the type of function pointer used as
@@ -68,9 +88,8 @@ typedef void (*handler_fn_t)(unsigned int, void *);
  *
  * Register the handler function for a given interrupt source. Each interrupt
  * source can have one handler: further dispatch should be invoked by
- * the handler itself. When a handler is registered for an interrupt source,
- * interrupts are enabled for that source. In order for interrupts to be generated,
- * must also turn on interrupts with `interrupts_global_enable`.
+ * the handler itself. Registering a handler does not enable the source:
+ * this must be done separately through `interrupts_enable_source`.
  *
  * This function asserts on an attempt to register handler without initializing
  * the interrupts module (i.e. required to call `interrupts_init` first).
@@ -91,9 +110,7 @@ typedef void (*handler_fn_t)(unsigned int, void *);
  *                  when calling handler function
  *
  * An assert is raised if `source` is invalid. `aux_data` can be NULL if
- * handler function has no need for auxiliary data. If `fn` is NULL, this
- * removes any handler previously registered and disables interrupts for
- * `source`.
+ * handler function has no need for auxiliary data.
  */
 void interrupts_register_handler(unsigned int source, handler_fn_t fn, void *aux_data);
 

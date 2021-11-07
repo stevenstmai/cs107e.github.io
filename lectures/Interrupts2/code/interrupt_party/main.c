@@ -56,6 +56,7 @@ void configure_alarm(void)
     armtimer_enable();             // enable timer itself
     armtimer_enable_interrupts();  // receive timer events as interrupts
     interrupts_register_handler(INTERRUPTS_BASIC_ARM_TIMER_IRQ, second_elapsed, NULL);
+    interrupts_enable_source(INTERRUPTS_BASIC_ARM_TIMER_IRQ);
 }
 
 void configure_keyboard(void)
@@ -77,6 +78,7 @@ void main(void)
     configure_alarm();
     configure_keyboard();
 
+	gpio_interrupts_enable();
     interrupts_global_enable();
 
     while (1) {

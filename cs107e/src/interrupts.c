@@ -112,7 +112,7 @@ static bool is_valid(unsigned int irq_source) {
     return is_basic(irq_source) || (is_shared(irq_source) && is_safe(irq_source));
 }
 
-static void interrupts_enable_source(unsigned int irq_source) {
+void interrupts_enable_source(unsigned int irq_source) {
     if (is_basic(irq_source)) {
         unsigned int shift = irq_source - INTERRUPTS_BASIC_BASE;
         interrupt->enable_basic |= 1 << shift;
@@ -123,7 +123,7 @@ static void interrupts_enable_source(unsigned int irq_source) {
     }
 }
 
-static void interrupts_disable_source(unsigned int irq_source) {
+void interrupts_disable_source(unsigned int irq_source) {
     if (is_basic(irq_source)) {
         unsigned int shift = irq_source - INTERRUPTS_BASIC_BASE;
         interrupt->disable_basic |= 1 << shift;
@@ -139,15 +139,8 @@ void interrupts_register_handler(unsigned int source, handler_fn_t fn, void *aux
     assert(vector_table_is_installed());
     assert(is_valid(source));
 
-    if (fn) {
-        handlers[source].fn = fn;
-        handlers[source].aux_data = aux_data;
-        interrupts_enable_source(source);
-    } else {
-        interrupts_disable_source(source);
-        handlers[source].fn = NULL;
-        handlers[source].aux_data = NULL;
-    }
+    handlers[source].fn = fn;
+    handlers[source].aux_data = aux_data;
 }
 
 static int get_next_source(void) {

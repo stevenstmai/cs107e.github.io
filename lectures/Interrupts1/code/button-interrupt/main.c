@@ -37,6 +37,7 @@ void main(void)
 
     interrupts_init();
     interrupts_register_handler(INTERRUPTS_GPIO3, button_pressed, NULL);
+    interrupts_enable_source(INTERRUPTS_GPIO3);
     interrupts_global_enable();
 
     console_init(NROWS, NCOLS, GL_AMBER, GL_BLACK);

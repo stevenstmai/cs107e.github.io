@@ -29,6 +29,32 @@
  */
 void gpio_interrupts_init(void);
 
+
+/*
+ * `gpio_interrupts_enable`
+ *
+ * Global enable for GPIO interrupts.
+ */
+void gpio_interrupts_enable(void);
+
+/*
+ * `gpio_interrupts_disable`
+ *
+ * Global disable for GPIO interrupts.
+ */
+void gpio_interrupts_disable(void);
+
+/*
+ * `gpio_interrupts_default_handler`
+ *
+ * The default handler for GPIO events. Does nothing. Provided
+ * as reference point for what the prior handler returned from
+ * registering a handler, plus as a convenience for uninstalling
+ * a handler (replace it with this).
+ */
+void gpio_default_handler(unsigned int pc, void *aux_data);
+
+
 /*
  * `gpio_interrupts_register_handler`
  *

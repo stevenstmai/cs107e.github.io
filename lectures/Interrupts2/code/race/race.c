@@ -31,6 +31,7 @@ void main(void) {
     armtimer_enable();
     interrupts_register_handler(INTERRUPTS_BASIC_ARM_TIMER_IRQ, timer_event_race, NULL);
     armtimer_enable_interrupts();
+    interrupts_enable_source(INTERRUPTS_BASIC_ARM_TIMER_IRQ);
     interrupts_global_enable();
 
     while (1) {
