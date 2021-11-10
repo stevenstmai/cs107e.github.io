@@ -295,14 +295,12 @@ for documentation on the function `gpio_enable_event_detection`.
 to the console. Remember that this handler must clear the event,
 or it will trigger forever.
 - In `main`, register your handler to your button pin with
-`interrupts_register_handler` for `INTERRUPTS_GPIO3`.
+`gpio_interrupts_register_handler`.
 - Finally, in `main`, set up your system to generate interrupts. You
 need to initialize the interrupts module, enable global interrupts,
 and enable interrupts for `INTERRUPTS_GPIO3`. Here are the specific functions
 you need to use:
 ```
-gpio_enable_event_detection
-gpio_interrupts_register_handler
 interrupts_global_enable
 interrupts_enable_source
 ```
