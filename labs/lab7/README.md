@@ -298,8 +298,14 @@ or it will trigger forever.
 `interrupts_register_handler` for `INTERRUPTS_GPIO3`.
 - Finally, in `main`, set up your system to generate interrupts. You
 need to initialize the interrupts module, enable global interrupts,
-and enable interrupts for `INTERRUPTS_GPIO3`. You can refer to
-`armtimer_diagnostic` for what this code looks like.
+and enable interrupts for `INTERRUPTS_GPIO3`. Here are the specific functions
+you need to use:
+```
+gpio_enable_event_detection
+interrupts_register_handler
+interrupts_global_enable
+interrupts_enable_source
+```
 
 The order that you do these operations can be very important: think
 carefully about what this code does, revisiting the lecture notes if
