@@ -191,9 +191,8 @@ staff can help you understand why, and you can always fall back to
 the reference implementaiton.
 
 In addition to `interrupt_asm`, you need to implement one more
-function in assembly.  This function is used by `interrupts.c`. You'll
-also probably want to use it in your GPIO interrupt library below. Its
-signature is:
+function in assembly.  This function is used by `interrupts.c`. 
+Its signature is:
 
 ```unsigned int count_leading_zeroes(unsigned int value);```
 
