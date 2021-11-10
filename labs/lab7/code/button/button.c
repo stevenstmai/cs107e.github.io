@@ -1,5 +1,6 @@
 #include "gl.h"
 #include "gpio.h"
+#include "gpio_extra.h"
 #include "printf.h"
 #include "uart.h"
 
