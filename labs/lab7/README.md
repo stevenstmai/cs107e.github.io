@@ -291,7 +291,7 @@ on the button pin. You can consult
 [gpio_extra.h](/header#gpio_extra)
 for documentation on the function `gpio_enable_event_detection`.
 - Write your handler. This function should have the signature
-`void (*)(unsigned int pc, void *aux_data)`. For starters, just have it print something
+`void function_name(unsigned int pc, void *aux_data)`. For starters, just have it print something
 to the console. Remember that this handler must clear the event,
 or it will trigger forever.
 - In `main`, register your handler to your button pin with
