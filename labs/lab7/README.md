@@ -302,7 +302,7 @@ and enable interrupts for `INTERRUPTS_GPIO3`. Here are the specific functions
 you need to use:
 ```
 gpio_enable_event_detection
-interrupts_register_handler
+gpio_interrupts_register_handler
 interrupts_global_enable
 interrupts_enable_source
 ```
