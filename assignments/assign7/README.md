@@ -94,7 +94,7 @@ The source files added to your repository for assignment 7 are:
   file.
 - `src/lib/bits_asm.s`: you'll implement a required function within this file.
 - `src/lib/gpio_interrupts.c`: you'll implement this module.
-- `src/tests/test_keyboard_interrupts.c`: you'll add tests to this file to
+- `src/tests/test_interrupts.c`: you'll add tests to this file to
   verify that your implementation works as expected.
 - `src/apps/interrupts_console_shell.c`: you'll leave this file unchanged but
   use it as a sample application to test your modules.
