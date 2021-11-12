@@ -107,7 +107,7 @@ void main(void) {
     memset(data, 0, 64);
     struct raw_rtc_time_info raw_time_info;
     struct time_info_t time_info;
-    // set_time(16, 8, 0);
+    // set_time(13, 9, 00);
     // set_day(5);
     // set_date(11, 11, 2021);
     
