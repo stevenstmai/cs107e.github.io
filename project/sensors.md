@@ -24,123 +24,121 @@ We have [10 kOhm rotary potentiometers](https://www.adafruit.com/product/4133).
 
 We have [10 kOhm sliding potentiometers](https://www.adafruit.com/product/4271)
 
-	* Analog Hall Effect sensor
-(voltage proportional to magnetic field)
+* Analog Hall Effect sensor (voltage proportional to magnetic field)
 
 We have [Hall effect sensors](https://www.adafruit.com/product/158). You will need
 to pair them with an ADC (see above).
 
-	* Temperature sensor
+* Temperature sensor
 
 ### Optical
 
-	<!--
-	* Sharp GP2D12 IR Distance sensors
-(voltage proportional to distance)
+<!---
+* Sharp GP2D12 IR Distance sensors (voltage proportional to distance)
 
-	* [TSAL1600 IR LEDs](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/TSAL6100/?qs=hQ8xas2ojoxzFnfG3K8LcA%3D%3D)
+* [TSAL1600 IR LEDs](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/TSAL6100/?qs=hQ8xas2ojoxzFnfG3K8LcA%3D%3D)
 
-	* [LTR-3208E IR Phototransistors](http://www.mouser.com/ProductDetail/Lite-On/LTR-3208E/?qs=CJyu4%2FNIJyr9En4gPmghMw%3D%3D)
+* [LTR-3208E IR Phototransistors](http://www.mouser.com/ProductDetail/Lite-On/LTR-3208E/?qs=CJyu4%2FNIJyr9En4gPmghMw%3D%3D)
 
-	* [BPV11 NPN Phototransistors](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/BPV11/?qs=%2Fjqivxn91ccQSntIBLifOQ%3D%3D)
+* [BPV11 NPN Phototransistors](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/BPV11/?qs=%2Fjqivxn91ccQSntIBLifOQ%3D%3D)
 
-	* [BPW77NB NPN Phototransistors](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/BPW77NB/?qs=sGAEpiMZZMs50KUSuyRkpr0bn2hcYGU5%252brfx68goEwU%3d)
+* [BPW77NB NPN Phototransistors](http://www.mouser.com/ProductDetail/Vishay-Semiconductors/BPW77NB/?qs=sGAEpiMZZMs50KUSuyRkpr0bn2hcYGU5%252brfx68goEwU%3d)
 
-	* HC_SR501 Infrared PIR Motion sensors
+* HC_SR501 Infrared PIR Motion sensors
 
-	* [TSOP 43838 38 KHz IR detectors](https://www.digikey.com/product-detail/en/vishay-semiconductor-opto-division/TSOP34838/751-1386-5-ND/1768188)
+* [TSOP 43838 38 KHz IR detectors](https://www.digikey.com/product-detail/en/vishay-semiconductor-opto-division/TSOP34838/751-1386-5-ND/1768188)
 
-	* IR emission/sensor modules
+* IR emission/sensor modules
 
 * Flame sensor module (760-1100 nm IR detector)
 
-	* RGB LED module
+* RGB LED module
 
-	* RGB LED SMD module
+* RGB LED SMD module
 
-	* 7 color flash LED
+* 7 color flash LED
 
-	* 2 color LED module
+* 2 color LED module
 
-	* Laser emitter module
+* Laser emitter module
 
-	* Photoresistor module
+* Photoresistor module
 
-	* Photointerruptor module
+* Photointerruptor module
+-->
 
-	-->
 ### Audio
 
-	<!--
-	* Electret microphones 
-	-->
+<!--
+* Electret microphones 
+-->
 
-	* [HC-SR04 Ultrasonic Sensor/Distance Measuring modules](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) (time of flight)
+* [HC-SR04 Ultrasonic Sensor/Distance Measuring modules](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) (time of flight)
 
-	<!--
+<!--
 * Microphone sound detection modules (digital threshold and analog outputs)
+-->
 
-
+<!---
 ### Digital
 
-	* Rotary switches
+* Rotary switches
 
-	* Reed switches
+* Reed switches
 
-	* Ball switch
+* Ball switch
 
-	* Rotary encoder module
+* Rotary encoder module
 
-	* A1104LUA-T Hall Effect sensor
+* A1104LUA-T Hall Effect sensor
 (schmitt trigger followed by open collector transistor)
 
-	* Relay switch module
+* Relay switch module
 
-	* Touch sensor module
+* Touch sensor module
 
-	* Temperature module
+* Temperature module
 
-	* Buzzer (active and passive) modules
+* Buzzer (active and passive) modules
 
-	* Shock (vibration switch) sensor module
+* Shock (vibration switch) sensor module
 
-	* Tap (vibration switch) module
+* Tap (vibration switch) module
 
-	* Obstacle avoidance module
+* Obstacle avoidance module
 
-	* 7-segment displays
-	-->
+* 7-segment displays
+-->
 
+<!---
 ### I2C
 
-	<!--
-	* [VL6180X Time-of-Flight Distance Sensors](https://www.pololu.com/product/2489)
+* [VL6180X Time-of-Flight Distance Sensors](https://www.pololu.com/product/2489)
 
-	* [VL53L0X Time-of-Flight Distance Sensors](https://www.pololu.com/product/2490)
+* [VL53L0X Time-of-Flight Distance Sensors](https://www.pololu.com/product/2490)
 
-	* [AltIMU-10 v3 Gyro, Accelerometer, Compass, and Altimeter (L3GD20H, LSM303D, and LPS331AP Carrier)](https://www.pololu.com/product/2469)
+* [AltIMU-10 v3 Gyro, Accelerometer, Compass, and Altimeter (L3GD20H, LSM303D, and LPS331AP Carrier)](https://www.pololu.com/product/2469)
 
-	* [LSM6DS3 3D Accelerometer and Gyroscope Sensor](https://www.digikey.com/catalog/en/partgroup/sparkfun-6-degrees-of-freedom-breakout-board-lsm6ds3/58635)
-
-	-->
+* [LSM6DS3 3D Accelerometer and Gyroscope Sensor](https://www.digikey.com/catalog/en/partgroup/sparkfun-6-degrees-of-freedom-breakout-board-lsm6ds3/58635)
+-->
 
 ### SPI
 
-	* MCP3008 Analog-to-Digital convertor
+* MCP3008 Analog-to-Digital convertor
 
-	<!--
-
+<!--
 * DS18B20 Temperature sensor module (not pure SPI)
 
-	* [Arducam 2-Megapixel Cameras](http://www.amazon.com/gp/product/B012UXNDOY)
+* [Arducam 2-Megapixel Cameras](http://www.amazon.com/gp/product/B012UXNDOY)
+
 * HC595 SIPO shift registers (for output)
 
 * HC165 PISO shift registers (for input)
 
-	* MCP4921 Digital-to-Analog convertor
+* MCP4921 Digital-to-Analog convertor
 
-	* MCP4922 Dual Digital-to-Analog convertor
+* MCP4922 Dual Digital-to-Analog convertor
 
-	* MCP4162 Digital potentiometer
-	-->
+* MCP4162 Digital potentiometer
+-->
 
