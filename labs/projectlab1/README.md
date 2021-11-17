@@ -3,6 +3,7 @@ released: true
 permalink: /labs/projectlab1/
 title: 'Lab 8: Project Team Meeting 1'
 readings: |
+  + [Prelab](/labs/projectlab1/#prelab-preparation) to prep before lab.
   + Lab will be a project work session. Plan to attend lab at same time as your teammates.
 ---
 {% comment %}
@@ -27,7 +28,30 @@ By the end of the lab session, you want to
 
 Refer to the [project writeup](/project/) for more information on the project itself.
 
-### Project repository and project mirror repository
+## Prelab preparation
+To prepare for lab, do the following:
+
+- Submit your project team membership at [this google form](https://forms.gle/hNLusVCcTBSyGnuq8)
+- Spend some time (on email/chat/etc.) brainstorming your project idea with your teammates. In particular:
+  - What types of sensors / electronics do you think you might need? Try to do a quick search to see where you can purchase them (Amazon.com, eBay, Adafruit, Jameco Electronics (which has an actual store near Redwood City), Digi-Key, Mouser, etc.).
+  - Who will be in charge of what part of the project?
+  - What will a demo look like?
+- Have questions ready for lab about your overall project, sensors, coding, etc.
+
+### Discussion with your teammates (most of the lab)
+
+When you get to lab, meet up with your group and prepare a short pitch to describe your project. After the pitch (see below) and after you set up your Github repo (also see below), you should continue to plan with your teammates. Delegate responsibilites, and plan who will work on what. A critical piece is ordering components, sensors, etc., and that should be done by the end of the week, if possible.
+
+### Pitch your project to an instructor or TA (20 minutes, at some point during lab)
+
+When you meet with the instructor or TA, and what you wish to accomplish with your project. Also describe how your Raspberry Pi(s) will be part of the project. Be prepared for constructive feedback, particularly about the scope of the project -- we want your projects to be doable in the timeframe we have, and this can be tricky to get correct without guidance.
+
+If your project will involve multiple Raspberry Pis that will communicate, make sure you have a plan for how that will happen -- this is non-trivial. We can help brainstorm ideas for that.
+
+Discuss the list of components you will need for your project (and put that in your Github repo later in the lab!). If you haven't already looked up where to purchase the components, do that, paying particular attention to how long shipping will take.
+
+
+### Project repository and project mirror repository (20 minutes)
 
 You've been git-wrangling all quarter as part of your individual development process; the benefits of revision control become even more critical when coordinating work across multiple authors. 
 
@@ -60,17 +84,13 @@ Have each team member do the following to confirm that your local project reposi
 
 During the pull/push operations, git will attempt to automatically merge changes made by different authors. However, if both you and a teammate have made overlapping edits, git will halt and report a "merge conflict". Git dumps both sets of changes into the conflicted file and fences the sections with marker symbols (`>>>`, `<<<`, `===`). You must manually resolve the sections in conflict. To do this, open the conflicted file, look for the marker symbols, edit the contents to select one/other/both changes as you see fit and remove the symbols. Save the file and commit it to complete the merge.
 
-### Check in with TA
+### Final Check
 
-Before the end of the lab period, be sure to confirm the following items with us:
-
-* What is the gist of your project?
-
-* What do you wish to accomplish with your project?
+Before the end of the lab period, be sure to confirm the following items:
 
 * Can each of you access the team repository?
 
 * What is your plan for acquiring any additional materials you need in a timely fashion? 
 
-* What are the milestones to achieve by next week?
+* What are the milestones to achieve during the week after Thanksgiving break?
 
