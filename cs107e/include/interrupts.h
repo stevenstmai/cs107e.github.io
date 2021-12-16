@@ -90,6 +90,11 @@ typedef void (*handler_fn_t)(unsigned int, void *);
  * source can have one handler: further dispatch should be invoked by
  * the handler itself. Registering a handler does not enable the source:
  * this must be done separately through `interrupts_enable_source`.
+ * These are separate because otherwise there can be impossible-to-solve
+ * technical challenges such as 
+ *   - having an interrupt handled before `interrupts_register_handler` returns,
+ *   - handling interrupts that were pending from a different use of the source,
+ *   - changing the handler as one part of a larger atomic action. 
  *
  * This function asserts on an attempt to register handler without initializing
  * the interrupts module (i.e. required to call `interrupts_init` first).

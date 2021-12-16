@@ -32,8 +32,8 @@ typedef struct ps2_device ps2_device_t;
  * that clients of this module don't need to know the implementation details
  * (like size) of ps2_device_t, since they just keep a pointer.
  *
- * @param clock_gpio    the gpio connected to the clock line of the PS2 device
- * @param data_gpio     the gpio connected to the data line of the PS2 device
+ * @param clock_gpio    the gpio pin number connected to the clock line of the PS2 device
+ * @param data_gpio     the gpio pin number connected to the data line of the PS2 device
  * @return              pointer to new PS2 device or NULL if failed to create
  *
  * Although `ps2_new` configures the requested clock and data GPIOs

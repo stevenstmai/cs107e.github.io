@@ -21,11 +21,14 @@
  *
  * Initialize the GPIO interrupts module. The init function must be
  * called before any calls to other functions in this module.
- * The init function configures gpio interrupts to a clean state.
+ * The init function initializes the data structure that stores
+ * interrupt handler function pointers and auxiliary data.
  * This function registers a handler for GPIO interrupts with the
  * top-level interrupts module. The top-level handler receives
  * GPIO events for all pins and in turn dispatches to the handler
  * registered with the gpio interrupts module for the specific pin.
+ * When this function returns, GPIO interrupts are disabled and
+ * must be nabled with `gpio_interrupts_enable`.
  */
 void gpio_interrupts_init(void);
 
