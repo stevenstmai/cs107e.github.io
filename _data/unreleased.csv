@@ -1,6 +1,39 @@
 permalink,title,released
+"/labs/lab6/","Lab 6: Drawing into the Framebuffer",false
+"/labs/lab3/","Lab 3: Debugging and Testing",false
 "/labs/projectlab2/","Lab 9: Project Team Meeting 2",false
+"/labs/lab5/","Lab 5: Keyboard Surfin'",false
+"/labs/lab1/","Lab 1: Setup your Raspberry Pi",false
+"/labs/lab0/","Lab 0: Getting Started",false
+"/labs/lab4/","Lab 4: Linked and Loaded",false
+"/labs/lab2/","Lab 2: Below C Level",false
+"/labs/projectlab1/","Lab 8: Project Team Meeting 1",false
+"/labs/lab7/","Lab 7: Raspberry Pi, Interrupted",false
+"/assignments/assign3/","Assignment 3: Implement a String Formatting Library",false
+"/assignments/assign0/","Assignment 0: Git oriented",false
+"/assignments/assign1/","Assignment 1: Implement a Larson Scanner",false
+"/assignments/assign4/","Assignment 4: Backtrace and Malloc",false
+"/assignments/assign5/","Assignment 5: Keyboard and Simple Shell",false
+"/assignments/assign6/","Assignment 6: Graphics Library and Console",false
+"/assignments/assign2/","Assignment 2: Implement a Clock",false
+"/assignments/assign7/","Assignment 7: System Monitor with Interrupts",false
+"/lectures/C_Pointers/","C Pointers and Arrays",false
+"/lectures/Keyboard/","Keyboards and the PS/2 Protocol",false
+"/lectures/Chris/","Chris Gregg's Projects",false
 "/lectures/PeterSean/","Guest",false
+"/lectures/Intro/","Introduction and Welcome",false
+"/lectures/Interrupts1/","Interrupts",false
+"/lectures/ARM/","ARM processor and architecture",false
+"/lectures/ASM/","ARM assembly and machine code",false
+"/lectures/C_Control/","From Assembly to C",false
+"/lectures/Framebuffer/","Graphics and the framebuffer",false
 "/lectures/InfoSession","Course Information Session",false
 "/lectures/AnnaLiana/","Guest",false
+"/lectures/Arithmetic/","Computer Arithmetic and Making Code Fast",false
+"/lectures/C_Mastery/","C Mastery",false
 "/lectures/ArithmeticAndSensors/","Sensors and Arithmetic",false
+"/lectures/MakingEngineering/","Engineering an Art Project",false
+"/lectures/Linking/","Modules, Libraries, and Linking",false
+"/lectures/Interrupts2/","Interrupts, cont'd",false
+"/lectures/C_Functions/","C Functions",false
+"/lectures/Memory/","Memory Management",false

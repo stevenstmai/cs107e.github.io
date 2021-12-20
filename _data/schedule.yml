@@ -2,8 +2,8 @@
 weeks:
     # start is date of first lecture (a Monday)
     # due date-time is for assign1 (will assume weekly repeat thereafter)
-  - start_date: "2021-09-20"
-    assign1_duedate: "2021-10-05 11:59 PM"
+  - start_date: "2022-01-03"
+    assign1_duedate: "2022-01-18 11:59 PM"
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/
@@ -49,14 +49,11 @@ weeks:
     assign: /project/
     fri: /lectures/Chris/
   -
-    mon: Thanksgiving break
-    fri: Thanksgiving break
-  -
     mon: /lectures/MakingEngineering/
     lab: /labs/projectlab2/
     assign: /project/
     fri: /lectures/Wrap/
   - 
     assign: /project/
-    project_due: "2021-12-09" 
+    project_due: "2022-03-17"
   -
