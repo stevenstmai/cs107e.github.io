@@ -32,24 +32,24 @@ weeks:
     mon: /lectures/Keyboard/
     lab: /labs/lab5/
     assign: /assignments/assign5/
-    fri: /lectures/Sound/
+    fri: /lectures/Framebuffer/
   -
-    mon: /lectures/Framebuffer/ 
+    mon: /lectures/Interrupts1/
     lab: /labs/lab6/
     assign: /assignments/assign6/
-    fri: /lectures/Interrupts1/
+    fri: /lectures/Interrupts2/
   -
-    mon:  /lectures/Interrupts2/
+    mon:  Presidents Day
     lab: /labs/lab7/
     assign: /assignments/assign7/
     fri: /lectures/Sensors/
   -
-    mon: /lectures/Arithmetic/
+    mon: TBD
     lab: /labs/projectlab1/
     assign: /project/
-    fri: /lectures/Chris/
+    fri: /lectures/Arithmetic/
   -
-    mon: /lectures/MakingEngineering/
+    mon: TDB
     lab: /labs/projectlab2/
     assign: /project/
     fri: /lectures/Wrap/

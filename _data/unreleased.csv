@@ -17,8 +17,10 @@ permalink,title,released
 "/assignments/assign6/","Assignment 6: Graphics Library and Console",false
 "/assignments/assign2/","Assignment 2: Implement a Clock",false
 "/assignments/assign7/","Assignment 7: System Monitor with Interrupts",false
+"/lectures/Sound/","Sound, Analog, and Music",false
 "/lectures/C_Pointers/","C Pointers and Arrays",false
 "/lectures/Keyboard/","Keyboards and the PS/2 Protocol",false
+"/lectures/Wrap/","Wrap or There and Back Again",false
 "/lectures/Chris/","Chris Gregg's Projects",false
 "/lectures/PeterSean/","Guest",false
 "/lectures/Intro/","Introduction and Welcome",false
@@ -28,12 +30,14 @@ permalink,title,released
 "/lectures/C_Control/","From Assembly to C",false
 "/lectures/Framebuffer/","Graphics and the framebuffer",false
 "/lectures/InfoSession","Course Information Session",false
+"/lectures/Sensors/","Sensors",false
 "/lectures/AnnaLiana/","Guest",false
 "/lectures/Arithmetic/","Computer Arithmetic and Making Code Fast",false
 "/lectures/C_Mastery/","C Mastery",false
 "/lectures/ArithmeticAndSensors/","Sensors and Arithmetic",false
 "/lectures/MakingEngineering/","Engineering an Art Project",false
 "/lectures/Linking/","Modules, Libraries, and Linking",false
+"/lectures/Serial/","Communication and the Serial Protocol",false
 "/lectures/Interrupts2/","Interrupts, cont'd",false
 "/lectures/C_Functions/","C Functions",false
 "/lectures/Memory/","Memory Management",false
