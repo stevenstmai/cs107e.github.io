@@ -13,7 +13,7 @@ or answers to [common questions from prospective students](http://cs107e.stanfor
 <div class="col-xs-5" markdown="1">
 
 ## Announcements
-- Our [course info session](/lectures/infosession) was December 20th.Check it out to decide if you'd like to apply to CS107e!
+- Our [course info session](/lectures/InfoSession) was December 20th. Check it out to decide if you'd like to apply to CS107e!
 
 <!--
     - We will post announcements to our [Ed forum]({{ site.data.course.forum }}). Be sure to join us there!.
