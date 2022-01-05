@@ -7,7 +7,7 @@ title: Labs
 {% include itemlist.html type="lab" %}
 
 ## Lab schedule
-Labs meet {{ site.data.quarter.labs }}. You will be assigned to one of the two labs for your regular section. Both labs cover the same content. The lab explores the material introduced in the preceding two lectures and prepares you for the upcoming assignment. The week's assignment is released after completion of the week's lab.
+Labs meet {{ site.data.course.lab_schedule }}. You will be assigned to one of the two labs for your regular section. Both labs cover the same content. The lab explores the material introduced in the preceding two lectures and prepares you for the upcoming assignment. The week's assignment is released after completion of the week's lab.
 
 ## Common questions about lab
 ---

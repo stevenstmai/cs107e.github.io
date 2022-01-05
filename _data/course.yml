@@ -20,5 +20,5 @@ sls:
   - name: Anna Mistele
     img: /_assets/img/anna.jpg
 lecture_schedule: Mon and Fri 11:30am - 1pm
-lab_schedule: Tues 6:30pm - 8:30pm and Wed 6:30-8:30pm
+lab_schedule: Tues 6:30-8:30pm and Wed 6:30-8:30pm
 forum: https://edstem.org/us/courses/16571/discussion/

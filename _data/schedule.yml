@@ -51,9 +51,7 @@ weeks:
   -
     mon: TDB
     lab: /labs/projectlab2/
-    assign: /project/
     fri: /lectures/Wrap/
   - 
-    assign: /project/
     project_due: "2022-03-17"
   -
