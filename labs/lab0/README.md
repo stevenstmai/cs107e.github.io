@@ -296,7 +296,7 @@ Why are these tools so much faster? For one, they can be launched directly from 
 
 How are these tools configurable? Well, once you've spent some time working with your editor, you might decide that you want to permanently add line numbers. Or rainbow indent markers. Or have "lambda" always be replaced with λ. Or have your editor always show you an XKCD upon startup. Once you feel comfortable with Emacs or Vim, you can look into editing their `.config` files (or, you can feel free to ask the TAs if they're willing to share their personal configs!).
 
-We won't dictate which text editor you have to use for this class, but right now, learn how to do the following things in that text editor __without__ touching your mouse. Our [command line guide](/guides/unix) has links to common Emacs and Vim commands, but you can also find all this information online. Practice the following:
+We won't dictate which text editor you use for this class, but right now, learn how to do the following things in your preferred text editor __without__ touching your mouse. Our [command line guide](/guides/unix) has links to common Emacs and Vim commands, but you can also find all this information online. Practice the following:
 + Move your cursor to the end of the line. Now move it to the start of the line. Practice moving back and forth.
 + Move your cursor one line down. Move it one line up. Go up and down and up down.
 + Scroll the screen down. Now scroll it back up. Repeat. Practice makes perfect!
@@ -315,7 +315,7 @@ Now that you know where the guides are located, find the [binary guide](/guides/
 
 ## Check in with TA
 
-Your should periodically touch base with the TA as you answer the [check-in questions](checkin). The TA will
+Your group should periodically touch base with the TA as you answer the [check-in questions](checkin). The TA will
 verify your understanding and can help with any unresolved issues.
 
 Remember that the goal of the lab is not to answer exactly and only these questions -- it's to work through the material. The questions are an opportunity to self-test your understanding and confirm with us.
