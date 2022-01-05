@@ -85,7 +85,7 @@ Your versions may be slightly newer (higher numbers). That's fine!
 ## Install CP2012 console driver
 The console driver enables the bootloader client to communicate with the Pi over the USB-serial device.
 
-> __Have Big Sur?__ If you are running macOS Big Sur 10.16 or later, you should have CP2102 support out of the box. Skip over this section and do not install the Silicon Labs driver. 
+> __Is your macOS version Big Sur, Monterey or newer?__ Check "About This Mac" to confirm. If your macOS version is >= 11.16, you should have CP2102 support out of the box. Skip over this section and do not install the Silicon Labs CP2102 driver. 
 {: .callout-warning}
 
 1. Download the CP2012 driver. The drivers are available on the Silicon Labs [CP210x Downloads page](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers). Select the "Downloads" tab and find the link for the "CP210x VCP Mac OSX Driver" and download the zip file. Open the zip to decompress into the dmg file `SiLabsUSBDriverDisk.dmg`. Open the dmg file to mount the volume named `Silicon Labs VCP Driver Install Disk`.
