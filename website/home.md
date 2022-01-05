@@ -16,7 +16,8 @@ or answers to [common questions from prospective students](http://cs107e.stanfor
 - We will post announcements to our [Ed forum]({{ site.data.course.forum }}). Enrolled students join us there!
 
 <div class="col-xs-7" markdown="1">
-## Upcoming events
+## Upcoming events 
+_Note: times listed are in your local timezone_.
 <div id ="upcoming" class="list-group" style="font-size:80%;overflow:auto; height:240px;" >
 <ul><li class="list-group-item"><i>Loading...</i></li></ul>     
 </div>
