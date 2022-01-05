@@ -276,7 +276,7 @@ Every programmer has their own (usually strongly held) opinion about which edito
 
 No matter which editor you decide to make your home base, we think it's a worthwhile investment for everyone to learn enough Emacs and Vim that you could open a file, make an edit, and save & close the file without any trouble (this skill will serve you well in the future, like if you have to quickly edit code on systems you've just ssh'ed into).
 
-To start with, practice opening a new file named `emacs_is_better.txt` in the directory `~/` with emacs:
+Try out Emacs now. The command below will open the editor on a new file named `emacs_is_better.txt` in the directory `~/`. (Note: on more recent macOS versions, use `mg` in place of `emacs`. This is a lightweight emacs-style editor that comes pre-installed. You can also install regular emacs via homebrew.)
 ```console
 $ emacs ~/emacs_is_better.txt
 ```
@@ -286,7 +286,7 @@ Now that you've tried Emacs, let's get a taste of Vim. To open a new file in `~/
 ```console
 $ vim ~/vim_is_better.txt
 ```
-To edit in vim, there's actually another step. We need to switch out of command mode into insert mode. Type `i` and you should be able to start writing away! Once you feel ready to quit, type `ESC` (the escape character) and you'll be back into command mode. From there, to save and quit, type `:wq`.
+To edit in Vim, there's actually another step. We need to switch out of command mode into insert mode. Type `i` and you should be able to start writing away! Once you feel ready to quit, type `ESC` (the escape character) and you'll be back into command mode. From there, to save and quit, type `:wq`.
 
 As long as you are able to open, edit, and exit in Emacs and Vim, you could attack any command line and start writing code (albeit, not very efficiently).
 
@@ -296,7 +296,7 @@ Why are these tools so much faster? For one, they can be launched directly from 
 
 How are these tools configurable? Well, once you've spent some time working with your editor, you might decide that you want to permanently add line numbers. Or rainbow indent markers. Or have "lambda" always be replaced with λ. Or have your editor always show you an XKCD upon startup. Once you feel comfortable with Emacs or Vim, you can look into editing their `.config` files (or, you can feel free to ask the TAs if they're willing to share their personal configs!).
 
-We won't dictate which text editor you use for this class, but right now, learn how to do the following things in your preferred text editor __without__ touching your mouse. Our [command line guide](/guides/unix) has links to common Emacs and Vim commands, but you can also find all this information online. Practice the following:
+We won't dictate which text editor you have to use, but whichever you pick, make an investment in learning and mastering its features. For a start, right now, learn how to do the following things in your preferred text editor __without__ touching your mouse. Our [command line guide](/guides/unix) has links to common Emacs and Vim commands, but you can also find all this information online. Practice the following:
 + Move your cursor to the end of the line. Now move it to the start of the line. Practice moving back and forth.
 + Move your cursor one line down. Move it one line up. Go up and down and up down.
 + Scroll the screen down. Now scroll it back up. Repeat. Practice makes perfect!
