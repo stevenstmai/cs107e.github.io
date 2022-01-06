@@ -32,9 +32,6 @@ Are you familiar with the following commands?
 If you don't know how to do these things, you will need to learn these skills.
 
 ## Resources
-- Philip Guo, a former PhD student at Stanford, produce some short
-[videos](http://pgbovine.net/command-line-tutorial.htm) that introduce basic
-unix commands. 
 - The CS107 course maintains an extensive collection of [unix reference documents and videos](https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/unixref/).
 
 
