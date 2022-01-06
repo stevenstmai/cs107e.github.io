@@ -117,8 +117,8 @@ Now you are going to tell Git about the changes you have made. The commands belo
 
 ```console
 $ git status
-$ git add .
-$ git commit -m "Add README folder and assign0_README"
+$ git add assign0-readme.md
+$ git commit -m "Answered background questions in assign0-readme"
 $ git push
 ```
 
