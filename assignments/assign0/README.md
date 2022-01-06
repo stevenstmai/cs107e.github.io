@@ -45,6 +45,13 @@ completed all of the steps.
 
 ## Steps
 
+### 0. Ensure you are familiar with your editing environment 
+
+In Lab 0, we asked you to explore text editors like vim and emacs. Before you 
+begin the assingment, make sure that you are familiar with the editor that you chose 
+to work with. This can be in the form of watching a couple of tutorials, reading 
+manuals, going to Matt's special intro OH and practicing using your editor of choice! 
+
 ### 1. Switch to the dev branch and pull starter code 
 
 Navigate to your local assignments repo and check which branch you're on:
