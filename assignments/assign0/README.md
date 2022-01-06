@@ -226,6 +226,9 @@ Click the 'Compare & Pull Request' button.
 
 <img title="We're on the right branch, so let's make a new pull request." src="images/04-new-pull-request.png" width="500">
 
+If the 'Compare & Pull Request' button isn't available, crick 'Contribute', then 
+'Open Pull Request'. 
+
 Now you will see text entry boxes for describing the pull request, followed by
 a list of the commits that you have made and a line-by-line comparison (`diff`)
 of the changed files.
