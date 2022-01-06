@@ -58,7 +58,7 @@ Distributor ID: Ubuntu
 Description:    Ubuntu 20.04.1 LTS
 Release:        20.04
 Codename:       focal
-$ powershell.exe "wsl --list --version"
+$ powershell.exe "wsl --list --verbose"
   NAME              STATE       VERSION
   Ubuntu-20.04      Running     1
 ```
