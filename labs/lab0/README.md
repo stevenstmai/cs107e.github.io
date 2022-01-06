@@ -267,7 +267,7 @@ $ cat file_I_want_to_look.at
 
 Over time, you might learn about other helpful commands, like `grep`, `diff`, and `echo`. Curious about how to use these, or any other commands you've seen used? Get more information from the `man` page, explainshell, a google search, or other reference document. Make a point to learn a new command each day when you sit down to work and you'll soon be well on your way to becoming a command line ninja! 🔥
 
-### 6. Editors
+### 5. Editors
 When you've taken CS classes in the past (like 106A/B), you've likely relied on IDEs (integrated development environments) like PyCharm, Qt, or Eclipse. While those are great for some tasks, we're going to rely on a new set of tools for this class: __text editors__. Have you ever opened a file in Notepad or TextEdit? The editors we'll be using, like Emacs and Vim, aren't too different at a basic level, except that they're built specifically for programming and can be configured to do all kinds of fancy things (although you don't need to worry about that for now).
 
 ![XKCD Text Editors](images/real_programmers.png){: style="float:center;"}
@@ -308,7 +308,7 @@ We won't dictate which text editor you have to use, but whichever you pick, make
 
 Now that you've learned how to do these, spend the next week practicing the commands! Your goal is to build up muscle memory around these commands---so even though it'll be annoying for the first week to keep looking up how to do this or that, we promise that with practice it'll become easier and easier, until you can't even remember a time when you needed to leave your keyboard while writing code💪. 
 
-### 7. Binary numbers
+### 6. Binary numbers
 
 Now that you know where the guides are located, find the [binary guide](/guides/numbers). Practice your binary/hex conversions by writing down answers to the questions in the guide. Then, check out these [bitwise practice problems](https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/lab1/practice.html) courtesy of CS107.
 
