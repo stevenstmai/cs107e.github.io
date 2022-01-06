@@ -60,12 +60,12 @@ If you're on `dev`, you're all set. Otherwise, switch to `dev`:
 $ git checkout dev
 ```
 To get the starter files, verify that you're on the `dev` branch and execute the
-    following commands:
+following commands:
 
-    ```console
-    $ git pull --allow-unrelated-histories starter-code assign0-starter 
-    $ ls
-    ```
+```console
+$ git pull --allow-unrelated-histories starter-code assign0-starter 
+$ ls
+```
 (Repeat this step even if you already did it in lab to get updated starter files). 
 The `git pull` command will open up `vim` and display the message "Merge branch
 'assign0-starter' of github.com:cs107e/assignments-mirror into dev". Confirm
