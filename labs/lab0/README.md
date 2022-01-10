@@ -87,12 +87,10 @@ We set up our ohyay space as a facsimile of our in-person lab. Students are seat
 
 ## Lab exercises
 
-When you start lab, pull up the [check-in questions](checkin) in your browser so you can refer to them as you go.
-
 <a name="step1"></a>
 
 ### 1. Confirm install
-Use the __Final check steps__ at the end of the [installation guide](/guides/install) to confirm that the needed tools are installed and your environment is correctly configured. If you hit any snags during install, bring those issues to lab and we can help you resolve.
+Use the __Final check steps__ at the end of the [installation guide](/guides/install) to confirm that the needed tools are installed and your environment is correctly configured. If you hit any snags during install, bring those issues to lab and we can help you resolve. If you're good to go [^1], go ahead and move on.
 
 ### 2. Set up your local assignments repository
 Our course repositories will be hosted on GitHub. You will download assignment 
@@ -226,7 +224,9 @@ and connects this remote `dev` to your local `dev`.
 
     If you return to your GitHub repo in your browser, you should now find a `dev` branch in the branches dropdown menu.
 
-Review our course [guide on git](/guides/git) for an introduction to git and links to further readings.
+With a working git setup, you are ready for the second check-in question [^2].
+
+Bookmark our course [guide on git](/guides/git) to read later for an introduction to git and links to further readings. 
 
 ### 3. Website scavenger hunt
 Our course website is where you'll find lecture slides, lab writeups, and assignment specifications, along with a trove of additional resources such as our course guides and curated set of readings, resources, and demos. We encourage you to explore a bit and become acquainted with what's available and how it's organized.  The __Search__ tab is handy way to find matching content across all pages on the site.
@@ -243,7 +243,7 @@ As you explore, see if you find answers to such questions as:
 + I'm working hard to write tests, but I just don't feel like I'm covering my bases. What am I doing wrong? Is there advice on software testing more broadly?
 + My partner and I are looking for inspiration for project ideas. Are there examples of what other groups have done in the past?
 
-If a topic has you curious or confused, start by checking the course website for helpful information. If can't find the information you need, reach out on Ed or come visit us in office hours. We want you to always feel comfortable coming to us with any questions you have, as well as suggestions on how we can improve the quality of the resources available to you.
+If a topic has you curious or confused, start by checking the course website for helpful information. If can't find the information you need, reach out on Ed or come visit us in office hours. We want you to always feel comfortable coming to us with any questions you have, as well as suggestions on how we can improve the quality of the resources available to you. You're ready for the third check-in question [^3].
 
 ### 4. Command line practice
 Over the course of CS107E, you'll get comfortable navigating the command line. To start, read through and follow all the steps in our [Unix Command Line Guide](/guides/unix).
@@ -308,6 +308,8 @@ We won't dictate which text editor you have to use, but whichever you pick, make
 
 Now that you've learned how to do these, spend the next week practicing the commands! Your goal is to build up muscle memory around these commands---so even though it'll be annoying for the first week to keep looking up how to do this or that, we promise that with practice it'll become easier and easier, until you can't even remember a time when you needed to leave your keyboard while writing code💪. 
 
+Let us know how you're doing on getting acclimated in your environment with this check-in question [^4].
+
 ### 6. Binary numbers
 
 Now that you know where the guides are located, find the [binary guide](/guides/numbers). Practice your binary/hex conversions by writing down answers to the questions in the guide. Then, check out these [bitwise practice problems](https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/lab1/practice.html) courtesy of CS107.
@@ -315,13 +317,26 @@ Now that you know where the guides are located, find the [binary guide](/guides/
 
 ## Check in with TA
 
-Your group should periodically touch base with the TA as you answer the [check-in questions](checkin). The TA will
-verify your understanding and can help with any unresolved issues.
+Each table group should periodically touch base with us as you work through the exercises. The check-in allows us to
+verify your understanding and help with any unresolved issues. 
 
-Remember that the goal of the lab is not to answer exactly and only these questions -- it's to work through the material. The questions are an opportunity to self-test your understanding and confirm with us.
+The four points we'd like you to check in with us for this lab are listed below:
 
-It's okay if you don't completely finish all of the exercises during
-lab; your sincere participation for the full lab period is sufficient
-for credit.  However, if you don't finish, we highly encourage you to
-work those parts to solidify your knowledge of this material before
-moving on.
+[^1]: All is installed and working in your development environment.
+
+[^2]: You have set up your local assignments repo and are able to push and pull to your remote.
+
+[^3]: You are comfortable with finding information on the course website.
+
+[^4]: You are able to handle simple command-line tasks, can make basic use of your editor, and are ready to learn more!
+
+
+<style>
+    .footnote:before {
+        content: ' Q-';
+    }
+    .footnotes:before {
+        content: "Check-in questions";
+        font-size: 125%;
+    }
+</style>

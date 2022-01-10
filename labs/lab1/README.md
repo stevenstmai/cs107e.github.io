@@ -45,22 +45,18 @@ To prepare, please do the following before coming to lab:
 1. Read this SparkFun tutorial on [using a breadboard](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard#history). Pay special attention to the section labeled "Anatomy of a Breadboard" to learn about the internal connections. 
 1. Organize your supplies to bring with you to lab. This week you will need:
     -  Raspberry Pi __parts kit__ (plastic box with Pi and all components) 
+    -  If you have access to a multimeter, bring it along.
 1. You will need an open USB-A port on your laptop to connect to the Pi. If your laptop requires a USB hub or adapter, pack one into your parts kit so that you'll always have it with you.
 
 
-## Lab Tables
-- **Lab tables:** When you walk into lab take the first few minutes to introduce yourselves to one another and share about how your week has been going.
-- **Working with friends:** If you have friends you'd like to work with, plan to arrive at lab around the same time so you end up at the same table. Feel free to use Ed to coordinate your arrival times.
-- **Multimeters:** If your table has more than one person with a multimeter, consider swapping an extra multimeter-owner into a different group, so that each table has at least one multimeter.
-- **Table collaboration:**  The goal is for your table group to work as a team, going through the exercises together and discussing as you go. 
-- **Asking for help:** If your table has a question or runs into an issue that can't be resolved within the group, grab a staff member to bring to your table to help. 
-- **Check-in questions:** As you hit each check-in point, confer with your table to ensure there is agreement and understanding for everyone before moving on. Ask a staff member to come review your answers. We recommend that you check-in as you go rather than waiting to do all questions at the end.
+## Virtual lab
+- Revew the instructions from [Lab0](../lab0/#the-ohyay-virtual-lab) on the setup for the ohyay virtual lab.
 
-## Lab exercises
-
-> This lab has a few activities that use a multimeter. If one of your table group has access to a multimeter, please use it! If not, try to work through what you expect the experimental results to be and check-in with one of the staff to confirm your understanding.
+> This lab has a few activities that use a multimeter. If one of your table group has access to a multimeter, please use it! If your table has more than one person with a multimeter, consider swapping an extra multimeter-owner into a different group. If your group has no multimeter, work through what you expect the experimental result to be and check-in with one of the staff to confirm your understanding.
 {: .callout-info}
 
+
+## Lab exercises
 
 ### 0. Clone the lab repo
 When starting each new lab or assignment, do a `git pull` in your copy of the `cs107e.github.io` repository to ensure your courseware files are up to date.
@@ -188,24 +184,20 @@ You are going to re-wire your circuit to run power/ground from the USB-serial fi
     laptop disable the USB port.
     {: .callout-danger-invert}
 
-2. Disconnect the USB-serial from the breadboard and connect instead to the Raspberry Pi. Pick out two female-female jumpers, one black and one red. Black black connects the GND on the USB-serial to a GND GPIO on the Raspberry Pi and red to connect VCC/5V to 5V GPIO.
+2. Disconnect the USB-serial from the breadboard and connect instead to the Raspberry Pi. Pick out two female-female jumpers, one black and one red. Black connects the GND on the USB-serial to a GND GPIO on the Raspberry Pi and red connects VCC/5V to 5V GPIO.
 
 3. Connect power and ground from the Raspberry Pi to the breadboard using the two female-male jumpers.  The black jumper connects a GND GPIO on the Raspberry Pi to the blue ground rail on the breadboard. The red jumper connects a 5V GPIO to the LED anode.
 
-4. After double-checking your wiring, apply power by plugging the USB-serial in your laptop. All three LEDs should light: the one on the USB-serial, the red PWR LED on the Raspberry Pi, and the LED on the breadboard. Power flows from the USB-serial to the Raspberry Pi and through to the breadboard. 
+4. After double-checking your wiring, apply power by plugging the USB-serial in your laptop. All three LEDs should light: the one on the USB-serial, the red PWR LED on the Raspberry Pi, and the LED on the breadboard. Power is flowing from the USB-serial to the Raspberry Pi and through to the breadboard. 
  Your circuit is complete!
 
     ![Complete circuit](images/piled.jpg){: .zoom}
 
 ### 4. Prepare SD card
-Get the microSDHC card ![](images/microsd.jpg){: .d-inline } and USB card reader ![](images/cardreader.jpg){: .d-inline } from your parts kit.  You will use these to prepare a SD card with the firmware files needed for the Raspberry Pi. The USB card reader in your kit is inexpensive and its construction is a bit flimsy. If your laptop has a built-in SD card reader or you have a more robust external SD card reader of your own, feel free to use it in place of this one. 
+Get the microSDHC card ![](images/microsd.jpg){: .d-inline } and USB card reader ![](images/cardreader.png){: .d-inline } from your parts kit.  You will use these to prepare a SD card with the firmware files needed for the Raspberry Pi. If your laptop has a built-in card reader, you will not need the external one.
 
-The firmware files you need are published in our courseware repo. You will copy these files onto the SD card using a card reader on your laptop.
+The firmware files you need are published in our courseware repo. You will copy these files onto the SD card.
 
-{% comment %}
->If your laptop doesn't have an SD card slot or the card slot isn't cooperating, ask your partner to use their computer or borrow a USB card reader from us. Configuring your SD card is a one-time task. You will not need to modify it again and in future will use the bootloader, so do whatever is most expedient to prep your SD card and move on.
-{: .callout-info}
-{% endcomment %}
 
 Follow these steps:
 
@@ -233,7 +225,7 @@ Follow these steps:
         ```
         {: .console-mac}
 
-    - WSL does not have access to the mounted volume so you must use the Windows File Explorer.  Use the commands below to open the firmware directory in File Explorer. The copy the four files from the folder onto the mounted SD card.
+    - WSL does not have access to the mounted volume so you must use the Windows File Explorer.  Use the commands below to open the firmware directory in File Explorer and then select the four files from the firmware folder and copy them to the mounted SD card.
         ```console
         $ cd $CS107E/firmware
         $ explorer.exe .
@@ -243,8 +235,7 @@ Follow these steps:
 4. The SD card needs an additional file named `kernel.img`. 
     Normally, `kernel.img` is the operating system kernel you want to run, like Linux or Windows. In this course, we will write our own program to take the place of the kernel, and put our program under the name `kernel.img`. One of the firmware files is a program called `blink-actled.bin` that blinks the green activity (ACT) LED on the Raspberry Pi board. We are going to use this blink program as the kernel for a test.
 
-    On the SD card, make a copy of the `blink-actled.bin` file and name it  `kernel.img`. 
-
+    On the SD card, make a copy of the `blink-actled.bin` file and name it `kernel.img`.  
 3. Confirm that the SD card contains the essential files for the reset sequence: `bootcode.bin` `start.elf` and `kernel.img`. The card can also contain additional files; any other files are ignored.
 
 4. Eject the SD card in the Finder/File Explorer.  If Terminal prevents you from ejecting, type in `cd ..` to move to the parent folder and try ejecting again.
@@ -445,9 +436,6 @@ of 2.
 ### 8.  Adding a button
 The final lab exercise is to study the `button` program and build a breadboard circuit to test the program. This button program is in the file `lab1/code/button/button.s`.
 
-> If you are coming back to review this lab, please note that I slightly changed the code after lab finished. The original program started with the LED off and when the button was pressed it turned the LED on. The updated program inverts that behavior, the LED starts on and when button pressed the LED turns off. This change makes it easier to confirm that the LED part of the circuit is working when the program starts, and then you can go on to test the button's ability to turn it off.  As originally presented, when the button turned on the LED, if you tested and the LED didn't light, you had to content with figuring whether failure was the LED or the button or both, which made for tougher debugging.
-{: .callout-info}
-
 The button program reads the state of a button connected to GPIO 10 and turns off the LED on GPIO 20 when the button is pressed.
 
 ```    
@@ -521,14 +509,14 @@ Here is the schematic. VCC is 3.3V and R1 is 10K.
 ![Button with pull-up resistor diagram](images/pull-up-resistor.jpg)
 {: .w-50 .mx-auto}
 
-Add the above circuit on your breadboard and use GPIO 10 as your input pin. Use your pinout to find GPIO 10 on the Raspberry Pi header. Be sure to include the 10K resistor! (without, it pressing the button would create a short between power and ground and could damage your Pi.) 
+Add the above circuit on your breadboard and use GPIO 10 as your input pin. Use your pinout to find GPIO 10 on the Raspberry Pi header. Be sure to include the 10K resistor! (without that resistor, pressing the button would create a short between power and ground and could damage your Pi.) 
 
-After confirming your circuit is correctly constructed, power it up and run the button program. In the initial state, the LED is on. When you press and hold the button the LED turns off.  Let there be 💡!
+After confirming your circuit is correctly constructed, power it up and run the button program. In the initial state, the LED is on. When you press and hold the button, the LED turns off.  Let there be 💡!
 
 ## Check in with TA
 
-Each table group should periodically touch base with the TA as you answer the check-in questions below. The check-in allows us to
-verify your understanding and help with any unresolved issues.
+Each table group should periodically touch base as you answer the check-in questions below. The check-in allows us to
+verify your understanding and help with any unresolved issues. We encourage you to check-in as you go, after each question, rather than batching them up at the end.
 
 Remember that the goal of the lab is not to answer exactly and only these questions -- it's to work through the material. The questions are an opportunity to self-test your understanding and confirm with us.
 
