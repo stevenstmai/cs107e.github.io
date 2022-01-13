@@ -33,6 +33,7 @@ different tools.
 - __Cutter__ 
     - Hakko diagonal wire cutter, $9 <http://www.amazon.com/gp/product/B00FZPDG1K/>
 - __Multimeter__
+    - AstroAI AM33D Multimeter, $13 <https://www.amazon.com/AstroAI-Digital-Multimeter-Voltage-Tester/dp/B01ISAMUA6/>
     - Extech EX330 mini-multimeter, $55 <http://www.amazon.com/gp/product/B000EX0AE4/>
 
 I include amazon links in case you have an Amazon Prime account which includes free shipping. This means you can get them fast at a good price. 
