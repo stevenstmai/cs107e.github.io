@@ -80,12 +80,22 @@ To encourage you to complete all assignments and resubmit to fix your bugs,
 if you submit the last assignment using only your own code,
 we will award you additional bonus points for building a complete working system. 
 
+<a name="grading"></a>
 ### How are assignments graded?
-We test functionality by exercising your code against our grading tests. For each bug or test failure, we file a GitHub issue to report the problem. An issue is categorized with its priority, Priority 1 being the most important and decreasing from there.  For full credit on the core functionality, you must have passing results on all of the Priority 1 tests. You are encouraged to revise and resubmit in order to address any Priority 1 issues.  Lower priority bugs can be addressed at your discretion. A higher percentage of passed tests boosts your course grade.
 
-We will also look at your code and assess the code quality.
-Good code should be decomposed into small, clear, well-named functions so that 
-no code is repeated and it is easy to follow the intent of each function.
+We evaluate your assignments through these three lenses:
+1. __Functionality__ (_does it pass the QA tests?_)
+2. __Code quality__ (_does my code achieve my team/tech lead's standards?_)
+3. __Timeliness__ (_did I meet the program manager's schedule?_)
+
+
+We test __functionality__ by exercising your code against our grading tests.  For each bug or test failure, we file a GitHub issue to report the problem. An issue is categorized with its priority, Priority 1 being the most important and decreasing from there.  Priority 1 "Essential" tests exercise core functionality that is critical to the system's operation. Your system won't be fully usable until these high priority issues are addressed. Priority 2 "Comprehensive" tests thoroughly exercise the full range of functionality including lesser-traveled features. A Priority 3 "Just Mention" would be used for small concerns as a misbehavior in an obscure edge case or minor issue of polish.
+
+For full credit on the core functionality, you must have passing results on all of the Priority 1 tests. You are encouraged to revise and resubmit in order to address any Priority 1 issues.  Lower priority bugs can be addressed at your discretion. A higher percentage of passed tests boosts your assignment grade.
+
+For __code quality__, the grader will read your code from the role of a team manager giving feedback before accepting the code into the team's repository.  We are expecting clear code that is readable, well-designed, and commented appropriately.  Good code is decomposed into small, clear, well-named functions so that 
+no code is repeated and it is easy to follow the intent of each function. 
+
 
 We evaluate code quality using a bucket system. Code that needs 
 improvement falls in the `-` bucket, code that meets our expectations is in the 
@@ -95,8 +105,17 @@ to help you improve your code quality.
 Please incorporate our feedback into future assignments;
 it will improve your grade and more importantly your coding style.
 
-For details on course grades, see our [course grading
+Effectively managing your time to hit deadlines with working code is an accomplishment that we reward in the __timeliness__ category. Your timeliness score is boosted by making your submissions on-time and resolving outstanding GitHub issues in a timely manner. 
+
+
+For details on overall course grades, see our [course grading
 policy](/policies/#grading-policy).
 
 ## What is the revise and resubmit policy?
-If our grading feedback from your assignment submission indicates one or more failed test cases on core functionality, you are encourage to review the bug reports and rework your code to fix the underlying bug(s). When you submit the revised code, we will run the tests again and update your quality metrics to show the now-passed results.
+Many of the assignments in this course build upon each other. It is a good idea, both for your learning and your grade, to revise and resubmit old assignments after seeing what tests they fail.
+
+For a failed test case on core functionality, we will file a GitHub issue to report the bug. You are encouraged to review your issues and rework your code to fix the underlying bug(s). When you submit the revised code, we will run the tests again and update to show the now-passed results. 
+
+The final opportunity for assignment revise and resubmit will be with the submission for Assignment 7. (Hint: don't wait til last minute -- much better to get those bug fixes in early rather than build up a big backlog!)
+
+
