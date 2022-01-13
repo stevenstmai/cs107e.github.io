@@ -64,7 +64,7 @@ The course follows a weekly cadence where material is introduced in the Friday-M
 
 Each assignment is structured into a core/basic part and one or more proposed extensions. Completing the core part is required for all students; the extensions are the optional "stretch goals" for those students aiming to go further. We encourage everyone to try the extensions; they're a great way to challenge yourself and solidify your understanding.
 
-> **YEAH = Your Early Assignment Help**  Each Thursday we'll hold a YEAH session as a kickoff for the week's assignment and more quality time with the CS107e family! We can answer your questions, pump you up for the neat things you'll be learning, and facilitate a group brainstorm on practices for success. YEAH Hours will take place Thursday 4-5pm in ohyay. Everyone welcome!
+> **YEAH = Your Early Assignment Help**  Each Thursday we'll hold a YEAH session as a kickoff for the week's assignment and more quality time with the CS107e family! We can answer your questions, pump you up for the neat things you'll be learning, and facilitate a group brainstorm on practices for success. YEAH Hours for Assignment 1 will take place Thursday 4-5pm in ohyay. Everyone welcome!
 {: .callout-success}
 
 ## Core functionality: simple scan pattern
@@ -171,10 +171,6 @@ Straight-line code is code without branches and is almost always easier
 to understand. However, a downside of a straight-line approach is that you may end up with duplicated code. There is a tension here between less code and clearer code. For this first assignment, prioritize writing code that can be easily understood, whether it's by you six months from now
 or by us in a week when we grade your assignment.
 
-Besides being understandable, good code should be easy to extend and maintain.
-A rule of thumb for style is that if your code is well-designed, it should take
-little additional code to extend it from 4 to 8 LEDs.
-
 Congratulations on completing your first step on the path to bare-metal mastery!
 Sit back and enjoy the show by turning off the lights and impressing your
 friends.
@@ -214,7 +210,7 @@ After committing, tagging, and pushing your submission, the final task is to ope
 To refresh on the steps to open a pull request, refer to
 the [Assignment 0 writeup](/assignments/assign0/).
 
-Assignment 1 is due on Tuesday, January 18 at 5:00pm Pacific. The timestamp on the tagged commit determines the submission time.  Learning to pace your work so as to deliver on schedule is a great skill to build and one that we reward. On-time submissions earn a timeliness bonus. There is also a 48-hour grace period where we accept late submissions without penalty. Read more about the [late policy](/policies/#late-policy).
+Assignment 1 is due on 5pm on Tuesday. The timestamp on the tagged commit determines the submission time.  Learning to pace your work so as to deliver on schedule is a great skill to build and one that we reward. On-time submissions earn a timeliness bonus. There is also a 48-hour grace period where we accept late submissions without penalty. Read more about the [late policy](/policies/#late-policy).
 
 ## Extension
 

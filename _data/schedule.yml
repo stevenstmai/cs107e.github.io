@@ -3,7 +3,7 @@ weeks:
     # start is date of first lecture (a Monday)
     # due date-time is for assign1 (will assume weekly repeat thereafter)
   - start_date: "2022-01-03"
-    assign1_duedate: "2022-01-18 11:59 PM"
+    assign1_duedate: "2022-01-18 5:00 PM"
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/

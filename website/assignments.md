@@ -45,7 +45,7 @@ you submit by creating a pull-request. Consult [Assignment 0](/assignments/assig
 
 ### What is the policy on late assignments?
 
-Assignments are due weekly at end of day Tuesday 11:59pm Pacific. On-time submission is awarded a small bonus that boosts course grade. After the deadline is a 2-day grace period that allows late submission with no penalty. All submissions are expected by end of the grace period.  Read our [course late policy](/policies/#late-policy)
+Assignments are due weekly Tuesday 5pm Pacific. On-time submission is awarded a small bonus that boosts course grade. After the deadline is a 2-day grace period that allows late submission with no penalty. All submissions are expected by end of the grace period.  Read our [course late policy](/policies/#late-policy)
 for specifics.
 
 ### What is the assignment collaboration policy?

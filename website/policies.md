@@ -43,11 +43,12 @@ Work that is not completed satisfactorily will earn grades **C and below**.
 
 ## Late Policy
 
-The course moves at a steady pace and the weekly assignments build on one other. In our experience, one of the clearest factors in student success has been the dedication to stay on pace. Learning to set a schedule and manage your time to hit deadlines is a valuable skill to develop and an accomplishment we want to reward. We designed our policy to encourage good habits, but also allow some flexibility in these unpredictable times of online learning.
+The course moves at a steady clip and the weekly assignments build on one other. In our experience, one of the strongest factors in student success has been the dedication to stay on pace. Learning to set a schedule and manage your time to hit deadlines is a valuable skill to develop and an accomplishment you can be proud of.  We designed our policy to encourage and reward good habits, but knowing that things come up, we have a standing grace period that provides a little flexibility if you need it. 
 
-1. For assignments 2 through 7, The submission deadline will be end of day in the Pacific time zone, i.e. Tuesday 11:59pm GMT-7. As noted above, completing your work by scheduled deadline and submitting on-time for the majority of assignments is necessary to earn an A grade. Steve Jobs famously said "_Real artists ship_". Challenge yourself to learn how to pace your work and deliver on time.
-
-2. The final project must be submitted on time.
+- The submission deadline for the weekly assignments is 5pm Tuesday. An ontime submission earns a small bonus in timeliness. Kudos to you for pacing your work and shipping on schedule! 
+- There is also a 48-hour grace period after the deadline in which we accept late submissions. There is no penalty or cap applied to late submissions within the grace period, but they do not earn the timeliness bonus. 
+- Late submissions beyond the grace period are arranged with the course staff as warranted for exceptional circumstances.
+- The final project must be submitted on time without exception.
 
 
 

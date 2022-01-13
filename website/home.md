@@ -4,16 +4,14 @@ title: Home
 layout: dashboard
 ---
 
-## {{ site.data.course.id }} {{ site.data.course.quarter }}
-
-CS107e is __Computer Systems from the Ground Up__. Read more [about the course](/about/)
-or answers to [common questions from prospective students](http://cs107e.stanford.edu).
+CS107e is __Computer Systems from the Ground Up__.  Read [about the course](/about/)
+and answers to [common questions from prospective students](http://cs107e.stanford.edu).
 
 <div class="row">
 <div class="col-xs-5" markdown="1">
 
 ## Announcements
-- We will post announcements to our [Ed forum]({{ site.data.course.forum }}). Enrolled students join us there!
+- We post course announcements to our [Ed forum]({{ site.data.course.forum }}). Join us there!
 
 <div class="col-xs-7" markdown="1">
 ## Upcoming events 
