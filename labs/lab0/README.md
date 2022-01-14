@@ -312,7 +312,7 @@ Let us know how you're doing on getting acclimated in your environment with this
 
 ### 6. Binary numbers
 
-Now that you know where the guides are located, find the [binary guide](/guides/numbers). Practice your binary/hex conversions by writing down answers to the questions in the guide. Then, check out these [bitwise practice problems](https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/lab1/practice.html) courtesy of CS107.
+Now that you know where the guides are located, find the [binary guide](/guides/numbers). Practice your binary/hex conversions by writing down answers to the questions in the guide. Then, check out these [bitwise practice problems](https://web.stanford.edu/class/archive/cs/cs107/cs107.1186/lab1/practice.html) courtesy of CS107. Another fun practice tool is this [online visualizer for bitwise expressions](https://mdrach.github.io/cs107-apps/) written by CS107 CA Max Drach. Check it out!
 
 
 ## Check in with TA

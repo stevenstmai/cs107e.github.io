@@ -23,7 +23,7 @@ Here we have gathered links to various interactive demos and visualization tools
     - For further information, see the [VisUAL user manual](https://salmanarif.bitbucket.io/visual/).
 
 ## C
-- Use the Godbolt [Compiler Explorer](http://gcc.godbolt.org/) to enter C code and see the mapping to compiled assembly. Choose `C` language, compiler `ARM gcc 9.2.1(none)` and flags `-O` to approximate the toolchain we use in the course.
+- Use the Godbolt [Compiler Explorer](http://gcc.godbolt.org/) to enter C code and see the mapping to compiled assembly. Choose `C` language, compiler `ARM gcc 9.2.1(none)` and flags `-Og` to approximate the toolchain we use in the course.
 
 - Type a C program into [Rextester](https://rextester.com/l/c_online_compiler_gcc ) and it will compile and execute in a virtual environment.
 Handy for quickly running a C snippet to see what it does.
