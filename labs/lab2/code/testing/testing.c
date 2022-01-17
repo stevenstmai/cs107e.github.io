@@ -65,7 +65,7 @@ void main(void)
     assert(count_bits(6) == 2);
     assert(count_bits(7) == 3);
     assert(count_bits(0xffffffff) == 32);
-    assert(count_bits(5) == 1);   // what happens if my test case is misconstructed?
+    assert(count_bits(5) == 1);   // this test case is misconstructed!
 
 	// read cstart.c to find out what happens after main() finishes
 }
