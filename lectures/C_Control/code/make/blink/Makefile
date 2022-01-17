@@ -9,4 +9,4 @@ run: blink.bin
 	rpi-run.py blink.bin
 
 clean:
-	rm *.o *.bin
+	rm -r *.o *.bin
