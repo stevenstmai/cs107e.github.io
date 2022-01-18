@@ -201,9 +201,9 @@ $ git push --tags
 
 As before, browse on your repo on GitHub to confirm your submission status. 
 
-After committing, tagging, and pushing your submission, the final task is to open a pull request in GitHub just like you did in assignment 0. The pull request should be to merge `dev` into `master` and give the pull request an intuitive title like "Submit assign1".
+After committing, tagging, and pushing your submission, the final task is to open a pull request in GitHub just like you did in assignment 0. The pull request should be to merge `dev` into `master` and give the pull request an intuitive title like "Submit assign1". IMPORTANT NOTE: if your assign0 pull request is still open, then you do not need to change it or create a new one. There can only be one open pull request for a given branch at a time, and it's ok if commits from multiple assignments are on the same pull request. You job here is to simply ensure that there is *a* pull request open.
 
-> **Don't forget to open a pull request!** We need you to open a pull request so that
+> **Don't forget to ensure you have an open pull request!** We need you to open a pull request so that
 > we can grade your assignment.
 > {: .callout-warning}
 
