@@ -12,7 +12,7 @@ Task list to copy/paste when creating PR for this assign:
 **Before releasing assign0:**
 
 - [ ] Review writeup/starter files/process (TA)
-- [ ] Followup on issues from previous quarter postmortem (issue #221)
+- [ ] Followup on issues from previous quarter postmortem (issue #385)
 
 **To prep for assign0:**
 
@@ -45,14 +45,14 @@ completed all of the steps.
 
 ## Steps
 
-### 0. Ensure you are familiar with your editing environment 
+### 0. Ensure you are familiar with your editing environment
 
 In Lab 0, we asked you to explore text editors like vim and emacs. Before you 
 begin the assingment, make sure that you are familiar with the editor that you chose 
 to work with. This can be in the form of watching a couple of tutorials, reading 
 manuals, going to Matt's special intro OH and practicing using your editor of choice! 
 
-### 1. Switch to the dev branch and pull starter code 
+### 1. Switch to the dev branch and pull starter code
 
 Navigate to your local assignments repo and check which branch you're on:
 

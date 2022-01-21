@@ -12,7 +12,7 @@ Task list to copy/paste when creating PR for this lab:
 __Before releasing lab2:__
 - [ ] Review writeup/code/checkin questions (instructor)
 - [ ] Walk through (SL)
-- [ ] Followup on issues from previous quarter postmortem (issue #)
+- [ ] Followup on issues from previous quarter postmortem (issue #382)
 
 __To prep for lab2:__
 - [ ] See private/answers and private/staff_notes for advice saved from past
