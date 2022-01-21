@@ -74,7 +74,13 @@ learning!
 To prepare, please do the following before coming to this lab:
 
 1. Follow the instructions in [installation guide](/guides/install) to set up your environment.
-1. Review our guide to the [Unix command line](/guides/unix/).
+2. From our course guides, please review:
+    -  [Unix command line](/guides/unix) 
+    -  [git](/guides/git) version control system
+    -  [binary and hexadecimal](/guides/numbers) numbers
+3. Check out these CS107 guides on using the `emacs` or `vim` text editor: 
+    - [emacs](https://cs107.stanford.edu/resources/emacs.html)
+    - [vim](https://cs107.stanford.edu/resources/vim.html)
 
 
 ## The ohyay virtual lab

@@ -32,11 +32,11 @@ There are 16 registers `r0` to `r15`. Most are general-use, a few are dedicated 
 | r2  | param 3, scratch |
 | r3  | param 4, scratch |
 | r4 - r10 | | 
-| r11  | Frame pointer (fp) |
-| r12  | Intraprocedural scratch  (ip) |
-| r13  | Stack pointer (sp) |
-| r14  | Link register (lr) |
-| r15  | Program counter (pc) |
+| r11  | Frame pointer (`fp`) |
+| r12  | Intraprocedural scratch  (`ip`) |
+| r13  | Stack pointer (`sp`) |
+| r14  | Link register (`lr`) |
+| r15  | Program counter (`pc`) |
 {: .table .table-sm .table-striped .reg }
 
 ## Common instructions
@@ -55,12 +55,12 @@ There are 16 registers `r0` to `r15`. Most are general-use, a few are dedicated 
 | EOR | Bitwise Exclusive Or | EOR dest, op1, op2 |
 | BIC | Bitwise Clear| BIC dest, op1, op2 |
 | ORR | Bitwise Or |ORR dest, op1, op2 |
-| CMP | Compare | CMP op1, op2 | op1 - op2 (CMP/TEST set flags, discard result)
+| CMP | Compare | CMP op1, op2 | op1 - op2 (next 4 insns set flags, discard result)
 | CMN | Compare Negated |CMN op1, op2 | op1 + op2
 | TST | Test | TST op1, op2 | op1 & op2 
 | TEQ | Test Equals | TEQ op1, op2 | op1 ^ op2
 | MOV | Move | MOV dest, op2 |
-| MVN | Move Negated | MVN dest, op2 |
+| MVN | Move Negated | MVN dest, op2 | bitwise inverse
 |---------|
 | | | |
 | LDR | Load Register | LDR dest, [src] | 

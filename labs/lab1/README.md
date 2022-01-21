@@ -47,6 +47,11 @@ To prepare, please do the following before coming to lab:
     -  Raspberry Pi __parts kit__ (plastic box with Pi and all components) 
     -  If you have access to a multimeter, bring it along.
 1. You will need an open USB-A port on your laptop to connect to the Pi. If your laptop requires a USB hub or adapter, pack one into your parts kit so that you'll always have it with you.
+1. From our course guides, please review:
+    -  [powering](/guides/power) the Pi
+    -  [using SD cards](/guides/sd) on the Pi
+    -  [using the bootloader](/guides/bootloader) to send programs to the Pi
+    -  [one page of ARM](/guides/arm) assembly
 
 
 ## Virtual lab

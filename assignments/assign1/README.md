@@ -161,10 +161,11 @@ Here is a short video of our 8-LED scanner in action:
 <iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/vhDcb7lxCF4?modestbranding=1&version=3&loop=1&playlist=vhDcb7lxCF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-Writing clean, readable assembly code is a challenge. Commenting is essential!  
+
+ Writing clean, readable assembly code is a challenge. Commenting is essential!  
 Be sure to choose good label names and add named constants using `.equ` to aid readability.
 Because you don't know how to write functions yet in assembly, you'll need to
-write your program without the aid of this useful abstraction. 
+write your program without the aid of this useful abstraction.  You otherwise have the full range of ARM assembly at your disposal; keep our [one-page guide to ARM](/guides/arm) on hand as a quick reference.
 
 A branch instruction is the assembly equivalent of a goto (a practice long considered harmful <https://en.wikipedia.org/wiki/Considered_harmful>), and code with lots of branches can be hard to debug and follow.
 Straight-line code is code without branches and is almost always easier
