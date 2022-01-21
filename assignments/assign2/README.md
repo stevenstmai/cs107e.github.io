@@ -335,13 +335,13 @@ __Note: Build warnings/errors__ We expect your code to compile cleanly with no w
 
 - Our grading tests are organized by __priority__. __P1 "Essential"__ tests exercise core functionality that is critical to the system's operation. Your system won't be fully usable until these high priority issues are addressed. __P2 "Comprehensive"__ tests thoroughly exercise the full range of functionality including lesser-traveled features. __P3 "Just Mention__" is used for small concerns as a misbehavior in an obscure edge case or minor issue of polish. __P4 "Extension"__ tests evaluate functionality of the extension if you attempt it. Higher priority tests are considered more significant in grading.
 
-- We have a __revise and retest__ policy for library modules. We will mark issues for each test failure that is are eligible for revision. You are strongly encouraged to rework and resubmit your code to correct these issues. Commit and push changes to your repo on your `dev` branch. Each week when we are testing the current assignment, we will also re-run our previous grading tests on your library modules. After re-running the tests, we will update your results to show passing status on any issue that you now have corrected.
+- We have a __revise and retest__ policy for library modules. We will mark issues for each test failure that is are eligible for revision. You are strongly encouraged to rework and resubmit your code to correct these issues. Commit and push changes to your repo on your `dev` branch. When you are ready to resubmit, tag the desired commit with `assignX-submission-updated`. Be sure to NOT update the original `assignX-submission` tag. See Ed for a comprehensive walkthrough of the resubmission process. Once a week, the staff will grade all `assignX-submission-updated` tags by re-running our previous grading tests on your library modules. After re-running the tests, we will update your results to show passing status on any issue that you now have corrected.
 
-- We will accept revisions for priority 1, 2, and 3 automated tests on your library modules. We do not accept revisions for extensions (priority 4) or for manual or application tests. We will file a Github Issue on your repo for each test failure that is eligible for revision. Any non-revisable test failures will be reported in your `README.md` file in the `main` branch of your repo
+- We will accept revisions for priority 1, 2, and 3 automated tests on your library modules. We will file a Github Issue on your repo for each test failure that is eligible for revision. Any non-revisable test failures will be reported in your `README.md` file in the `main` branch of your repo
 
 - A snapshot of your test results for each assignment will be reported in your `README.md` file on your `main` branch of your repo.
 
-By the end of the quarter, we expect your library modules to have passing results on all Priority 1 tests. Lower priority tests and tests on non-library modules can be fixed at your discretion.
+By the end of the quarter, we expect your library modules to have passing results on all Priority 1 tests. Lower priority tests and tests on non-library modules can be fixed at your discretion, but are also taking into consideration when determining final grades.
 
 ## Good habits == good results
 
