@@ -1,8 +1,8 @@
 # Very simple Makefile to build program from single ASM or C file (no link)
 
-all : c_button.bin button.bin c_button.list
+all : button.bin c_button.bin c_button.list
 
-CFLAGS = -g -Wall -O2 -std=c99 -ffreestanding
+CFLAGS = -g -Wall -Og -std=c99 -ffreestanding
 
 %.bin: %.o
 	arm-none-eabi-objcopy $< -O binary $@
