@@ -214,6 +214,7 @@ set history expansion
 Whenever you start gdb, the commands from your user `~/.gdbinit` config 
 file are read and executed. The user config file is good for any gdb commands or defaults that you want applied to every use of gdb.
 
+<a name=autoload></a>
 You can also add a local `.gdbinit` file in a project directory that applies settings specific to this project. For example, given a project that runs only in simulation mode, a local config file could automate the gdb commands to set the target and load the program. For this, 
 add a `.gdbinit` file in the project directory:
 

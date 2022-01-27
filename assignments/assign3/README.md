@@ -381,7 +381,7 @@ printf to help you debug.  Here are a couple of strategies you may want to consi
 - __Use the debugger__! Run under gdb in simulation mode and use gdb commands to
   step and print variables to observe your program's operation. We strongly encourage you to invest in building up your gdb chops now -- this investment will really pay off! Stay mindful of the differences between the simulator and the actual Pi. (Review [Exercise 4 of Lab 3](/labs/lab3/#4d-differences-under-simulation) for a refresher)
 <a name="gdbinit">
-    * Run the debugger on program.elf file. Always start gdb from the __top-level directory__ of your assignments repo and access the elf file in the `build` subdirectory:
+    * You run the debugger on the `.elf` version of the program you wish to debug. Always start gdb from the __top-level directory__ of your assignments repo and access the elf file in the `build` subdirectory:
     ```console?prompt=(gdb),#
     # cd ~/cs107e_home/assignments
     # arm-none-eabi-gdb build/test_strings_printf.elf
@@ -389,7 +389,7 @@ printf to help you debug.  Here are a couple of strategies you may want to consi
     ... blah blah blah...
     (gdb)
     ```
-    There is a `.gdbinit` configuration file in the top-level assignments directory that fakes the existence of a uart peripheral within gdb. Confirm it is active by checking for our special breakpoint:
+    * If the program you are debugging attempts to access the uart peripheral, be sure your gdb is auto-loading the `.gdbinit` configuration file we provide that fakes a uart for gdb. Our provided `.gdbinit` file is at the top-level of your assignments repo. Once you are inside gdb, confirm that it has been auto-loaded by looking for our special breakpoint:
     ```console?prompt=(gdb),#
     (gdb) info break
     Num     Type           Disp Enb Address    What
@@ -400,6 +400,9 @@ printf to help you debug.  Here are a couple of strategies you may want to consi
         cont
     ```
     This breakpoint intercepts a character intended to output on uart and echoes it manually. Without this bit of trickery, a program that attempts to output to the uart will stall or otherwise misbehave when accessing the non-existent peripheral in the gdb simulator.
+
+    > __Does your gdb get stuck when your program tries to print output?__  The gdb simulator does not emulate the peripherals (no gpio, no timer, no uart, etc.) so a program that attempts to use the uart will be DOA without the help of our `.gdbinit` file. Re-read the instructions above. If your gdb settings disable auto-load, follow the instructions in our [gdb guide](/guides/gdb#autoload) to allow it.
+    {: .callout-warning}
 - __Liberal use of `assert()` tests__. For example, you can test the output written
   by `signed_to_base` matches the expected output by asserting the two strings
   `strcmp` as equal. Note that the version of `assert` from assign3 forward calls  `uart_putstring` to print out details (i.e. line number, failed expression), so you are no longer limited to interpreting red and green smoke signals.
