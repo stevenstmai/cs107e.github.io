@@ -370,7 +370,7 @@ at the baud rate of 115200.
 $ screen /dev/your-tty-device-here 115200
 ```
 
-> __Permission error on WSL?__ On WSL, if screen fails due to a permissions error, first execute as superuser. The command `sudo screen -ls` should respond "No sockets found". After doing that once, you should be able to use screen normally. 
+> __Permission error on WSL?__ On WSL, if screen fails due to a permissions error, run the command `sudo chmod -R 777 /var/run/screen` to enable the correct permissions. After doing this, try running screen again. You should only need to enable the permissions one time, screen should operate normally thereafter. 
 {: .callout-warning}
 
 When screen opens, it clears your terminal and positions the cursor
