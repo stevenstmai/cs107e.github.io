@@ -1,9 +1,8 @@
 ---
 title: "Guide: Git Workflow for CS107e"
-toc: false
 ---
 
-_Written by CS 107E TAs Jesse Doan, Matt Trost, and Maria Hernandez with material borrowed from labs and assignments_
+_Written by CS 107E TAs Jesse Doan and Matt Trost with material borrowed from labs and assignments_
 
 ## Lab Workflow
 

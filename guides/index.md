@@ -25,6 +25,7 @@ We prepared these guides on various topics relevant to CS107E students. Hope you
 - [Reset the Pi without unplugging](reset-button)
 
 ## Development tools/process
+- [CS107e Git Workflow](cs107e-git)
 - [Git](git)
 - [One page of ARM](arm)
 - [Bare metal programming using gcc](gcc) 
