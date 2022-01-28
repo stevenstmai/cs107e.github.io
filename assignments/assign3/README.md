@@ -471,7 +471,7 @@ The deliverables for `assign3-submission` are:
 
 Submit the finished version of your assignment by tagging `assign3-submission` and ensuring you have an open pull request. The steps to follow are given in the [Assignment 0 writeup](/assignments/assign0/#submit).
   
- Remember that yoy may fix your bugs marked as 'Resolveable' for your GPIO modules (assign2) using a tag labelled 'assign2-submission-updated'. Note that mnaual tests (clock) are not eligible for resubmission. 
+As time permits, you are encouraged to revisit code from previous assignments and submit fixes for any issues that are marked "Resolvable".  To resubmit, commit your changes, tag `assign2-submission-updated` (`assignN` where `N` is the assignment you are resubmitting) and push. This tag signals that we should re-run the unit tests and update your issue lists to show new successes.  Most unit tests on library modules are eligible for resubmit, manual tests and extensions are not.
 
 ## Grading
 
