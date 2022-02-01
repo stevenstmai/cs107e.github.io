@@ -1,7 +1,7 @@
 APPLICATION = names
 MY_MODULES = malloc.o
 
-CFLAGS = -I$(CS107E)/include -g -Wall -Og -std=c99 -ffreestanding -Wpointer-arith
+CFLAGS = -I$(CS107E)/include -g -Wall -Og -std=c99 -ffreestanding -Wpointer-arith -Werror
 LDFLAGS = -nostdlib -T memmap -L$(CS107E)/lib
 LDLIBS = -lpi -lgcc
 
