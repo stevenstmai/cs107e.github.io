@@ -158,9 +158,8 @@ on for the same amount of time that a middle LED would be on). The scanning freq
 
 Here is a short video of our 8-LED scanner in action:
 
-<iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/vhDcb7lxCF4?modestbranding=1&version=3&loop=1&playlist=vhDcb7lxCF4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
+<video controls="controls" width="400"
+       name="Assignment 1 demo" src="images/larson_demo.mp4"></video>
 
  Writing clean, readable assembly code is a challenge. Commenting is essential!  
 Be sure to choose good label names and add named constants using `.equ` to aid readability.

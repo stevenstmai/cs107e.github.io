@@ -264,7 +264,8 @@ The clock time is counting elapsed time since the clock was started, which is no
 
 This video shows starting our Raspberry Pi clock and counting to 12 seconds:
 
-<iframe width="420" height="236" src="https://www.youtube-nocookie.com/embed/PaYcgyyuA60?modestbranding=1&version=3&loop=1&playlist=PaYcgyyuA60" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<video controls="controls" width="400"
+       name="Assignment 2 demo" src="images/clock_demo.mp4"></video>
 
 __Mission accomplished!__ Follow our [submit instructions](#submit) and it's time
 to celebrate. You have wired up a complex breadboard circuit, written two reusable
