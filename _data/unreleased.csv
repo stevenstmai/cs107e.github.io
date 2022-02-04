@@ -1,24 +1,23 @@
 permalink,title,released
-"/labs/lab7/","Lab 7: Raspberry Pi, Interrupted",false
-"/labs/lab5/","Lab 5: Keyboard Surfin'",false
-"/labs/projectlab1/","Lab 8: Project Team Meeting 1",false
-"/labs/lab6/","Lab 6: Drawing into the Framebuffer",false
+"/project/","Final Project",false
 "/labs/projectlab2/","Lab 9: Project Team Meeting 2",false
-"/assignments/assign6/","Assignment 6: Graphics Library and Console",false
-"/assignments/assign5/","Assignment 5: Keyboard and Simple Shell",false
-"/assignments/assign7/","Assignment 7: System Monitor with Interrupts",false
+"/labs/projectlab1/","Lab 8: Project Team Meeting 1",false
+"/labs/lab7/","Lab 7: Raspberry Pi, Interrupted",false
+"/labs/lab6/","Lab 6: Drawing into the Framebuffer",false
+"/labs/lab5/","Lab 5: Keyboard Surfin'",false
 "/lectures/Keyboard/","Keyboards and the PS/2 Protocol",false
 "/lectures/Sound/","Sound, Analog, and Music",false
-"/lectures/Sensors/","Sensors",false
-"/lectures/ArithmeticAndSensors/","Sensors and Arithmetic",false
-"/lectures/Wrap/","Wrap or There and Back Again",false
-"/lectures/Chris/","Chris Gregg's Projects",false
-"/lectures/Interrupts2/","Interrupts, cont'd",false
-"/lectures/Framebuffer/","Graphics and the framebuffer",false
 "/lectures/PeterSean/","Guest",false
-"/lectures/Interrupts1/","Interrupts",false
-"/lectures/MakingEngineering/","Engineering an Art Project",false
+"/lectures/Framebuffer/","Graphics and the framebuffer",false
+"/lectures/Wrap/","Wrap or There and Back Again",false
 "/lectures/Arithmetic/","Computer Arithmetic and Making Code Fast",false
+"/lectures/Sensors/","Sensors",false
+"/lectures/MakingEngineering/","Engineering an Art Project",false
+"/lectures/Interrupts1/","Interrupts",false
 "/lectures/AnnaLiana/","Guest",false
-"/lectures/C_Mastery/","C Mastery",false
-"/project/","Final Project",false
+"/lectures/Chris/","Chris Gregg's Projects",false
+"/lectures/ArithmeticAndSensors/","Sensors and Arithmetic",false
+"/lectures/Interrupts2/","Interrupts, cont'd",false
+"/assignments/assign7/","Assignment 7: System Monitor with Interrupts",false
+"/assignments/assign5/","Assignment 5: Keyboard and Simple Shell",false
+"/assignments/assign6/","Assignment 6: Graphics Library and Console",false
