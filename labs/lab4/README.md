@@ -12,7 +12,7 @@ Task list to copy/paste when creating PR for this lab:
 __Before releasing lab4:__
 - [ ] Review writeup/code/checkin questions (instructor)
 - [ ] Walk through (SL)
-- [ ] Followup on issues from previous quarter postmortem (issue #333)
+- [ ] Followup on issues from previous quarter postmortem (issue #394)
 
 __To prep for lab4:__
 - [ ] Make copies memory diagrams (ideally in color if possible) to hand out in lab

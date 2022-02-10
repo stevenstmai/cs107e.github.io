@@ -20,7 +20,7 @@ __Before releasing lab3:__
 - [ ] Review writeup/code/checkin questions (instructor)
 - [ ] Walk through (SL)
 - [ ] Re-take photo of loopback on latest CP2102
-- [ ] Followup on issues from previous quarter postmortem (issue #)
+- [ ] Followup on issues from previous quarter postmortem (issue #390)
 
 __To prep for lab3:__
 - [ ] Be extra careful when reviewing exercise 1, make sure nothing has changed to invalidate the typescript embedded in writeup

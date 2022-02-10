@@ -111,7 +111,7 @@ The current value of the `fp` register is the "anchor" you need to start examini
 named `cur_fp`:
 
 ```c
-void *cur_fp;
+uintptr_t *cur_fp;
 __asm__("mov %0, fp" : "=r" (cur_fp));
 ```
 

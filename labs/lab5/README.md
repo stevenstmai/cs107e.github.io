@@ -12,11 +12,11 @@ Task list to copy/paste when creating PR for this lab:
 __Before releasing lab5:__
 - [ ] Review writeup/code/checkin questions (instructor)
 - [ ] Walk through (SL)
-- [ ] Followup on issues from previous quarter postmortem (issue #)
+- [ ] Followup on issues from previous quarter postmortem (issue #396)
 - [ ] Update instructions/photos for non-Saleae analyzers, consider PulseView instead of Logic app?
 
 __To prep for lab5:__
-- [ ] Confirm sufficient count of PS/2 keyboards+plug board+logic anaylzers for all students (Label keyboard with id number for tracking and add column to lab attendance to record number checked out to student?)
+- [ ] Confirm sufficient count of PS/2 keyboards+plug board+logic analyzers for all students (Label keyboard with id number for tracking and add column to lab attendance to record number checked out to student?)
 - [ ] Print copies of bootloader.c source code
 - [ ] Print copies of PS/2 key code chart (assignments/assign5/images/scancode.gif)
 
@@ -169,7 +169,7 @@ This is what it looks like when the keyboard is wired up to the logic analyzer.
 ![wired up](images/connector_analyzer_spaced.jpg){: .zoom .w-75}
 
 If you haven't already, attach your keyboard to the PS/2 plug board. Make sure
-to connect the USB-to-PS/2 adaptor to the keyboard, and then you can plug it
+to connect the USB-to-PS/2 adapter to the keyboard, and then you can plug it
 right into the plug board outlet.
 
 In the Logic 2 application, hit the green start button in the upper right to
