@@ -282,7 +282,7 @@ Before starting on the extension, be sure you have completed all core tasks, inc
 
 The extension follows the same workflow, edit files on the `dev` branch, make regular commits and pushes. When you have successfully completed the extension, then move your submission tag to this version so it is the one graded. You do not need to repeat the pull request.
 
-Add a second button to your clock breadboard next to the start button. Connect this button to GPIO pin 3. Design a user interface that allows you to set the time using these buttons. You should be able to set the minutes and seconds separately. Strive for an interface design that is easy to use and that works even after the clock starts running. It can be challenging to build an [interface with just a few buttons](https://dilbert.com/strip/2016-06-12)!
+Add a second button to your clock breadboard next to the start button. Connect this button to GPIO pin 3. Design a user interface that allows you to set the time using these buttons. You should be able to set the minutes and seconds separately. The time must be able to be set both before and after starting the clock. The time must be able to be set an arbitrary number of times (i.e. not just once initially). Strive for an interface design that is easy to use and that works even after the clock starts running. It can be challenging to build an [interface with just a few buttons](https://dilbert.com/strip/2016-06-12)!
 
 Add documentation to the `assign2-readme.md` file that explains to the user how to set the time via your buttons.
 
