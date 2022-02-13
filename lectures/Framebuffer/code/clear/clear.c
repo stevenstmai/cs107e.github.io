@@ -38,8 +38,9 @@ void fb_init(void) {
     fb.total_bytes = 0;
     fb.pitch = 0;
 
-    mailbox_write(MAILBOX_FRAMEBUFFER, (unsigned)&fb);
-    assert(mailbox_read(MAILBOX_FRAMEBUFFER) == 0);
+    // send address of fb struct to the GPU
+    bool mailbox_success = mailbox_request(MAILBOX_FRAMEBUFFER, (unsigned)&fb);
+    assert(mailbox_success);
 }
 
 void clear_char_by_char(void)

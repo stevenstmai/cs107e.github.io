@@ -415,7 +415,7 @@ $ cat `which rpi-run.py`
 
 The `bootloader.bin` you have installed on your SD card is a C program that
 runs bare-metal on the Raspberry Pi. Change to the directory
-`lab4/code/bootloader`. This directory contains the bootloader source code. The
+`lab5/code/bootloader`. This directory contains the bootloader source code. The
 bootloader program waits for your laptop to send it a program binary. Upon
 receives a program, it loads it into memory, and then branches to the code to
 begin execution.

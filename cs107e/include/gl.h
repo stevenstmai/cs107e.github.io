@@ -130,7 +130,7 @@ void gl_swap_buffer(void);
  * @param y  the y location of the pixel
  * @param c  the color of the pixel
  */
-void gl_draw_pixel(unsigned int x, unsigned int y, color_t c);
+void gl_draw_pixel(int x, int y, color_t c);
 
 /*
  * `gl_read_pixel`
@@ -143,7 +143,7 @@ void gl_draw_pixel(unsigned int x, unsigned int y, color_t c);
  *
  * @return   the color at that location
  */
-color_t gl_read_pixel(unsigned int x, unsigned int y);
+color_t gl_read_pixel(int x, int y);
 
 /*
  * `gl_draw_char`
@@ -160,7 +160,7 @@ color_t gl_read_pixel(unsigned int x, unsigned int y);
  *            in the current font, nothing is drawn (refer to font_get_glyph())
  * @param c   the color of the character
  */
-void gl_draw_char(unsigned int x, unsigned int y, char ch, color_t c);
+void gl_draw_char(int x, int y, char ch, color_t c);
 
 /*
  * `gl_draw_string`
@@ -176,7 +176,7 @@ void gl_draw_char(unsigned int x, unsigned int y, char ch, color_t c);
  * @param str  the null-terminated string to be drawn
  * @param c    the color of the string
  */
-void gl_draw_string(unsigned int x, unsigned int y, const char* str, color_t c);
+void gl_draw_string(int x, int y, const char* str, color_t c);
 
 /*
  * `gl_get_char_height`
@@ -209,7 +209,7 @@ unsigned int gl_get_char_width(void);
  * @param h  the height of the rectangle
  * @param c  the color of the rectangle
  */
-void gl_draw_rect(unsigned int x, unsigned int y, unsigned int w, unsigned int h, color_t c);
+void gl_draw_rect(int x, int y, int w, int h, color_t c);
 
 /*
  * `gl_draw_line`: optional extension
@@ -227,7 +227,7 @@ void gl_draw_rect(unsigned int x, unsigned int y, unsigned int w, unsigned int h
  * This function is NOT part of the core requirements.
  * You can leave this function unimplemented if not doing the extension.
  */
-void gl_draw_line(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2, color_t c);
+void gl_draw_line(int x1, int y1, int x2, int y2, color_t c);
 
 /*
  * `gl_draw_triangle`: optional extension
@@ -247,6 +247,6 @@ void gl_draw_line(unsigned int x1, unsigned int y1, unsigned int x2, unsigned in
  * This function is NOT part of the core requirements.
  * You can leave this function unimplemented if not doing the extension.
  */
-void gl_draw_triangle(unsigned int x1, unsigned int y1, unsigned int x2, unsigned int y2, unsigned int x3, unsigned int y3, color_t c);
+void gl_draw_triangle(int x1, int y1, int x2, int y2, int x3, int y3, color_t c);
 
 #endif

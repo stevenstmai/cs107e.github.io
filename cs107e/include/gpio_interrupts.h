@@ -28,10 +28,9 @@
  * GPIO events for all pins and in turn dispatches to the handler
  * registered with the gpio interrupts module for the specific pin.
  * When this function returns, GPIO interrupts are disabled and
- * must be nabled with `gpio_interrupts_enable`.
+ * must be enabled with `gpio_interrupts_enable`.
  */
 void gpio_interrupts_init(void);
-
 
 /*
  * `gpio_interrupts_enable`
@@ -46,17 +45,6 @@ void gpio_interrupts_enable(void);
  * Global disable for GPIO interrupts.
  */
 void gpio_interrupts_disable(void);
-
-/*
- * `gpio_interrupts_default_handler`
- *
- * The default handler for GPIO events. Does nothing. Provided
- * as reference point for what the prior handler returned from
- * registering a handler, plus as a convenience for uninstalling
- * a handler (replace it with this).
- */
-void gpio_default_handler(unsigned int pc, void *aux_data);
-
 
 /*
  * `gpio_interrupts_register_handler`

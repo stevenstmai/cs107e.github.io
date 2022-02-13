@@ -37,7 +37,7 @@ void interrupts_init(void);
  * `interrupts_global_enable`
  *
  * Turns on interrupts system-wide. An interrupt generated on
- * an enabled interrupt source will call the registered handler.
+ * an interrupt source that is enabled will call the registered handler.
  */
 void interrupts_global_enable(void);
 
@@ -64,7 +64,7 @@ void interrupts_enable_source(unsigned int source);
 /*
  * `interrupts_disable_source`
  *
- * Disable a particular interrpt source. Interrupts for this source
+ * Disable a particular interrupt source. Interrupts for this source
  * will not trigger a handler and will remain pending (until cleared).
  * The source should be a value from the INTERRUPTS enum below.
  */
@@ -115,7 +115,8 @@ typedef void (*handler_fn_t)(unsigned int, void *);
  *                  when calling handler function
  *
  * An assert is raised if `source` is invalid. `aux_data` can be NULL if
- * handler function has no need for auxiliary data.
+ * handler function has no need for auxiliary data. If `fn` is NULL, this
+ * removes any handler previously registered for `source`.
  */
 void interrupts_register_handler(unsigned int source, handler_fn_t fn, void *aux_data);
 
