@@ -1,3 +1,4 @@
+#include "backtrace.h"
 #include "console.h"
 #include "echo.h"
 #include "gpio.h"
@@ -26,6 +27,8 @@ static void button_pressed(unsigned int pc, void *aux_data)
 {
     if (gpio_check_and_clear_event(BUTTON_GPIO)) {
         gCount++;
+        printf("\nButton pressed!\n");
+        print_backtrace();
     }
 }
 

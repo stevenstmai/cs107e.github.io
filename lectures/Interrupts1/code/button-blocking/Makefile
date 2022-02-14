@@ -1,6 +1,6 @@
 NAME = main
 
-CFLAGS = -I$(CS107E)/include -g -Wall -Og -std=c99 -ffreestanding
+CFLAGS = -I$(CS107E)/include -g -Wall -Og -std=c99 -ffreestanding -mpoke-function-name -mapcs-frame
 LDFLAGS = -nostdlib -T memmap -L$(CS107E)/lib
 LDLIBS = -lpi -lgcc
 

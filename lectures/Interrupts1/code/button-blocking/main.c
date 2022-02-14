@@ -1,3 +1,4 @@
+#include "backtrace.h"
 #include "console.h"
 #include "echo.h"
 #include "gpio.h"
@@ -25,6 +26,8 @@ static void wait_for_press(void)
     while (gpio_read(BUTTON_GPIO) == 0) ;
     while (gpio_read(BUTTON_GPIO) == 1) ;
     gCount++;
+    printf("\nButton pressed!\n");
+    print_backtrace();
 }
 
 void main(void)
