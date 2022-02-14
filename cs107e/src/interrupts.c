@@ -170,9 +170,9 @@ static int get_next_source(void) {
 void interrupt_dispatch(unsigned int pc);
 
 void interrupt_dispatch(unsigned int pc) {
-    int next_interrupt = get_next_source();
-    if (next_interrupt < INTERRUPTS_COUNT && handlers[next_interrupt].fn) {
-        handlers[next_interrupt].fn(pc, handlers[next_interrupt].aux_data);
+    int source = get_next_source();
+    if (source < INTERRUPTS_COUNT && handlers[source].fn) {
+        handlers[source].fn(pc, handlers[source].aux_data);
     }
 }
 

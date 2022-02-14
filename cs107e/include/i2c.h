@@ -10,7 +10,7 @@
  */
 
 void i2c_init(void);
-void i2c_read(unsigned slave_address, char *data, int data_length);
-void i2c_write(unsigned slave_address, char *data, int data_length);
+void i2c_read(unsigned peripheral_address, char *data, int data_length);
+void i2c_write(unsigned peripheral_address, char *data, int data_length);
 
 #endif

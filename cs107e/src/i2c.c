@@ -16,7 +16,7 @@ struct I2C { // I2C registers
     int control;
     int status;
     int data_length;
-    int slave_address;
+    int peripheral_address;
     int data_fifo;
     int clock_divider;
     int data_delay;
@@ -36,14 +36,14 @@ struct I2C { // I2C registers
 #define STATUS_FIFO_CAN_READ		0x020
 #define STATUS_FIFO_EMPTY				0x040
 #define STATUS_FIFO_FULL				0x080
-#define STATUS_ERROR_SLAVE_ACK	0x100
+#define STATUS_ERROR_PERIPHERAL_ACK	0x100
 #define STATUS_TIMEOUT					0x200
 
 #define FIFO_MAX_SIZE 16
 
 /*
- * There are three I2C masters on the Raspberry Pi, with the following
- * virtual memory addresses:
+ * There are three I2C controllers on the Raspberry Pi, with the following
+ * bus addresses:
  * 	• BSC0: 0x7E20_5000
  * 	• BSC1: 0x7E80_4000
  * 	• BSC2: 0x7E80_5000
@@ -66,18 +66,18 @@ void i2c_init(void) {
     i2c->control = CONTROL_ENABLE;
 }
 
-void i2c_read(unsigned slave_address, char *data, int data_length) {
+void i2c_read(unsigned peripheral_address, char *data, int data_length) {
     // clear out the FIFO
     i2c->control |= CONTROL_CLEAR_FIFO;
     while (!(i2c->status & STATUS_FIFO_EMPTY))
         ;
     // clear previous transfer's flags
     i2c->status |= STATUS_TRANSFER_DONE |
-                   STATUS_ERROR_SLAVE_ACK |
+                   STATUS_ERROR_PERIPHERAL_ACK |
                    STATUS_TIMEOUT;
 
-    // set slave address + data length
-    i2c->slave_address = slave_address;
+    // set peripheral address + data length
+    i2c->peripheral_address = peripheral_address;
     i2c->data_length = data_length;
     int data_index = 0;
 
@@ -94,7 +94,7 @@ void i2c_read(unsigned slave_address, char *data, int data_length) {
     }
 #if 0
     // inform end user of potential responses
-    if (i2c->status & STATUS_ERROR_SLAVE_ACK) {
+    if (i2c->status & STATUS_ERROR_PERIPHERAL_ACK) {
         printf("NACK received.\n");
     }
     if (i2c->status & STATUS_TIMEOUT) {
@@ -106,18 +106,18 @@ void i2c_read(unsigned slave_address, char *data, int data_length) {
 #endif
 }
 
-void i2c_write(unsigned slave_address, char *data, int data_length) {
+void i2c_write(unsigned peripheral_address, char *data, int data_length) {
     // clear out the FIFO
     i2c->control |= CONTROL_CLEAR_FIFO;
     while (!(i2c->status & STATUS_FIFO_EMPTY))
         ;
     // clear previous transfer's flags
     i2c->status |= STATUS_TRANSFER_DONE |
-                   STATUS_ERROR_SLAVE_ACK |
+                   STATUS_ERROR_PERIPHERAL_ACK |
                    STATUS_TIMEOUT;
 
-    // set slave address + data length
-    i2c->slave_address = slave_address;
+    // set peripheral address + data length
+    i2c->peripheral_address = peripheral_address;
     i2c->data_length = data_length;
     int data_index = 0;
 
@@ -138,12 +138,12 @@ void i2c_write(unsigned slave_address, char *data, int data_length) {
         i2c->data_fifo = data[data_index++];
     }
 
-    // wait until the FIFO's contents are emptied by the slave
+    // wait until the FIFO's contents are emptied by the peripheral
     while (!(i2c->status & STATUS_FIFO_EMPTY))
         ;
 #if 0
     // inform end user of potential responses
-    if (i2c->status & STATUS_ERROR_SLAVE_ACK) {
+    if (i2c->status & STATUS_ERROR_PERIPHERAL_ACK) {
         printf("NACK received.\n");
     }
     if (i2c->status & STATUS_TIMEOUT) {

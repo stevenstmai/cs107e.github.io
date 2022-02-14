@@ -2,7 +2,7 @@
 #include "spi.h"
 
 struct spi {
-    unsigned cs; /* SPI Master Control and Status */
+    unsigned cs; /* SPI controller control and status */
     unsigned fifo;
     unsigned clk;
     unsigned dlen;
