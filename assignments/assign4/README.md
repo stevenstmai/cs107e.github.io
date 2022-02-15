@@ -303,6 +303,9 @@ What happens if a client allocates a block, but forgets to free it when done? Th
 
 Memory debugging tools such as [Valgrind](http://valgrind.org) are invaluable weapons in the battle against difficult-to-find memory errors and memory leaks. For the extension, you are to implement a "Mini-Valgrind" that adds memory error and memory leak detection to your heap allocator.
 
+> __This extension will require an semi-invasive re-structuring of malloc/free.__ Before attempting the extension, commit and submit your completed code for the core features. This ensures you have a working version on file. This version serves as a point of comparison as you move forward and it may be your lifeline if you end up needing a known good place to restore to.
+{: .callout-warning}
+
 #### Red zones and leak detection
 
 One technique for detecting memory over/underruns is to surround each payload with a pair of _red zones_. When servicing a malloc request, oversize the space by an extra 8 bytes. Place the actual payload in the middle with one 4-byte red zone before it and another 4-byte red zone after it. (Take care to keep the payload aligned on the 8-byte boundary). Fill the red zone with a distinctive repeating value (a good use for your handy `memset` function!). Our implementation uses `0x7e`, though you are free to use [any non-offensive pattern you like](https://en.wikipedia.org/wiki/Hexspeak). When the client later frees that block, check the red zones and squawk loudly if the value has been perturbed.
