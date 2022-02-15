@@ -167,7 +167,7 @@ that simply wants typed characters might need only the top level
 `keyboard_read_next`; a client that reacts to up and down events also accesses
 the mid level `keyboard_read_event`.  
 
-The hierarchical design also eases the job of the implementor. Each level
+The hierarchical design also eases the job of the implementer. Each level
 focuses on a discrete part of the operation and delegates tasks above and below
 to other functions. This makes each function simpler to implement and test.
 Your implementation plan of attack is to start at the bottom and work your way
@@ -196,13 +196,13 @@ Discard as many invalid tries as necessary until you receive a valid scancode.
 In a similar vein, a dropped bit or discarded partial read could cause your
 driver to become de-synchronized. When that happens your driver can get stuck,
 trying to read a scancode byte starting mid-packet and waiting for further bits
-to arrive that aren't forthcoming. One way to resynchronize is using a simple
-timeout reset. We recommend, but do not require, that you use your `timer` module 
-to note if the current clock edge occurred more than 1ms after the previous one, and 
-if so, reset the state and assume the current clock edge is for a start bit. This 
-small check will let your driver handle the case when you plug in the keyboard
-after you start the driver (which can generate a few blips and bits as the plug
-is connected).
+to arrive that aren't forthcoming. We recommend, but do not require, that you 
+implement a timeout reset to resynchronize. The timeout can use your
+`timer` module from assignment 2. 
+Call your `timer_get_ticks` function to get a timestamp
+for each clock edge. If you detect that the current clock edge occurs
+ more than 1ms after the previous timestamp, reset the state and assume the current clock edge is for a start bit. 
+This small effort provides additional robustness in your driver to combat flaky connections and hardware blips.
 
 The `struct ps2_device_t` at the top of the `ps2.c` is used to track the state
 associated with a given PS2 device. The struct defined in the starter code has
@@ -300,9 +300,7 @@ __A__ key produces `{ 'a', 'A' }`. The __Four__ key produces `{ '4', '$' }`.
 Keys such as __Tab__ that are unchanged by the modifier have the same character
 for `ch` and `other_ch`, e.g. `{'\t', '\t'}`.
 
-Your keyboard should handle all keys shown in this keyboard diagram. (The
-number pad and movement keys are not shown and do not need to be handled by
-your keyboard driver.)
+The keyboard diagram below shows which keys your keyboard driver is required to handle. Keys not shown in this diagram, e.g. numeric keypad, arrow keys, home, scroll lock, etc., are __not required__.
 
 ![PS/2 Scancodes](images/scancode.gif){: .zoom .w-75}
 
@@ -652,7 +650,7 @@ Our highest priority tests will focus on the core features for this assignment:
 - Essential functionality of your library modules
   - ps2
     - read well-formed scancode
-    - discard of malformed (wrong start/stop/parity or timeout), resynchronize
+    - discard of malformed (wrong start/stop/parity)
   - keyboard
     - read events from all keys
     - handling of modifiers, including caps lock
