@@ -193,22 +193,10 @@ of each start, parity, and stop bit. If you detect an erroneous bit, discard
 the partial scancode and retry reading a new scancode from the beginning.
 Discard as many invalid tries as necessary until you receive a valid scancode.
 
-In a similar vein, a dropped bit or discarded partial read could cause your
-driver to become de-synchronized. When that happens your driver can get stuck,
-trying to read a scancode byte starting mid-packet and waiting for further bits
-to arrive that aren't forthcoming. We recommend, but do not require, that you 
-implement a timeout reset to resynchronize. The timeout can use your
-`timer` module from assignment 2. 
-Call your `timer_get_ticks` function to get a timestamp
-for each clock edge. If you detect that the current clock edge occurs
- more than 1ms after the previous timestamp, reset the state and assume the current clock edge is for a start bit. 
-This small effort provides additional robustness in your driver to combat flaky connections and hardware blips.
-
 The `struct ps2_device_t` at the top of the `ps2.c` is used to track the state
 associated with a given PS2 device. The struct defined in the starter code has
 just two fields (clock and data gpios). If you encounter a need to track
 additional state for the device, simply add new fields to the struct.
-
 
 > **Timing is everything!** The timing of the PS/2 protocol has to be strictly
 > followed. The keyboard sends the bits rapid-fire and you must catch each bit
