@@ -52,7 +52,7 @@ void interrupts_global_enable(void);
 void interrupts_global_disable(void);
 
 /*
- * `interrupts_enable_source``
+ * `interrupts_enable_source`
  *
  * Enable a particular interrupt source. The source itself must still
  * be configured to generate interrupts (and global interrupts must be

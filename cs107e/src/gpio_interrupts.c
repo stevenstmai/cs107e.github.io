@@ -36,35 +36,29 @@ static unsigned int get_next_pin(void) {
 // dispatch to the per-pin handlers that have been registered with
 // this module (gpio_interrupts)
 static void gpio_interrupt_dispatch(unsigned int pc, void *unused) {
-    unsigned int next_pin = get_next_pin();
-    if (next_pin <= GPIO_PIN_LAST && handlers[next_pin].fn) {
-        handlers[next_pin].fn(pc, handlers[next_pin].aux_data);
+    unsigned int pin = get_next_pin();
+    if (pin <= GPIO_PIN_LAST && handlers[pin].fn) {
+        handlers[pin].fn(pc, handlers[pin].aux_data);
     }
 }
 
 void gpio_interrupts_init(void) {
     // okay to re-init this module
-    // will not wipe handlers that were previously registered
-	gpio_interrupts_disable();
+    // will not wipe per-pin handlers that were previously registered
+    // re-register gpio dispatch as handler with top-level interrupts modules
+    // reset gpio interrupt source to disabled state
+    interrupts_disable_source(INTERRUPTS_GPIO3);
     interrupts_register_handler(INTERRUPTS_GPIO3, gpio_interrupt_dispatch, NULL);
     gpio_interrupts_initialized = true;
 }
 
-/*
- * `gpio_interrupts_enable`
- *
- * Global enable for GPIO interrupts.
- */
 void gpio_interrupts_enable(void) {
+    assert(gpio_interrupts_initialized);
     interrupts_enable_source(INTERRUPTS_GPIO3);
 }
 
-/*
- * `gpio_interrupts_disable`
- *
- * Global disable for GPIO interrupts.
- */
 void gpio_interrupts_disable(void) {
+    assert(gpio_interrupts_initialized);
     interrupts_disable_source(INTERRUPTS_GPIO3);
 }
 

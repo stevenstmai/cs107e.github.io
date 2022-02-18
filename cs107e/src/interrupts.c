@@ -112,24 +112,30 @@ static bool is_valid(unsigned int irq_source) {
     return is_basic(irq_source) || (is_shared(irq_source) && is_safe(irq_source));
 }
 
-void interrupts_enable_source(unsigned int irq_source) {
-    if (is_basic(irq_source)) {
-        unsigned int shift = irq_source - INTERRUPTS_BASIC_BASE;
+void interrupts_enable_source(unsigned int source) {
+    assert(interrupts_initialized);
+    assert(is_valid(source));
+
+    if (is_basic(source)) {
+        unsigned int shift = source - INTERRUPTS_BASIC_BASE;
         interrupt->enable_basic |= 1 << shift;
-    } else if (is_shared(irq_source)) {
-        unsigned int bank = irq_source / 32;
-        unsigned int shift = irq_source % 32;
+    } else if (is_shared(source)) {
+        unsigned int bank = source / 32;
+        unsigned int shift = source % 32;
         interrupt->enable[bank] |= 1 << shift;
     }
 }
 
-void interrupts_disable_source(unsigned int irq_source) {
-    if (is_basic(irq_source)) {
-        unsigned int shift = irq_source - INTERRUPTS_BASIC_BASE;
+void interrupts_disable_source(unsigned int source) {
+    assert(interrupts_initialized);
+    assert(is_valid(source));
+
+    if (is_basic(source)) {
+        unsigned int shift = source - INTERRUPTS_BASIC_BASE;
         interrupt->disable_basic |= 1 << shift;
-    } else if (is_shared(irq_source)) {
-        unsigned int bank = irq_source / 32;
-        unsigned int shift = irq_source % 32;
+    } else if (is_shared(source)) {
+        unsigned int bank = source / 32;
+        unsigned int shift = source % 32;
         interrupt->disable[bank] |= 1 << shift;
      }
 }
