@@ -1,7 +1,10 @@
 /* File: gpio_extra.c
  * ------------------
  * Support for GPIO event detection and internal pull-up/down
- * Julie Zelenski Sat Jan 27 09:15:07 PST 2018
+ *
+ * Author: Julie Zelenski <zelenski@cs.stanford.edu>
+ *
+ * Last modified: Jan 2018
  */
 
 #include "gpio.h"

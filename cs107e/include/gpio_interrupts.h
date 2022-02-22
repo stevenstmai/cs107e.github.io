@@ -29,6 +29,8 @@
  * registered with the gpio interrupts module for the specific pin.
  * When this function returns, GPIO interrupts are disabled and
  * must be enabled with `gpio_interrupts_enable`.
+ * The top-level interrupts module must be initialized before
+ * attempting to initialize this module.
  */
 void gpio_interrupts_init(void);
 

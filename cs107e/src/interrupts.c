@@ -1,8 +1,10 @@
 /*
- * Julie Zelenski <zelenski@cs.stanford.edu>
- * Philip Levis <pal@cs.stanford.edu>
+ * Module to configure/enable/dispatch interrupts at top-level
  *
- * Last modified: May 8, 2020
+ * Author: Philip Levis <pal@cs.stanford.edu>
+ *         Julie Zelenski <zelenski@cs.stanford.edu>
+ *
+ * Last modified: Feb 2022
  */
 #include "assert.h"
 #include "bits.h"

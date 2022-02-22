@@ -2,8 +2,11 @@
  * ----------
  * Utility functions for Raspberry Pi.
  * (reboot/abort execution, control on-board LEDs)
- * Author: Pat Hanrahan Mar 1, 2016
- * Author: Julie Zelenski Sat Jan 27 09:15:07 PST 2018
+ *
+ * Author: Pat Hanrahan <hanrahan@cs.stanford.edu>
+ *         Julie Zelenski <zelenski@cs.stanford.edu>
+ *
+ * Last modified: Jan 2018
  */
 
 #include "pi.h"

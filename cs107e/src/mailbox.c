@@ -4,7 +4,7 @@
  * code should use the property interface instead.
  *
  * Author: Pat Hanrahan <hanrahan@cs.stanford.edu>
- * Author: Philip Levis <pal@cs.stanford.edu>
+ *         Philip Levis <pal@cs.stanford.edu>
  * Date: 6/20/17
  */
 

@@ -1,3 +1,13 @@
+/* File: gpio_interrupts.c
+ * -----------------------
+ * Dispatcher for GPIO interrupts.
+ *
+ * Author: Philip Levis <pal@cs.stanford.edu>
+ *         Julie Zelenski <zelenski@cs.stanford.edu>
+ *
+ * Last modified: Feb 2022
+ */
+
 #include "assert.h"
 #include "bits.h"
 #include "gpio_interrupts.h"

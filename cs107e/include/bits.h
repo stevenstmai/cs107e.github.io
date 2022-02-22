@@ -4,8 +4,6 @@
 /*
  * Header file for bit counting routines in assembly code.
  *
- * You implement this module in assignment 7.
- *
  * Author: Philip Levis <pal@cs.stanford.edu>
  *
  * Last updated:   February 2020

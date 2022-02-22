@@ -1,4 +1,6 @@
 /*
+ * Hardware abstractions for a serial port (UART).
+ *
  * Author: Pat Hanrahan <hanrahan@cs.stanford.edu>
  * Date: Jan 24, 2016
  */

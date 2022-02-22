@@ -31,10 +31,6 @@ extern ps2_key_t const ps2_keys[];
 
 /* Since regular chars have ASCII values that are all <= 0x7F,
  * we assign codes >= 0x90 to the non-char keys.
- * IMPORTANT NOTE: Students are not required to handle some
- * of these keys, e.g. NUM_LOCK and SCROLL_LOCK. They are
- * included here for completeness. Refer to the Assignment 5
- * spec to know which keys you need to handle and which you don't.
  */
 enum ps2_codes {
     PS2_KEY_NONE = 0,

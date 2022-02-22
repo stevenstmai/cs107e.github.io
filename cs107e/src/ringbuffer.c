@@ -4,7 +4,7 @@
  * access by 1 reader and 1 writer.
  *
  * Author: Philip Levis <pal@cs.stanford.edu>
- * Author: Julie Zelenski <zelenski@cs.stanford.edu>
+ *         Julie Zelenski <zelenski@cs.stanford.edu>
  */
 
 #include "ringbuffer.h"
