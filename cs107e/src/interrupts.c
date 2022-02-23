@@ -179,7 +179,7 @@ void interrupt_dispatch(unsigned int pc);
 
 void interrupt_dispatch(unsigned int pc) {
     int source = get_next_source();
-    if (source < INTERRUPTS_COUNT && handlers[source].fn) {
+    if (source < INTERRUPTS_COUNT && handlers[source].fn != NULL) {
         handlers[source].fn(pc, handlers[source].aux_data);
     }
 }

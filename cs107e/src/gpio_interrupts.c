@@ -28,29 +28,7 @@ static struct {
     void *aux_data;
 } handlers[GPIO_PIN_LAST + 1];
 
-static unsigned int get_next_pin(void) {
-    unsigned int bank0_zeroes = count_leading_zeroes(_gpio->eds[0]);
-    unsigned int bank1_zeroes = count_leading_zeroes(_gpio->eds[1]);
-    if (bank0_zeroes != 32) {
-        return 31 - bank0_zeroes;
-    } else if (bank1_zeroes != 32) {
-        return 63 - bank1_zeroes;
-    } else {
-        return GPIO_PIN_LAST + 1;
-    }
-}
-
-// gpio_interrupt_dispatch is registered with top-level interrupts
-// module as handler for source INTERRUPTS_GPIO3. This handler is
-// thus called for all GPIO interrupts and then performs second-level
-// dispatch to the per-pin handlers that have been registered with
-// this module (gpio_interrupts)
-static void gpio_interrupt_dispatch(unsigned int pc, void *unused) {
-    unsigned int pin = get_next_pin();
-    if (pin <= GPIO_PIN_LAST && handlers[pin].fn) {
-        handlers[pin].fn(pc, handlers[pin].aux_data);
-    }
-}
+static void gpio_interrupt_dispatch(unsigned int, void *);
 
 void gpio_interrupts_init(void) {
     // okay to re-init this module
@@ -77,4 +55,28 @@ void gpio_interrupts_register_handler(unsigned int pin, handler_fn_t fn, void *a
     assert(pin <= GPIO_PIN_LAST);
     handlers[pin].fn = fn;
     handlers[pin].aux_data = aux_data;
+}
+
+static unsigned int get_next_pin(void) {
+    unsigned int bank0_zeroes = count_leading_zeroes(_gpio->eds[0]);
+    unsigned int bank1_zeroes = count_leading_zeroes(_gpio->eds[1]);
+    if (bank0_zeroes != 32) {
+        return 31 - bank0_zeroes;
+    } else if (bank1_zeroes != 32) {
+        return 63 - bank1_zeroes;
+    } else {
+        return GPIO_PIN_LAST + 1;
+    }
+}
+
+// gpio_interrupt_dispatch is registered with top-level interrupts
+// module as handler for source INTERRUPTS_GPIO3. This handler is
+// thus called for all GPIO interrupts and then performs second-level
+// dispatch to the per-pin handlers that have been registered with
+// this module (gpio_interrupts)
+static void gpio_interrupt_dispatch(unsigned int pc, void *unused) {
+    unsigned int pin = get_next_pin();
+    if (pin <= GPIO_PIN_LAST && handlers[pin].fn != NULL) {
+        handlers[pin].fn(pc, handlers[pin].aux_data);
+    }
 }
