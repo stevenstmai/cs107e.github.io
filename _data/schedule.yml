@@ -44,12 +44,12 @@ weeks:
     assign: /assignments/assign7/
     fri: /lectures/Sensors/
   -
-    mon: /lectures/Arithmetic/
+    mon: "Matt & Liana"
     lab: /labs/projectlab1/
     assign: /project/
-    fri: "Guest: Safety"
+    fri: /lectures/Arithmetic/
   -
-    mon: "Guest: Code Optimization"
+    mon: "Maria & Anna"
     lab: /labs/projectlab2/
     fri: /lectures/Wrap/
   - 
