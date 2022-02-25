@@ -13,6 +13,23 @@
 #include <stddef.h>
 
 /*
+*  See BCM p 90 for layout of gpio peripheral registers
+
+    Reminder of names/order
+
+    uint32_t eds[2];    // event detect status
+    uint32_t ren[2];    // rising edge detect enable
+    uint32_t fen[2];    // falling edge detect enable
+    uint32_t hen[2];    // high detect enable
+    uint32_t len[2];    // low detect enable
+    uint32_t aren[2];   // async rising edge detect enable
+    uint32_t afen[2];   // async falling edge detect enable
+
+    uint32_t pud;       // pull-up/down signal
+    uint32_t pudclk[2]; // pull-up/down clock
+*/
+
+/*
 Reminder from .h, this is the order the registers need to be placed in register array
 enum gpio_event {
     GPIO_DETECT_RISING_EDGE = 0,
