@@ -42,7 +42,9 @@
     {% if week.project_due %}
     <TR>
         <TD></TD>
-        <TD colspan="2"> <B> Final projects due {{ week.project_due | date: "%s" | date: "%a %-m/%-d" }} </B></TD>
+        <TD colspan="2"> <B> Final Project</B><br>
+                       Demo session {{ week.project_demo | date: "%s" | date: "%a %-m/%-d at %l:%M %P" }} <br>
+                       Code submission due  {{ week.project_due | date: "%s" | date: "%a %-m/%-d at %l:%M %P" }}  </TD>
     </TR>
     {% break %}
     {% endif %}
