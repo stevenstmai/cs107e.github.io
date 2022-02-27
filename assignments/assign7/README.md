@@ -127,13 +127,13 @@ Edit `ps2_new` to configure the clock GPIO to  detect falling edge events (see h
 
 Now you need to hook up your event handler to the `gpio_interrupts` module which acts as the dispatcher for all GPIO interrupts. In `ps2_new`, initialize gpio_interrupts, register your handler, and enable it. (see header [gpio_interrupts.h](/header#gpio_interrupts))
 
-The final steps are to initialize the top-level `interrupts` module and flip the global enable switch. (see header [interrupts.h](/header#interrupts)) These steps should be done in `main`.
+The final steps are to initialize the top-level `interrupts` module and flip the global enable switch. (see header [interrupts.h](/header#interrupts)) These steps should be done in `main` of `test_interrupts.c`.
 
 Note how you configure GPIO interrupts within the PS/2 module and configure the top-level interrupts in the main program: this structure of where enables what reflects the structure of the level at which they interact with the interrupts system. 
 
 There sure are a lot of steps to configuring an interrupt; your work from [lab7](/labs/lab7) may be helpful to review if you're missing a step or have them out of order.
 
-Use the function `check_interrupts_received` to confirm that your handler is correctly configured and enabled. When you type a key, the handler should output a `+` for each bit in the scancode. How many `+`s correspond to one key press?
+Use the function `check_interrupts_received` of `test_interrupts.c` to confirm that your handler is correctly configured and enabled. When you type a key, the handler should output a `+` for each bit in the scancode. How many `+`s correspond to one key press?
 
 Remember, interrupt code needs to be simple and fast. 
 You want it to be fast because you don't want to delay/miss the
