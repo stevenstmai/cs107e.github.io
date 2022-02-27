@@ -35,7 +35,7 @@ unsigned int get_distance(void) {
 
 	unsigned end = timer_get_ticks();
 
-    // speed of light is 340M/sec
+    // speed of sound is 340M/sec
 	// ((340M/S / 2) * 39.37inch / meter) / 10^6 = inch/usec = 149
 	return (end - start) / 149;
 }
