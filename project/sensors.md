@@ -33,6 +33,8 @@ to pair them with an ADC (see above).
 
 ### Optical
 
+* WS2812B LED Strips
+
 <!---
 * Sharp GP2D12 IR Distance sensors (voltage proportional to distance)
 
@@ -69,29 +71,34 @@ to pair them with an ADC (see above).
 
 ### Audio
 
-<!--
 * Electret microphones 
--->
+
+* Piezo disks 
 
 * [HC-SR04 Ultrasonic Sensor/Distance Measuring modules](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf) (time of flight)
+
+* Buzzer (active and passive) modules
+
+* DIN connectors and 6N138 optoisolators for MIDI
 
 <!--
 * Microphone sound detection modules (digital threshold and analog outputs)
 -->
 
-<!---
 ### Digital
 
 * Rotary switches
 
 * Reed switches
 
-* Ball switch
-
 * Rotary encoder module
 
+
+<!---
 * A1104LUA-T Hall Effect sensor
 (schmitt trigger followed by open collector transistor)
+
+* Ball switch
 
 * Relay switch module
 
@@ -99,35 +106,33 @@ to pair them with an ADC (see above).
 
 * Temperature module
 
-* Buzzer (active and passive) modules
-
 * Shock (vibration switch) sensor module
 
 * Tap (vibration switch) module
 
 * Obstacle avoidance module
-
-* 7-segment displays
 -->
 
-<!---
 ### I2C
 
 * [VL6180X Time-of-Flight Distance Sensors](https://www.pololu.com/product/2489)
 
 * [VL53L0X Time-of-Flight Distance Sensors](https://www.pololu.com/product/2490)
 
-* [AltIMU-10 v3 Gyro, Accelerometer, Compass, and Altimeter (L3GD20H, LSM303D, and LPS331AP Carrier)](https://www.pololu.com/product/2469)
+* [VL53L3CX Time-of-Flight Distance Sensors](https://www.pololu.com/product/3416)
 
 * [LSM6DS3 3D Accelerometer and Gyroscope Sensor](https://www.digikey.com/catalog/en/partgroup/sparkfun-6-degrees-of-freedom-breakout-board-lsm6ds3/58635)
+
+<!--
+* [AltIMU-10 v3 Gyro, Accelerometer, Compass, and Altimeter (L3GD20H, LSM303D, and LPS331AP Carrier)](https://www.pololu.com/product/2469)
 -->
+
+* 4-channel 3.3V to 5V bidirecional level shifters
+
 
 ### SPI
 
 * MCP3008 Analog-to-Digital convertor
-
-<!--
-* DS18B20 Temperature sensor module (not pure SPI)
 
 * [Arducam 2-Megapixel Cameras](http://www.amazon.com/gp/product/B012UXNDOY)
 
@@ -140,5 +145,8 @@ to pair them with an ADC (see above).
 * MCP4922 Dual Digital-to-Analog convertor
 
 * MCP4162 Digital potentiometer
+
+<!--
+* DS18B20 Temperature sensor module (not pure SPI)
 -->
 
