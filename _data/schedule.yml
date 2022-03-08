@@ -44,7 +44,7 @@ weeks:
     assign: /assignments/assign7/
     fri: /lectures/Sensors/
   -
-    mon: "Matt & Liana"
+    mon: /lectures/Matt/
     lab: /labs/projectlab1/
     assign: /project/
     fri: /lectures/Arithmetic/
