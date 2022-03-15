@@ -138,12 +138,18 @@ Your versions may be slightly newer (higher numbers). That's fine!
 The console driver enables the bootloader client to communicate with the Pi over the USB-serial device. 
 
 1. The installation of the CP2102 driver is done from Windows (not inside the WSL terminal). Switch to your Windows web browser and go to the Silicon Labs [CP210x Downloads page](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers).
-1. On this page, select the "Downloads" tab and find the link for the "CP210x Windows Drivers v6.7.6". There are several downloads with similar names -- be sure to choose the version __v6.7.6__ . Download this zip file. 
-1. Unzip and look inside the uncompressed folder for a file named `CP210xVCPInstaller_x64.exe` (if your system is 64-bit) or `CP210xVCPInstaller_x86.exe` (if 32-bit). If you are sure whether your system is 32 or 64-bit, see [these instructions](https://support.microsoft.com/en-us/help/13443/windows-which-version-am-i-running). 
+1. On this page, select the "Downloads" tab and find the link for "CP210x Windows Drivers v6.7.6". Download this zip file. 
+    > __Be sure to choose version 6.7.6!__ Don't be confused by other drivers with similar names and slightly different version numbers. The version to download is exactly __CP210x Windows Drivers v6.7.6__. 
+    {: .callout-warning}
+1. Extract all files from the downloaded zip file. Look in the uncompressed folder for the installer exe file that matches the architecture of your laptop.  If your laptop is 64-bit, the installer exe is named `CP210xVCPInstaller_x64.exe`. If 32-bit, it is `CP210xVCPInstaller_x86.exe`.
+    - If you don't know whether your laptop is 32 or 64-bit, use command `dpkg --print-architecture` in your WSL terminal and look for a response of `amd64` (64-bit) or `i386` (32-bit).
 {%- comment %}
 REMINDER: newer universal driver not compatible with WSL, keep using the older 6.7.6 version! https://github.com/cs107e/staff/issues/225
 {%- endcomment %}
 1. Run the appropriate installer exe and follow the prompts to completion.
+
+{% comment %}
+Removed this check step as driver does not show up until it has been loaded. Leave this information here for trouble-shooting.
 
 {% include checkstep.html content="confirm System Information finds driver" %}
 1. Open the "System Information" app. A panel pops up with a "System Summary" of your hardware and software environment.
@@ -152,11 +158,12 @@ REMINDER: newer universal driver not compatible with WSL, keep using the older 6
 
     > __Driver not found?__ We suspect that the Windows System Information may not find the driver if it has net yet loaded it for a device, so it doesn't find the driver yet, don't be alarmed. You can confirm later when you have the USB-serial device to test the driver.
     {: .callout-warning}
+{% endcomment %}
 
 {% comment %}
 Sean April 2020, We had a few students that were having trouble with the driver, and were getting a "could not find CP2102 device" error. I'm adding the driver install instructions back now since the redundancy doesn't seem to break anything.
 
-Julie Jan 2020,Windows 10 should be plug-and-play, will automatically download/install driver. I tested on brand new machine and confirmed it worked as advertised. Commenting out the instructions for manual install, but will leave here in case we later find we need to revive them
+Julie Jan 2020,Windows 10 should be plug-and-play, will automatically download/install driver. I tested on brand new machine and confirmed it worked as advertised. Commenting out the above instructions for manual install from SiLabs, but will leave here in case we later find we need to revive them
 {% endcomment %}
 
 {% include_relative userconfig.md %}
