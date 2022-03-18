@@ -173,7 +173,7 @@ hardware! What you have running is not too far from an Apple II computer.
 ### 4) Need for speed? (just for fun)
 
 Your new interrupt-driven keyboard driver won't drop a key unless someone can
-type 86+ characters in between calls to `ps2_read`: the ring buffer is 256 elements and most keys are 3 scancodes. Unless you're doing something really CPU-intensive, this is unlikely.
+type ~170 characters in between calls to `ps2_read`: the ring buffer is 512 elements and most keys are 3 scancodes. Unless you're doing something really CPU-intensive, this is unlikely.
 
 However a moderately fast typist can still enqueue a decent number of keys during a slow console redraw that makes for a longish wait as the console works through the backlog. __This is the expected behavior: the console receives every character that is typed and painstakingly draws and responds to that input__. But, ... if you caught the optimization fever from [performance exploration in lab7](/labs/lab7/speed), we'd love to see what you can do to improve the
 refresh performance. A few ideas to consider:

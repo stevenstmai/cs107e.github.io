@@ -11,7 +11,7 @@
 #include "assert.h"
 #include "malloc.h"
 
-#define LENGTH 256
+#define LENGTH 512
 
 /*
  * A ring buffer is represented using a struct containing a fixed-size array
