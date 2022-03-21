@@ -20,11 +20,12 @@ Each student is given a CS107e parts kit containing the materials needed for the
     -  __male-male__ jumpers, various lengths
 - a __mini-box__ containing these small components:
     - __resistors__ ([how resistance is encoded in band color](https://learn.sparkfun.com/tutorials/resistors#decoding-resistor-markings),  [color code calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-resistor-color-code))
-        - twenty __1K resistors__ (for leds, 4-digit display, transistors) <https://www.taydaelectronics.com/resistors/1-8w-metal-film-resistors/r-1k-ohm-1-8w-1-metal-film-resistor.html>
-        - four __10K resistors__ (for push buttons) <https://www.taydaelectronics.com/resistors/1-8w-metal-film-resistors/r-10k-ohm-1-8w-1-metal-film-resistor.html>
+        - twenty __1K resistors__ (for leds, 4-digit display, transistors) <https://www.taydaelectronics.com/resistors/1k-ohm-1-2w-5-carbon-film-resistor.html>
+        - four __10K resistors__ (for push buttons) <https://www.taydaelectronics.com/10k-ohm-1-2w-5-carbon-film-resistor.html>
     - eight __LEDs__ <https://www.taydaelectronics.com/catalogsearch/result/?q=led+5mm+ultra+bright>
     - a 4-digit __7-segment display__ (common cathode) <http://www.lanpade.com/7-segment-led-dot-matrix/5461as.html>
-    - four tactile __pushbuttons__ with colored caps <https://www.taydaelectronics.com/tact-switch-12-12mm-7-5mm-through-hole-spst-no.html>
+    - four tactile __pushbuttons__ <https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/tact-switch-12-12mm-7-3mm-through-hole-spst-no-4-pins.html>
+    - four __caps__ for the pushbuttons (we give 1 each of 4 different colors): <https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-blue-color.html> <https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-yellow-color.html> <https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-red-color.html> <https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-green-color.html>
     - four 2N3904 __transistors__ (BJTs) <https://www.taydaelectronics.com/2n3904-npn-general-propose-transistor.html>
     - a USB MicroSD __card reader__ <https://www.aliexpress.com/item/4001223105774.html>
     - a 2-4 pin __header strip__ <https://www.taydaelectronics.com/40-pin-2-54-mm-single-row-pin-header-strip.html>
