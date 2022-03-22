@@ -11,9 +11,12 @@ li a[href*="//"]:link { font-size: 80%; }
 ## Parts kit
 Each student is given a CS107e parts kit containing the materials needed for the course assignments and labs. The parts kit contains:
 - a __Raspberry Pi A+__ <https://www.raspberrypi.org/products/raspberry-pi-1-model-a-plus/>
-- a __MicroSDHC card__ <https://en.wikipedia.org/wiki/SD_card>
+- a __MicroSDHC card__ <https://www.aliexpress.com/item/1005002533302780.html>
+    + need only tiny capacity (< 1GB) , buy minimum size you can find
+    + choose a manufacturer with known good quality control (cheap unreliable cards are no bargain)
 - a __CP2102 USB-to-serial__ breakout board <https://www.taydaelectronics.com/cp2102-serial-converter-usb-2-0-to-ttl-uart-ftdi.html>
 - a full-sized __breadboard__ <https://www.jameco.com/z/WBU-202-R-Jameco-Valuepro-830-Point-Solderless-Breadboard-6-5-x-2-125-_20723.html>
+    + Jameco is solid! (cheaper breadboards can have flaky connection points)
 - __jumpers__ (5-25 of each kind) <https://www.aliexpress.com/item/32891879068.html>
     -  __female-female__ (short, 10cm) and (long, 20cm)
     -  __female-male__ (long, 20cm)
@@ -27,21 +30,34 @@ Each student is given a CS107e parts kit containing the materials needed for the
     - four tactile __pushbuttons__ <https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/tact-switch-12-12mm-7-3mm-through-hole-spst-no-4-pins.html>
     - four __caps__ for the pushbuttons (we give 1 each of 4 different colors): [blue](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-blue-color.html), [yellow](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-yellow-color.html), [red](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-red-color.html), [green](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-green-color.html)
     - four 2N3904 __transistors__ (BJTs) <https://www.taydaelectronics.com/2n3904-npn-general-propose-transistor.html>
-    - a USB MicroSD __card reader__ <https://www.aliexpress.com/item/4001223105774.html>
+    - a USB MicroSD __card reader__ <https://www.aliexpress.com/item/1005002286511762.html>
     - a 2-4 pin __header strip__ <https://www.taydaelectronics.com/40-pin-2-54-mm-single-row-pin-header-strip.html>
     - mini __claw clips__ (for cable management) <https://www.amazon.com/gp/product/B089R9R8MH>
 
 
 
 ## Lab tools supplement
-Doing the labs also requires a few hand tools and supplies. When we teach the course on campus, these are available in the lab. When we teach it remotely, we send a supplemental pack of tools including:
+Doing the labs also requires a few hand tools and supplies. When we teach the course on campus, these are available in the lab.
 
-- wire __stripper__ <https://www.amazon.com/dp/B073YG65N2>
-- needlenose __pliers__ <https://www.amazon.com/dp/B0000AY5DQ>
-- angled __cutter__ <https://www.amazon.com/dp/B0829SSZJZ>
+Hand tools and supplies for breadboarding:
+
+- wire __stripper__, needlenose __pliers__, and angled __cutter__
+    (recommendations in our [guide to hand tools](/guides/handtools))
 - solid core __wire__, 22-24 AWG
-- __HDMI cable__
+
+For keyboard lab:
+
 - PS/2 __keyboard__ and __mouse__ <https://www.amazon.com/dp/B0758BF15X>
+-  inexpensive, low-speed USB __logic analyzer__ <https://www.amazon.com/dp/B077LSG5P2>
+- PS/2 breakout board (optional)
+    + we source a custom board from <https://www.pcbway.com/>
+    + other options from Adafruit <https://www.adafruit.com/product/804> or Digikey <https://www.digikey.com/short/ptjt5f4b>
+    + can simply wire jumpers directly into keyboard plug (we did this for years and it works fine)
+
+For graphics lab:
+- any __display__ (monitor, tv, projector) that accepts HDMI input
+- __HDMI cable__
+
 
 
 ## Sources for parts
