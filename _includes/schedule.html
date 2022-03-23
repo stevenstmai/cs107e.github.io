@@ -17,6 +17,7 @@
     {% assign one_day = 86400 %}
     {% assign one_week = one_day | times: 7 %}
     {% assign four_days = one_day | times: 4 %}
+    {% assign two_days = one_day | times: 2 %}
 
     {% assign start_index = 0 %}
     {% assign num_weeks = site.data.schedule.weeks.size %}
@@ -32,7 +33,7 @@
         {% assign i = forloop.index | plus: start_index %}
         {% assign i_weeks = i | minus: 1 | times: one_week %}
         {% assign ith_monday = first_monday | plus: i_weeks %}
-        {% assign ith_friday = ith_monday | plus: four_days %}
+        {% assign ith_wednesday = ith_monday | plus: two_days %}
 
     <TR>
         <TD colspan="3" style="background-color:#cccccc; font-size:75%; font-style:italic; padding: 2px 12px 2px 12px;"
@@ -59,8 +60,8 @@
         <TD class="alert-primary"> {% include event.html plink=week.assign %} </TD>
     </TR>
     <TR>
-        <TD style="font-size: 75%; vertical-align: middle"> Lecture <BR>{{ ith_friday | date: "%a %-m/%-d" }} </TD>
-        <TD colspan="2"> {% include event.html plink=week.fri %} </TD>
+        <TD style="font-size: 75%; vertical-align: middle"> Lecture <BR>{{ ith_wednesday | date: "%a %-m/%-d" }} </TD>
+        <TD colspan="2"> {% include event.html plink=week.wed %} </TD>
     </TR>
 
   {% endfor %}
