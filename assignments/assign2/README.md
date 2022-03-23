@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /assignments/assign2/
 title: "Assignment 2: Implement a Clock"
 toc: true

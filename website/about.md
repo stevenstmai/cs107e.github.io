@@ -47,7 +47,7 @@ using a keyboard and display. Finally, students do a project of their choosing
 where they build a complete hardware-software system.
 
 This class is organized by weeks. Each week has lectures
-on Wed and Mon, a 2-hour lab session midweek, and a programming
+on Fri and Mon, a 2-hour lab session midweek, and a programming
 assignment which is due the following week. Lecture and lab attendance is mandatory. The final project is completed over the last two weeks of the quarter. There are no exams.
 
 For information about the differences between CS107 and CS107e,

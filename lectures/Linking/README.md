@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /lectures/Linking/
 title: Modules, Libraries, and Linking
 readings: |

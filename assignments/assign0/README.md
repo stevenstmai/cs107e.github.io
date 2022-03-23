@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /assignments/assign0/
 title: "Assignment 0: Git oriented"
 toc: true

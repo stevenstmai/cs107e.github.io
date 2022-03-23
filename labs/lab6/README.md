@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /labs/lab6/
 title: 'Lab 6: Drawing into the Framebuffer'
 toc: true

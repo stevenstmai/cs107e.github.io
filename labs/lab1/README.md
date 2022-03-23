@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /labs/lab1/
 title: 'Lab 1: Setup your Raspberry Pi'
 toc: true

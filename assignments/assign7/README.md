@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /assignments/assign7/
 title: 'Assignment 7: System Monitor with Interrupts'
 toc: true

@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /labs/lab3/
 title: 'Lab 3: Debugging and Testing'
 toc: true

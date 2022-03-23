@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /assignments/assign1/
 title: "Assignment 1: Implement a Larson Scanner"
 toc: true

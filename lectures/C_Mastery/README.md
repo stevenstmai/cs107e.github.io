@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /lectures/C_Mastery/
 title: C Mastery
 readings: |

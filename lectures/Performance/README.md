@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /lectures/Performance/
 title: "Anna & Maria on Performance"
 readings: |

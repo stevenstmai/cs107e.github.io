@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /assignments/assign5/
 title: 'Assignment 5: Keyboard and Simple Shell'
 toc: true

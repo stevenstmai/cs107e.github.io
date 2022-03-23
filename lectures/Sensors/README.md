@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /lectures/Sensors/
 title: Sensors
 readings: |

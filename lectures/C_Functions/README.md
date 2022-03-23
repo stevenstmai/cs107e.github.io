@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /lectures/C_Functions/
 title: C Functions 
 readings: |

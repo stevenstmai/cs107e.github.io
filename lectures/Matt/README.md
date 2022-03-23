@@ -1,5 +1,5 @@
 ---
-released: false
+released: true
 permalink: /lectures/Matt/
 title: Guest Lecture
 readings: |

@@ -1,5 +1,5 @@
 ---
-released: false
+released: true 
 permalink: /labs/lab2/
 title: 'Lab 2: Below C Level'
 toc: true
