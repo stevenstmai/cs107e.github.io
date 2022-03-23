@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/C_Pointers/
 title: C Pointers and Arrays
 readings: |

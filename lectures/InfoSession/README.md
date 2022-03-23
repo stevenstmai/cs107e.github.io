@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/InfoSession
 title: Course Info Session
 readings: |

@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/ASM/
 title: ARM assembly and machine code
 readings: |

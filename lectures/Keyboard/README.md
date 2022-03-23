@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Keyboard/
 title: Keyboards and the PS/2 Protocol
 readings: |

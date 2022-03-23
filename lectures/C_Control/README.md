@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/C_Control/
 title: From Assembly to C
 readings: |

@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Sound/
 title: Sound, Analog, and Music
 readings: |

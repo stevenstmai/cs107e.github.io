@@ -2,57 +2,57 @@
 weeks:
     # start is date of first lecture (a Monday)
     # due date-time is for assign1 (will assume weekly repeat thereafter)
-  - start_date: "2022-01-03"
-    assign1_duedate: "2022-01-18 5:00 PM"
+  - start_date: "2022-03-28"
+    assign1_duedate: "2022-04-11 5:00 PM"
     mon: /lectures/Intro/
+    wed: /lectures/ARM/
     lab: /labs/lab0/
     assign: /assignments/assign0/
-    fri: /lectures/ARM/
   -
     mon: /lectures/ASM/
+    wed: /lectures/C_Control/
     lab: /labs/lab1/
     assign: /assignments/assign1/
-    fri: /lectures/C_Control/
   -
     mon: /lectures/C_Pointers/
+    wed: /lectures/C_Functions/
     lab: /labs/lab2/
     assign: /assignments/assign2/
-    fri: /lectures/C_Functions/
   -
     mon: /lectures/Serial/
+    wed: /lectures/Linking/
     lab: /labs/lab3/
     assign: /assignments/assign3/
-    fri: /lectures/Linking/
   -
     mon: /lectures/Memory/
+    wed: /lectures/C_Mastery/
     lab: /labs/lab4/
     assign: /assignments/assign4/
-    fri: /lectures/C_Mastery/
   -
     mon: /lectures/Keyboard/
+    wed: /lectures/Framebuffer/
     lab: /labs/lab5/
     assign: /assignments/assign5/
-    fri: /lectures/Framebuffer/
   -
     mon: /lectures/Interrupts1/
+    wed: /lectures/Interrupts2/
     lab: /labs/lab6/
     assign: /assignments/assign6/
-    fri: /lectures/Interrupts2/
   -
-    mon:  Presidents Day
+    mon:  tbd
+    wed: /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    fri: /lectures/Sensors/
   -
-    mon: /lectures/Matt/
+    mon: tbd
+    fri: /lectures/Arithmetic/
     lab: /labs/projectlab1/
     assign: /project/
-    fri: /lectures/Arithmetic/
   -
     mon: /lectures/Performance/
-    lab: /labs/projectlab2/
     fri: "No lecture"
+    lab: /labs/projectlab2/
   - 
-    project_demo: "2022-03-15 9:00 AM"
-    project_due: "2022-03-16 11:59 PM"
+    project_demo: "2022-06-04 9:00 AM"
+    project_due: "2022-06-15 11:59 PM"
   -

@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /assignments/assign4/
 title: 'Assignment 4: Backtrace and Malloc'
 toc: true

@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Interrupts2/
 title: Interrupts, cont'd
 readings: |

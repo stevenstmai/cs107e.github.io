@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /labs/projectlab1/
 title: 'Lab 8: Project Team Meeting 1'
 readings: |

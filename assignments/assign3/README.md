@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /assignments/assign3/
 title: 'Assignment 3: Implement a String Formatting Library'
 toc: true

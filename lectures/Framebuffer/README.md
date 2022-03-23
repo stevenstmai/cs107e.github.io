@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Framebuffer/
 title: Graphics and the framebuffer
 readings: |

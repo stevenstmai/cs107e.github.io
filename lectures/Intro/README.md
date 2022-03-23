@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Intro/
 title: Introduction and Welcome
 readings: |

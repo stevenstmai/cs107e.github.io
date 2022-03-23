@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Serial/
 title: Communication and the Serial Protocol
 readings: |

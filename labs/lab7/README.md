@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /labs/lab7/
 title: 'Lab 7: Raspberry Pi, Interrupted'
 toc: true

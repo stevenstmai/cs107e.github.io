@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /assignments/assign6/
 title: 'Assignment 6: Graphics Library and Console'
 toc: true

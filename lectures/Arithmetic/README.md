@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Arithmetic/
 title: Computer Arithmetic
 readings: |

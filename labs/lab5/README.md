@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /labs/lab5/
 title: "Lab 5: Keyboard Surfin'"
 toc: true

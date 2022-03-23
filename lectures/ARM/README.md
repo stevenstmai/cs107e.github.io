@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/ARM/
 title: ARM processor and architecture
 readings: |

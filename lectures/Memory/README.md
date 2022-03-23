@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /lectures/Memory/
 title: Memory Management
 readings: |

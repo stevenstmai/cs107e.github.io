@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /labs/lab4/
 title: 'Lab 4: Linked and Loaded'
 toc: true
