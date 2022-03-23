@@ -55,13 +55,13 @@
         <TD colspan="2"> {% include event.html plink=week.mon %} </TD>
     </TR>
     <TR>
+        <TD style="font-size: 75%; vertical-align: middle"> Lecture <BR>{{ ith_wednesday | date: "%a %-m/%-d" }} </TD>
+        <TD colspan="2"> {% include event.html plink=week.wed %} </TD>
+    </TR>
+    <TR>
         <TD style="font-size: 75%; vertical-align: middle">Lab/assign</TD>
         <TD class="alert-success"> {% include event.html plink=week.lab %} </TD>
         <TD class="alert-primary"> {% include event.html plink=week.assign %} </TD>
-    </TR>
-    <TR>
-        <TD style="font-size: 75%; vertical-align: middle"> Lecture <BR>{{ ith_wednesday | date: "%a %-m/%-d" }} </TD>
-        <TD colspan="2"> {% include event.html plink=week.wed %} </TD>
     </TR>
 
   {% endfor %}
