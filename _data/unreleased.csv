@@ -1,7 +1,36 @@
 permalink,title,released
+"/labs/lab3/","Lab 3: Debugging and Testing",false
+"/labs/projectlab2/","Lab 9: Project Team Meeting 2",false
+"/labs/lab4/","Lab 4: Linked and Loaded",false
+"/labs/projectlab1/","Lab 8: Project Team Meeting 1",false
+"/labs/lab7/","Lab 7: Raspberry Pi, Interrupted",false
+"/labs/lab6/","Lab 6: Drawing into the Framebuffer",false
+"/labs/lab1/","Lab 1: Setup your Raspberry Pi",false
+"/labs/lab2/","Lab 2: Below C Level",false
+"/labs/lab5/","Lab 5: Keyboard Surfin'",false
+"/lectures/C_Mastery/","C Mastery",false
+"/lectures/Performance/","Anna & Maria on Performance",false
+"/lectures/Keyboard/","Keyboards and the PS/2 Protocol",false
+"/lectures/Serial/","Communication and the Serial Protocol",false
+"/lectures/Sound/","Sound, Analog, and Music",false
 "/lectures/PeterSean/","Guest",false
+"/lectures/C_Functions/","C Functions",false
+"/lectures/Framebuffer/","Graphics and the framebuffer",false
+"/lectures/C_Pointers/","C Pointers and Arrays",false
 "/lectures/Wrap/","Wrap or There and Back Again",false
+"/lectures/Linking/","Modules, Libraries, and Linking",false
+"/lectures/Arithmetic/","Computer Arithmetic",false
+"/lectures/Memory/","Memory Management",false
+"/lectures/ARM/","ARM processor and architecture",false
+"/lectures/InfoSession","Course Info Session",false
+"/lectures/Sensors/","Sensors",false
 "/lectures/MakingEngineering/","Engineering an Art Project",false
+"/lectures/Matt/","Guest Lecture",false
+"/lectures/C_Control/","From Assembly to C",false
+"/lectures/Intro/","Introduction and Welcome",false
+"/lectures/Interrupts1/","Interrupts",false
 "/lectures/AnnaLiana/","Guest",false
 "/lectures/Chris/","Chris Gregg's Projects",false
 "/lectures/ArithmeticAndSensors/","Sensors and Arithmetic",false
+"/lectures/Interrupts2/","Interrupts, cont'd",false
+"/lectures/ASM/","ARM assembly and machine code",false
