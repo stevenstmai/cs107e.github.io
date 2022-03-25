@@ -1,10 +1,10 @@
-APPLICATION = hello
+PROGRAM = hello.bin
 
 CFLAGS = -I$(CS107E)/include -g -Wall -Og -std=c99 -ffreestanding -mapcs-frame -fno-omit-frame-pointer
 LDFLAGS = -nostdlib -T memmap -L$(CS107E)/lib
 LDLIBS = -lpi -lgcc
 
-all : $(APPLICATION).bin
+all : $(PROGRAM)
 
 %.bin: %.elf
 	arm-none-eabi-objcopy $< -O binary $@
@@ -21,7 +21,7 @@ all : $(APPLICATION).bin
 %.list: %.o
 	arm-none-eabi-objdump --no-show-raw-insn -d $< > $@
 
-run: $(APPLICATION).bin
+run: $(PROGRAM)
 	rpi-run.py -p $<
 
 clean:
@@ -30,9 +30,8 @@ clean:
 .PHONY: all clean run
 .PRECIOUS: %.elf %.o
 
-# empty recipe used to disable built-in rules for native build
-%:%.c
-%:%.o
+# disable built-in rules (they are not used)
+.SUFFIXES:
 
 define CS107E_ERROR_MESSAGE
 ERROR - CS107E environment variable is not set.
@@ -45,4 +44,3 @@ endef
 ifndef CS107E
 $(error $(CS107E_ERROR_MESSAGE))
 endif
-
