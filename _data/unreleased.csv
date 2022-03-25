@@ -9,6 +9,7 @@ permalink,title,released
 "/labs/lab1/","Lab 1: Setup your Raspberry Pi",false
 "/labs/lab2/","Lab 2: Below C Level",false
 "/labs/lab5/","Lab 5: Keyboard Surfin'",false
+"/labs/lab0/","Lab 0: Orientation",false
 "/lectures/C_Mastery/","C Mastery",false
 "/lectures/Performance/","Anna & Maria on Performance",false
 "/lectures/Keyboard/","Keyboards and the PS/2 Protocol",false
@@ -41,4 +42,5 @@ permalink,title,released
 "/assignments/assign2/","Assignment 2: Implement a Clock",false
 "/assignments/assign6/","Assignment 6: Graphics Library and Console",false
 "/assignments/assign3/","Assignment 3: Implement a String Formatting Library",false
+"/assignments/assign0/","Assignment 0: Git oriented",false
 "/assignments/assign1/","Assignment 1: Implement a Larson Scanner",false
