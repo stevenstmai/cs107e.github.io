@@ -1,5 +1,5 @@
 ---
-released: true
+released: false
 permalink: /project/
 title: 'Final Project'
 toc: true
