@@ -238,7 +238,7 @@ As you explore, see if you find answers to such questions as:
 + Breadboards make no sense to me. How do I know which holes are connected?
 + Pat demo'ed this cool ARM simulator in lecture. How can I play with that myself?
 + I'm working hard to write tests, but I just don't feel like I'm covering my bases. What am I doing wrong? Is there advice on software testing more broadly?
-+ My partner and I are looking for inspiration for project ideas. Are there examples of what other groups have done in the past?
++ I am curious about the final project. Are there examples of what other groups have done in the past to take inspiration from?
 
 If a topic has you curious or confused, start by checking the course website for helpful information. If can't find the information you need, reach out on Ed or come visit us in office hours. We want you to always feel comfortable coming to us with any questions you have, as well as suggestions on how we can improve the quality of the resources available to you. You're ready for the third check-in question [^3].
 
