@@ -14,13 +14,17 @@ Else, when starting each new lab or assignment, first do a `git pull` in your co
 $ cd $CS107E
 $ git pull
 ```
-
-The lab materials are distributed in a separate git repository. We recommend that you store your copy of each lab under your `cs107e_home`. Change to that directory now and clone labX (changing X to be 1, 2, etc.):
+Next, update your local labs repo with the latest starter code for the labs by pulling any changes from the remote repo (changing X to be 1, 2, etc.):
 
 ```console
-$ cd ~/cs107e_home
-$ git clone https://github.com/cs107e/labX
+$ cd ~/cs107e_home/labs
+$ git checkout dev
+$ git pull --allow-unrelated-histories starter-code labX-starter
 ```
+
+After these commands, your assignments repo is on `dev` branch and all files are up to date. Use `ls` to see the files now in your repo.
+
+(Note: It may be the case that the `git pull` command will open up `vim` and display the message "Merge branch 'labX-starter' of github.com:cs107e/assignments-mirror into dev". Confirm this merge by typing `:x`, which will save and exit `vim`.)
 
 ## Assignment Workflow
 
