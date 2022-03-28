@@ -4,10 +4,10 @@
 {% if page contains "duedate" %}
 {% assign duedate = page.duedate %}
 {% else %}
-{% assign first = site.data.schedule.weeks[0].assign1_duedate | date: "%s" %}
+{% assign first = site.data.schedule.weeks[0].assign0_duedate | date: "%s" %}
 {% assign one_day = 86400 %}
 {% assign one_week = one_day | times: 7 %}
-{% assign delta = include.n | minus: 1 | times: one_week %}
+{% assign delta = include.n | times: one_week %}
 {% assign duedate = first | plus: delta %}
 {% endif %}
 

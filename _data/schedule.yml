@@ -1,9 +1,9 @@
 # Data to populate schedule (lecture topics, labs, assignments)
 weeks:
     # start is date of first lecture (a Monday)
-    # due date-time is for assign1 (will assume weekly repeat thereafter)
+    # assign0_duedate is second week Tuesday 5pm (assume weekly repeat for assign1-7)
   - start_date: "2022-03-28"
-    assign1_duedate: "2022-03-28 5:00 PM"
+    assign0_duedate: "2022-04-05 5:00 PM"
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/
