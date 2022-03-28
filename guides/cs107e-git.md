@@ -6,21 +6,31 @@ toc: true
 _Written by CS 107E TAs Jesse Doan and Matt Trost with material borrowed from labs and assignments_, 
 updated by Maria Paula Hernandez for Spring 2022. 
 
-## Configure `mycode` repo
+In this course, we use git repositories to share code between you and us. 
+These repositories are hosted on GitHub. You will be using git commands such as `git pull`
+to access starter code and `git pull` to submit your work. You can read more about
+the general use of `git` in our [git guide](/guides/git). In this document, we go through the
+details of the `mycode` repo and specific git workflow we will be using in this course for
+distributing starter code and submitting your work.
 
-The following instructions are for the first time git setup of you assignment and 
-lab repo, refered to from now on as `mycode` repo.  
+## Configure local `mycode` repo
+Each student has their own `mycode` repo, which manages all of the code for the coures assignments and labs.
 
-Our course repositories will be hosted on GitHub. You will download assignment and lab
-starter files from GitHub and upload your completed work to GitHub for grading.  Each student will be given a private assignments and labs repository inside our [CS107e GitHub organization](https://github.com/cs107e).  The repository that resides on GitHub is your __remote__ mycode repo. It will be connected to the __local__ mycode repo on your computer where you will work on the assignments.  Set up the local mycode repo by following the steps below. Be sure to ask for help if you run into any snags.
+We will create a personal repository for each student within our [CS107e GitHub organization](https://github.com/cs107e).  
+Your personal repository that resides on GitHub 
+is your __remote__ mycode repo. It will be connected to 
+the __local__ mycode repo on your computer where you will work on your code.
 
-- __Step 1: Accept GitHub invitations__
+The following instructions are used to configure your local `mycode` repo.  Do these steps __once__
+ at the beginning of the course. Be sure to ask for help if you run into any snags.
 
-    You should have received two email invitations from GitHub: an invitation for read-only access to the starter code repo <https://github.com/cs107e/code-mirror.git> and another invitation for read-write access to your private mycode repo. Once you receive and accept both invitations, you're ready to proceed.
+### Step 1: Accept GitHub invitations
 
--   __Step 2: Create SSH key and add to GitHub account__
+- You should have received two email invitations from GitHub: an invitation for read-only access to the starter code repo <https://github.com/cs107e/code-mirror.git> and another invitation for read-write access to your personal repo. Once you receive and accept both invitations, you're ready to proceed.
 
-    In order to interact with GitHub from the command line, you'll need set up an SSH
+### Step 2: Create SSH key and add to GitHub account
+
+- To streamline interacting with GitHub from the command line, you'll need to add an SSH
     key on your GitHub account. An SSH key is a way to authenticate
     that you are who you say you are. To create an SSH key, enter the following
     command in your shell:
@@ -48,25 +58,28 @@ starter files from GitHub and upload your completed work to GitHub for grading. 
     Now add your new SSH key to your GitHub account by following [these
     instructions](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account).
 
-- __Step 3: Clone code repo__
 
-    **Note**: In this step and the steps to follow, where you see
-`[YOUR-GITHUB-USERNAME]`, replace with your __actual GitHub username__.
+### Step 3: Clone repo
 
-    After accepting the GitHub invitation and setting up your SSH key, you can now clone your code repo.
-    In your browser, visit the page
-    `https://github.com/cs107e/spring22-[YOUR-GITHUB-USERNAME]` to see the contents of your remote repo.
-    It should have only a single file: `README.md`, which lists the name of your
-    repo and nothing more. Upon confirming this, switch to the terminal and execute
-    the following commands to clone the repo, which creates a local copy on your
-    machine of the remote repo on GitHub. We recommend that you store your local repo in the parent directory `cs107e_home` that you made during the install process.
+> **Note** In any commands below that reference `[YOUR-GITHUB-USERNAME]`, be sure replace with your __actual GitHub username__.
+{: .callout-warning}
+
+In your browser, visit the page
+`https://github.com/cs107e/spring22-[YOUR-GITHUB-USERNAME]` to see the contents of your remote repo.
+It should have only a single file: `README.md`, which lists the name of your
+repo and nothing more.
+
+- After accepting the GitHub invitation and setting up your SSH key, you can now set up a local clone of your repo. 
+   This is a copy of the remote repo that lives locally on your computer.
+   We recommend that you store your local repo in the parent directory `cs107e_home` that you made during the install process.
+   Execute the following terminal commands to make your local `mycode` repo.
 
     ```console
     $ cd ~/cs107e_home
     $ git clone git@github.com:cs107e/spring22-[YOUR-GITHUB-USERNAME].git mycode
     ```
 
-    Confirm that the local cloned repo matches the remote repo by cd'ing and and examining its contents.
+    Confirm that the local repo matches the remote repo by cd'ing and and examining its contents.
 
     ```console
     $ cd mycode
@@ -74,11 +87,12 @@ starter files from GitHub and upload your completed work to GitHub for grading. 
     $ cat README.md
     ```
 
-- __Step 4: Create dev branch__
+### Step 4: Create `dev` branch (local and remote)
 
-    The master branch in your code repo is write-protected which means
-    that you will not be able to directly modify the master branch on GitHub. Instead, you'll create a separate `dev` branch where you will do your work. To create this
-    branch, change to your code repo and execute the
+- The `master` branch in your repo is write-protected which means
+    that you will not be able to directly modify this branch on GitHub. Instead, you'll do your work
+    on a separate `dev` branch. To create this
+    branch, change to your repo and execute the
     following commands:
 
     ```console
@@ -88,15 +102,25 @@ starter files from GitHub and upload your completed work to GitHub for grading. 
     $ git branch
     ```
 
-    When you run the first `git branch` command, notice how there is only a single
-    branch listed: `master` and there is an asterisk next to `master`,
-    which means that it is the currently checked out branch. When you run the second
-    `git branch` command, you should have two branches--`master` and `dev`--and the
-    asterisk marking the currently checked out branch is now next to `dev`.
+    When you execute the first `git branch` command, notice how there is only a single
+    branch listed: `master` and there is an asterisk next to `master`. This asterisk
+    identifies which is the currently checked out branch. When you run the second
+    `git branch` command, you should have two branches (`master` and `dev`) and the
+    asterisk is now next to `dev`.
 
-- __Step 5: Get starter files__
+    The new `dev` branch you created only exists in your local repo; next you will 
+    connect it to a new remote branch of the same name. Use `git branch` to confirm that you are on the
+    `dev` branch and execute the following command:
 
-    Next, you must configure your local `mycode` repo to have an additional remote connection to the starter code repo so that it can also synchronize with that repo. Execute the following commands to add a remote for `starter-code`
+    ```console
+    $ git push --set-upstream origin dev
+    ```
+
+    If you return to your GitHub repo in your browser, you should now find a `dev` branch in the branches dropdown menu.
+
+### Step 5: Add starter-code remote
+
+- Now you will configure your local repo to have an additional remote connection to the starter code repo so that it can also synchronize with that repo. Execute the following commands to add a remote for `starter-code` on the `code-mirror` repository for which you early accepted the invitation.
 
     ```console
     $ git remote -v
@@ -104,46 +128,29 @@ starter files from GitHub and upload your completed work to GitHub for grading. 
     $ git remote -v
     ```
 
-    After running the first `git remote -v` command, you should have only a single
+    When executing the first `git remote -v` command, you should have only a single
     remote: `origin`. `origin` is a shorthand way of referring to your remote repo
     on GitHub. The `git remote add` command adds a second remote. This second remote
     is `starter-code`, which is a shorthand way of referring to the starter code
     repo on GitHub. The second `git remote -v` should show you both remotes:
     `origin` and `starter-code` and the URLs that they represent.
 
-    To get the starter files, verify that you're on the `dev` branch and execute the
+    To get the starter files for `lab0`, verify that you're on the `dev` branch and execute the
     following commands:
 
     ```console
-    $ git pull --allow-unrelated-histories starter-code assign0-starter
+    $ git pull --allow-unrelated-histories starter-code lab0-starter
     $ ls
     ```
 
-    The `git pull` command will open up `vim` and display the message "Merge branch
-'assign0-starter' of github.com:cs107e/code-mirror into dev". Confirm
-this merge by typing `:x`, which will save and exit `vim`. 
+    When pulling new files, the `git pull` command may open your editor and display the message 
+    "Merge branch 'labX-starter' into dev". 
+    Confirm the merge by saving and exiting the editor.
 
-- __Step 6: Create remote branch__
-
-    A few steps earlier, you created a `dev` branch in your repo. Unfortunately, this
-    branch is only local. That is, it doesn't exist in your remote repo on GitHub
-    yet. Let's fix this now. First confirm that you're on the `dev` branch. Then,
-    run the following command:
-
-    ```console
-    $ git push --set-upstream origin dev
-    ```
-
-    This command creates the `dev` branch on the `origin` remote (your GitHub repo)
-and connects this remote `dev` to your local `dev`.
-
-    If you return to your GitHub repo in your browser, you should now find a `dev` branch in the branches dropdown menu.
-
-###Organization of the `mycode` repo
-Your `mycode` repo will be organized by lab and assignment. Each lab and assignment 
-will have its own subdirectory 'labX' and 'assignX' which will contain all of the code 
-required for you to complete your lab and write your assignments. For each lab and assignment, 
-you will follow the steps below to get the starter code in your `mycode` repo. 
+## Organization of the `mycode` repo
+Your `mycode` repo is organized by lab and assignment. Pulling the starter files for
+a lab or assignment will add a subdirectory named `labX` or `assignX` that contains the
+associated starter code. Follow the steps below to get the starter code in your `mycode` repo. 
 
 ## Lab workflow
 ### Get lab starter code
@@ -190,16 +197,19 @@ After these commands, your repo is on `dev` branch and all files are up to date.
 
 (Note: the `git pull` command may open up your editor and display the message "Merge branch 'assignX-starter' into dev". Confirm the merge by saving and exiting the editor.)
 
-{% comment %}
 ### Assignment commit
-You will work on your assignments in your local `mycode` repo. However, you must inform git 
-of the changes you made locally. The commands below add the changed file to the staging index, commit staged changes (save to local repo), and push the commit to GitHub (update remote repo):
+You will work on your assignments in your local `mycode` repo. As you edit, we recommend that you
+make regular git commits to record a snapshot of your work and track your progress. Each commit is
+saved in your local repo. You can follow up with a `git push` to synch those changes with your remote
+repo. You can consider your remote repo as a sort of "offsite backup".
+
+The commands below add a changed file to the staging index, commit staged changes (save to local repo), and push the commit to GitHub (update remote repo):
 
 ```console
 $ git status
 ```
 The 'git status' command will show you the files you have edited locally that have 
-not yet been pushed to your remote repo. Now, lets stage them for commiting using 
+not yet been pushed to your remote repo. Now, let's add them to staging index for commit using 
 the command 'git add'. 
 
 ```console
@@ -240,10 +250,10 @@ that you write detailed commit messages.**
 > important messages about the state of your repo.
 > {: .callout-info}
 
-**Note:** GitHub will show commits for `Branch: master` by default. To see the code and
-changes for a specific assignment branch, switch to the branch by selecting it from `Branch` drop-down menu :
+**Note:** GitHub will show commits for `Branch: master` by default. To see activity
+on the `dev` branch, switch to it by selecting from `Branch` drop-down menu :
 
-<img title="Changing to another branch." src="images/03-change-branch.png" width="400">
+<img title="Changing to another branch." src="../images/03-change-branch.png" width="400">
 
 
 ### Assignment tags
@@ -274,11 +284,11 @@ $ git push --tags --force
 ```
 
 Additionally, if you complete the assignment extension, please tag the commit 
-corresponding to the extension with the tag assignX-extension. This can be the 
+corresponding to the extension with the tag `assignX-extension`. This can be the 
 same commit as your basic functionality, or it can be a different one. However, 
-we will not grade your extension if you have not tagged it. 
+we will only grade an extension if it has the proper tag. 
 
-See the section below entitled 'Assingment Submission' for a checklist of steps to 
+See the section below entitled 'Assignment Submission' for a checklist of steps to 
 complete when you submit your assignment. 
 
 
@@ -313,7 +323,7 @@ menu.
 
 Click the 'Compare & Pull Request' button.
 
-<img title="We're on the right branch, so let's make a new pull request." src="images/04-new-pull-request.png" width="500">
+<img title="We're on the right branch, so let's make a new pull request." src="../images/04-new-pull-request.png" width="500">
 
 If the 'Compare & Pull Request' button isn't available, click 'Contribute', then 
 'Open Pull Request'. 
@@ -322,22 +332,22 @@ Now you will see text entry boxes for describing the pull request, followed by
 a list of the commits that you have made and a line-by-line comparison (`diff`)
 of the changed files.
 
-Set the Title to "Submission Pull Request" and leave the description blan. 
-<img title="Ready to create the pull request." src="images/06-create-pull-request.png" width="500">
+Set the Title to "Submission Pull Request" and leave the description blank. 
+<img title="Ready to create the pull request." src="../images/06-create-pull-request.png" width="500">
 
 Click 'Create pull request', which will submit the pull request and take you to
 a page to view it:
 
-<img title="Pull request page." src="images/07-pull-request.png" width="500">
+<img title="Pull request page." src="../images/07-pull-request.png" width="500">
 
 The pull request page will update to reflect any changes that are pushed after
 the initial submission. This page will also be used by graders to provide feedback
 on your submissions.
 
-If you need to update your submission simply edit your files, commit, retag, and push to add
-it to the pull request. There is no need to make another pull request. Rember to only 
-retag with assignX-submission if you are resubmitting before the deadline to avoid 
-getting marked as late. Past the deadline, please use the convention assignX-submission-update. 
+If you need to update your submission simply edit your files, commit, move the tag, and push to add
+it to the pull request. There is no need to make another pull request. Remember to only 
+retag with `assignX-submit` if you are resubmitting before the deadline to avoid 
+getting marked as late. 
 
 ### Assignment submission
 
@@ -345,20 +355,19 @@ This guide contains a lot of information. The following is a checklist to follow
 you are submitting your assignments. 
 
 Submitting your assignments before the deadline, or during the grace period: 
-1. Ensure all of your code is committed and pushed (See section 'Assignment Commit' 
-2. Tag your code with 'assignx-submit' (See Section Assignment Tags') 
-3. Tag your extension with 'assignX-extension' 
+1. Ensure all of your code is committed and pushed (See section 'Assignment Commit')
+2. Tag with 'assignX-submit' (See Section 'Assignment Tags') 
+3. If you completed the extension to be graded, tag with 'assignX-extension' 
 4. Ensure you have an open Pull Request (See Section 'Assignment Pull Request', though 
 you do not have to follow the steps again as long as you have a pull request open) 
-5. If you edit your code before the grade period deadline, make sure to commit again and move your 
-tags to the correct commit as outlined in 'Assingment Commit' 
+5. If you edited your code before the grace period ends and want to replace a previous submission, commit again and move your 
+tags to the new commit as outlined in 'Assignment Commit' 
 
-Submitting your assignment after the grace period deadline or resubmitting your code: 
+Submitting your assignment after the grace period ends or resubmitting your code for re-test: 
 1. Ensure all of your code is committed and pushed. 
-2. Tag your code with 'assignX-retest' 
+2. Tag with `assignX-retest`
 3. Ensure you have an open Pull Request.  
 
-|
 ### Assignment grading feedback
 
 Functionality Grades: 
