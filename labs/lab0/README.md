@@ -90,7 +90,7 @@ To prepare, please do the following before coming to this lab:
 Use the __Final check steps__ at the end of the [installation guide](/guides/install) to confirm that the needed tools are installed and your environment is correctly configured. If you hit any snags during install, bring those issues to lab and we can help you resolve. If you're good to go [^1], go ahead and move on.
 
 ### 2. Set up your local `mycode` repository
-Follow the Instructions in __Configure mycode repo__ at the start of the [Git workflow guide](/guides/cs107e-git) to 
+Follow the Instructions in __Configure mycode repo__ at the start of the [Git workflow guide](https://cs107e.github.io/guides/cs107e-git/) to 
 configure your `mycode` repo. Read through the rest of the Git Workflow Guide to understand how you 
 will get lab and assignment starter code as well as submit your assignments. 
 
