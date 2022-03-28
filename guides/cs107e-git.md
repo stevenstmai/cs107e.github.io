@@ -88,14 +88,18 @@ __Some of the steps below are explained in assign0, move text into this document
 > TODO explain submit in terms of commit/push/tags/PR (also how to update submit)
 {: .callout-danger}
 
-### Assignment re-test
+### Assignment grading feedback
 
-> TODO explain re-test submit in terms of commit/push/tag
+> TODO where to find style comments, issues, logs
 {: .callout-danger}
 
+### Assignment re-test
+
+> TODO how to fix open issues, update code in terms of commit/push/tag
+{: .callout-danger}
 
 ## Decide what to do with text below?
-From here down gets bogged down in complex scenario, not sure this helps and I would prefer the focus be clearly explaining the basics (i.e. the steps above). Maybe just cut from here to end until we have time to clean it up?
+From here down gets bogged down in complex scenario and fussiness about time details, not sure this helps and I would prefer the focus be clearly explaining the basics (i.e. the steps above). Maybe just cut from here to end until we have time to clean it up?
 
 1. For any submission (on-time or resubmission), you first need to `git add` all of the files that you want to add to this commit. You then perform `git commit -m "insert short but meaningful commit message"` followed by `git push`.
 2. Next, you also need to tag your commit as your submission with either `git tag assignX-submission` if it's on-time (e.g. before the grace period ends) or `git tag assignX-submission-updated` if it's a resubmission (e.g. fixing code to address bugs and failing tests for eligible resubmission -- extension not included). You then push the tag with `git push --tags`.
