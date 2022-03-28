@@ -3,10 +3,12 @@ title: "Guide: Git Workflow for CS107e"
 toc: true
 ---
 
-_Written by CS 107E TAs Jesse Doan and Matt Trost with material borrowed from labs and assignments_
+_Written by CS 107E TAs Jesse Doan and Matt Trost with material borrowed from labs and assignments_, 
+updated by Maria Paula Hernandez for Spring 2022. 
 
 ## Configure `mycode` repo
- 
+
+{% comment %} 
 > TODO Remove setup instructions from lab0 and put in this document (lab0 can refer to this page)
 {: .callout-danger}
 
@@ -18,6 +20,7 @@ Steps:
 - create dev branch, upstream
 
 Explain organization `mycode` repo, separate subdirectory per each lab and assignment.
+{% endcomment %}
 
 ## Lab workflow
 ### Get lab starter code
@@ -64,7 +67,7 @@ After these commands, your repo is on `dev` branch and all files are up to date.
 
 (Note: the `git pull` command may open up your editor and display the message "Merge branch 'assignX-starter' into dev". Confirm the merge by saving and exiting the editor.)
 
-
+{% comment %}
 ### Assignment commit
 
 __Some of the steps below are explained in assign0, move text into this document instead (assign0
@@ -100,7 +103,7 @@ __Some of the steps below are explained in assign0, move text into this document
 
 ## Decide what to do with text below?
 From here down gets bogged down in complex scenario and fussiness about time details, not sure this helps and I would prefer the focus be clearly explaining the basics (i.e. the steps above). Maybe just cut from here to end until we have time to clean it up?
-
+{% endcomment %}
 1. For any submission (on-time or resubmission), you first need to `git add` all of the files that you want to add to this commit. You then perform `git commit -m "insert short but meaningful commit message"` followed by `git push`.
 2. Next, you also need to tag your commit as your submission with either `git tag assignX-submission` if it's on-time (e.g. before the grace period ends) or `git tag assignX-submission-updated` if it's a resubmission (e.g. fixing code to address bugs and failing tests for eligible resubmission -- extension not included). You then push the tag with `git push --tags`.
 3. After submitting your code, check to see if you have an open pull request on GitHub to merge the dev branch into the master branch. If you have an open pull request, you can safely skip the rest of this step (you only need one open pull request at a time for grading). If not, you should create a pull request by going to GitHub -> Pull Requests -> New Pull Request -> Verify that dev is being merged to master (e.g. base: master <- compare: dev) -> Name your Pull Request -> Create Pull Request.
