@@ -1,62 +1,101 @@
 ---
 title: "Guide: Git Workflow for CS107e"
+toc: true
 ---
 
 _Written by CS 107E TAs Jesse Doan and Matt Trost with material borrowed from labs and assignments_
 
-## Lab Workflow
+## Configure `mycode` repo
+ 
+> TODO Remove setup instructions from lab0 and put in this document (lab0 can refer to this page)
+{: .callout-danger}
 
-If this is your first lab, see [Lab 0](https://cs107e.github.io/labs/lab0/) for setup.
+Steps:
+- accept invites (personal + mirror)
+- configure ssh key
+- make `mycode` clone in ~/cs107e_home
+- set code-mirror as remote (note change in name -- was assignments-mirror, now is code-mirror)
+- create dev branch, upstream
 
-Else, when starting each new lab or assignment, first do a `git pull` in your copy of the `cs107e.github.io` repository to ensure your courseware files are up to date.
+Explain organization `mycode` repo, separate subdirectory per each lab and assignment.
+
+## Lab workflow
+### Get lab starter code
+
+When starting a new lab, do a `git pull` in your `cs107e.github.io` repository to ensure your courseware files are up to date.
 
 ```console
 $ cd $CS107E
 $ git pull
 ```
-Next, update your local labs repo with the latest starter code for the labs by pulling any changes from the remote repo (changing X to be 1, 2, etc.):
+Update your local `mycode` repo by checking out the `dev` branch and pulling the lab starter files from the remote (change labX to lab1, lab2, as appropriate):
 
 ```console
-$ cd ~/cs107e_home/labs
+$ cd ~/cs107e_home/mycode
 $ git checkout dev
 $ git pull --allow-unrelated-histories starter-code labX-starter
 ```
 
-After these commands, your assignments repo is on `dev` branch and all files are up to date. Use `ls` to see the files now in your repo.
+After these commands, your repo is on `dev` branch and all files are up to date. `cd` to the `labX` folder and use `ls` to see the new files.
 
-(Note: It may be the case that the `git pull` command will open up `vim` and display the message "Merge branch 'labX-starter' of github.com:cs107e/assignments-mirror into dev". Confirm this merge by typing `:x`, which will save and exit `vim`.)
+(Note: the `git pull` command may open up your editor and display the message "Merge branch 'labX-starter' into dev". Confirm the merge by saving and exiting the editor.)
 
-## Assignment Workflow
+You don't need to commit or submit lab code to be graded. The staff will review your code during lab and check off your participation. 
 
-### Assignment Setup
+## Assignment workflow
+### Get assignment starter code
 
-If this is your first assignment, see [Assign 0](https://cs107e.github.io/assignments/assign0/) for setup.
-
-Else, before starting each new assignment, first do a `git pull` in your copy of the `cs107e.github.io` repository to ensure your courseware files are up to date.
+When starting a new assignment, do a `git pull` in your `cs107e.github.io` repository to ensure your courseware files are up to date.
 
 ```console
-$ cd ~/cs107e_home/cs107e.github.io
+$ cd $CS107E
 $ git pull
 ```
 
-Next, update your local assignments repo with the latest starter code for the assignments by pulling any changes from the remote repo (changing X to be 1, 2, etc.):
+Update your local `mycode` repo by checking out the `dev` branch and pulling the assignment starter files from the remote (change assignX to assign1, assign2, as appropriate):
 
 ```console
-$ cd ~/cs107e_home/assignments
+$ cd ~/cs107e_home/mycode
 $ git checkout dev
 $ git pull --allow-unrelated-histories starter-code assignX-starter
 ```
 
-After these commands, your assignments repo is on `dev` branch and all files are up to date. Use `ls` to see the files now in your repo.
+After these commands, your repo is on `dev` branch and all files are up to date. `cd` to the `assignX` folder and use `ls` to see the new files.
 
-(Note: It may be the case that the `git pull` command will open up `vim` and display the message "Merge branch 'assignX-starter' of github.com:cs107e/assignments-mirror into dev". Confirm this merge by typing `:x`, which will save and exit `vim`.)
+(Note: the `git pull` command may open up your editor and display the message "Merge branch 'assignX-starter' into dev". Confirm the merge by saving and exiting the editor.)
 
 
-### Assignment Submission
+### Assignment commit
 
-Following these instructions properly will make it much easier for us to get your assignments graded and back to you in a timely manner.
+__Some of the steps below are explained in assign0, move text into this document instead (assign0
+ can refer to this page)__
 
-As a summary:
+> TODO explain add/commit and encourage consistent, regular commit/push
+{: .callout-danger}
+
+### Assignment tags
+
+> TODO explain how to set a tag and how to push tags, including how to move a tag, use of tags for extension
+{: .callout-danger}
+
+### Assignment pull request
+
+> TODO explain how to open PR, how to check PR is open
+{: .callout-danger}
+
+### Assignment submit
+
+> TODO explain submit in terms of commit/push/tags/PR (also how to update submit)
+{: .callout-danger}
+
+### Assignment re-test
+
+> TODO explain re-test submit in terms of commit/push/tag
+{: .callout-danger}
+
+
+## Decide what to do with text below?
+From here down gets bogged down in complex scenario, not sure this helps and I would prefer the focus be clearly explaining the basics (i.e. the steps above). Maybe just cut from here to end until we have time to clean it up?
 
 1. For any submission (on-time or resubmission), you first need to `git add` all of the files that you want to add to this commit. You then perform `git commit -m "insert short but meaningful commit message"` followed by `git push`.
 2. Next, you also need to tag your commit as your submission with either `git tag assignX-submission` if it's on-time (e.g. before the grace period ends) or `git tag assignX-submission-updated` if it's a resubmission (e.g. fixing code to address bugs and failing tests for eligible resubmission -- extension not included). You then push the tag with `git push --tags`.
