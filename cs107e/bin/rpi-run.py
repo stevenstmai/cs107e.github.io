@@ -4,10 +4,11 @@
 -------- VERSION numbering ----------
         First rpi-install.py by Pat Hanrahan, 2015-16
 0.8     Edited by Omar Rizwan 2017-04-23.
-0.91    Updated by Julie Zelenski winter quarter 2017-18
+0.91    Updated by Julie Zelenski Winter 2018
 1.0     WSL support added Nov 2018 by mchang
-1.1     Updated winter 2020 (python3, wsl)
-2.0     Bump major version number when rename to rpi-run.py winter 2021
+1.1     Updated Winter 2020 (python3, wsl)
+2.0     Bump major version number when rename to rpi-run.py Winter 2021
+2.1     Add exit code for integration with auto-test Spring 2022
 -----------------------------------
 
 This bootloader client is used to upload binary image to execute on
@@ -36,10 +37,10 @@ from serial.tools import list_ports
 from xmodem import XMODEM
 
 # See VERSION numbering above
-VERSION = "2.0"
+VERSION = "2.1"
 
 # Set the vendor and product ID of the serial unit.
-# The CP2102 units used fall 2018, winter 2019, winter 2020 all have
+# The CP2102 units used during years 2018 - 2022 all have
 # vendor ID 0x10C4 and product ID 0xEA60.
 SERIAL_VID = "10C4"
 SERIAL_PID = "EA60"
@@ -56,12 +57,23 @@ class bcolors:
     FAILRED = BOLD + RED
     ENDC = '\033[0m'
 
-def error(shortmsg, msg=""):
+# Added code to communicate exit status
+class exitcode:
+    OK = 0
+    EOT = 0
+    USAGE = 2
+    ERROR = 3
+    USER_CANCEL = 4
+    BOOTLOAD_FAIL = 5
+    SERIAL_ERROR = 6
+    TIMEOUT = 7
+
+def error(shortmsg, msg="", code=exitcode.ERROR):
     sys.stderr.write("\n%s: %s\n" % (
         args.exename,
         bcolors.FAILRED + shortmsg + bcolors.ENDC + "\n" + msg
     ))
-    sys.exit(1)
+    sys.exit(code)
 
 # We used to just have a preset list --
 # /dev/tty.SLAB_USBtoUART for macOS + Silicon Labs driver,
@@ -94,7 +106,7 @@ def find_serial_port():
 I looked through the serial devices on this computer, and did not
 find a device associated with a CP2102 USB-to-serial adapter. Is
 your Pi plugged in?
-""")
+""", code=exitcode.SERIAL_ERROR)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="This script sends a binary file to the Raspberry Pi bootloader. Version %s" % VERSION)
@@ -167,12 +179,12 @@ if __name__ == "__main__":
         if e.errno in [errno.EBUSY, errno.EWOULDBLOCK]:
             error("The serial device `%s` is busy." % portname, """
 Do you have a `screen` or `rpi-run.py` currently active on that device?
-""")
+""", code=exitcode.SERIAL_ERROR)
         else:
-            error("Unable to open serial device `%s`.\n%s." % (portname, str(e)))
+            error("Unable to open serial device `%s`.\n%s." % (portname, str(e)), code=exitcode.SERIAL_ERROR)
 
     if not args.file:   # if no file to send, report status of serial device and exit
-        sys.exit(0)
+        sys.exit(exitcode.OK)
 
     stream = args.file
     printq("Sending `%s` (%d bytes): " % (stream.name, os.stat(stream.name).st_size), end='')
@@ -202,13 +214,13 @@ I waited a few seconds for an acknowledgement from the bootloader
 and didn't hear anything. Do you need to reset your Pi?
 
 Further help at https://cs107e.github.io/guides/bootloader/#troubleshooting
-""")
+""", code=exitcode.BOOTLOAD_FAIL)
     except serial.serialutil.SerialException as ex:
-        error(str(ex))
+        error(str(ex), code=exitcode.SERIAL_ERROR)
     except KeyboardInterrupt:
         error("Canceled by user pressing Ctrl-C.", """
 You should probably restart the Pi, since you interrupted it mid-load.
-""")
+""", code=exitcode.USER_CANCEL)
 
     printq(bcolors.OKGREEN + "\nSuccessfully sent!" + bcolors.ENDC)
     stream.close()
@@ -219,10 +231,10 @@ You should probably restart the Pi, since you interrupted it mid-load.
             while True:
                 if args.t > 0 and time.time() - last_comm > args.t:
                     printq("\n%s: waited %d seconds with no data received from Pi. Detaching." % (args.exename, args.t))
-                    break
+                    sys.exit(exitcode.TIMEOUT)
                 if args.T != -1 and time.time() - initial_comm > args.T:
                     printq("\n%s: ran for a total of %d seconds. Detaching." % (args.exename, args.T))
-                    break
+                    sys.exit(exitcode.TIMEOUT)
                 #  grade scripts invoke -T, don't print this message during autograde
                 if args.T == -1 and select.select([sys.stdin,],[],[],0.0)[0]:  # user has typed something on stdin
                     sys.stdin.readline()  # consume input and discard
@@ -230,7 +242,7 @@ You should probably restart the Pi, since you interrupted it mid-load.
                 c = getc(1)
                 if c == b'\x04':   # End of transmission.
                     printq("\n%s: received EOT from Pi. Detaching." % args.exename)
-                    break
+                    sys.exit(exitcode.EOT)
                 if c is None: continue
                 last_comm = time.time()
 
@@ -238,7 +250,7 @@ You should probably restart the Pi, since you interrupted it mid-load.
                 sys.stdout.flush()
         except KeyboardInterrupt:
             printq("\n%s: received Ctrl-C from user. Detaching." % args.exename)
-            sys.exit(0)
+            sys.exit(exitcode.USER_CANCEL)
         except Exception as ex:
             print(ex)
             pass
@@ -252,4 +264,4 @@ You should probably restart the Pi, since you interrupted it mid-load.
         else:
             printq("%s: screen canceled." % args.exename)
 
-    sys.exit(0)
+    sys.exit(exitcode.OK)  # successful bootload, nothing further is known
