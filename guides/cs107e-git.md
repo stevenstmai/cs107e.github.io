@@ -3,8 +3,7 @@ title: "Guide: Git workflow for CS107e"
 toc: true
 ---
 
-_Written by CS 107E TAs Jesse Doan and Matt Trost with material borrowed from labs and assignments_, 
-updated by Maria Paula Hernandez for Spring 2022. 
+_Written by Maria Paula Hernandez, incorporating material from past documents_. 
 
 In this course, we use git repositories to share code between you and us. 
 These repositories are hosted on GitHub. You will be using git commands such as `git pull`
@@ -149,7 +148,19 @@ repo and nothing more.
 ## Organization of the `mycode` repo
 Your `mycode` repo is organized by lab and assignment. Pulling the starter files for
 a lab or assignment will add a subdirectory named `labX` or `assignX` that contains the
-associated starter code. Follow the steps below to get the starter code in your `mycode` repo. 
+associated starter code. 
+
+```console
+$ cd ~/cs107e_home/mycode
+$ ls
+assign0/   assign2/    assign4/    lab1/       lab3/       mylib/
+assign1/   assign3/    lab0/       lab2/       lab4/
+$ ls assign1
+Makefile    larson.s
+```
+
+Your typical workflow will be to change to the subfolder for the particular lab or assignment 
+you are currently working on. Within that subfolder, you edit files, build and run your code, make git commits, and so on.
 
 ## Lab workflow
 
