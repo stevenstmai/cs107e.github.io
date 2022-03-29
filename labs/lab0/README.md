@@ -86,13 +86,25 @@ To prepare, please do the following before coming to this lab:
 
 <a name="step1"></a>
 
-### 1. Confirm install
-Use the __Final check steps__ at the end of the [installation guide](/guides/install) to confirm that the needed tools are installed and your environment is correctly configured. If you hit any snags during install, bring those issues to lab and we can help you resolve. If you're good to go [^1], go ahead and move on.
+### 1. Confirm install of development tools
+Use the __Final check steps__ at the end of the [installation guide](/guides/install) to confirm that the needed tools are installed and your environment is correctly configured. If you hit any snags during install, bring those issues to lab and we can help you resolve. If you're good to go [^1], you are ready to move on.
 
 ### 2. Set up your local `mycode` repository
-Follow the Instructions in __Configure mycode repo__ at the start of the [Git workflow guide](https://cs107e.github.io/guides/cs107e-git/) to 
-configure your `mycode` repo. Read through the rest of the Git Workflow Guide to understand how you 
-will get lab and assignment starter code as well as submit your assignments. 
+Follow the instructions to __Configure mycode repo__ in our [Git workflow guide](/guides/cs107e-git).
+Read through the rest of the guide to understand the workflow for retrieving starter code and submitting your work.
+
+Use the standard workflow below to pull courseware updates and get the `lab0` starter files:
+
+```console
+$ cd $CS107E
+$ git pull
+$ cd ~/cs107e_home/mycode
+$ git checkout dev
+$ git pull --allow-unrelated-histories starter-code lab0-starter
+```
+
+If you run into any trouble, grab a staff member for help resolving. After pulling the starter files into your repo,
+you should have a `lab0` folder containing an `editors` subfolder that holds two text files. [^2]
 
 ### 3. Website scavenger hunt
 Our course website is where you'll find lecture slides, lab writeups, and assignment specifications, along with a trove of additional resources such as our course guides and curated set of readings, resources, and demos. We encourage you to explore a bit and become acquainted with what's available and how it's organized.  The __Search__ tab is handy way to find matching content across all pages on the site.
@@ -142,15 +154,15 @@ Every programmer has their own (usually strongly held) opinion about which edito
 
 No matter which editor you decide to make your home base, we think it's a worthwhile investment for everyone to learn enough Emacs and Vim that you could open a file, make an edit, and save & close the file without any trouble (this skill will serve you well in the future, like if you have to quickly edit code on systems you've just ssh'ed into).
 
-Try out Emacs now. The command below will open the editor on a new file named `emacs_is_better.txt` in the directory `~/`. (Note: on more recent macOS versions, use `mg` in place of `emacs`. This is a lightweight emacs-style editor that comes pre-installed. You can also install regular emacs via homebrew.)
+Try out Emacs now. Change directory into the subfolder named `editors` within `lab0` in your `mycode` repo. The folder contains two text files, `emacs_is_better.txt`and `vim_is_better.txt`.  Use the command below to open a file in the emacs editor. (Note: on recent macOS versions, use `mg` in place of `emacs`. `mg` is a lightweight emacs-style editor that comes pre-installed. You can also install full emacs via homebrew.)
 ```console
-$ emacs ~/emacs_is_better.txt
+$ emacs emacs_is_better.txt
 ```
 If that worked, type away! Once you're ready to save your document and exit Emacs, type `ctrl+x ctrl+s` to save and `ctrl+x ctrl+c` to exit.
 
-Now that you've tried Emacs, let's get a taste of Vim. To open a new file in `~/` named `vim_is_better.txt`, type:
+Now that you've tried Emacs, let's get a taste of Vim. Use this comment to open vim on the text file:
 ```console
-$ vim ~/vim_is_better.txt
+$ vim vim_is_better.txt
 ```
 To edit in Vim, there's actually another step. We need to switch out of command mode into insert mode. Type `i` and you should be able to start writing away! Once you feel ready to quit, type `ESC` (the escape character) and you'll be back into command mode. From there, to save and quit, type `:wq`.
 
@@ -190,7 +202,7 @@ The four points we'd like you to check in with us for this lab are listed below:
 
 [^1]: All is installed and working in your development environment.
 
-[^2]: You have set up your local assignments repo and are able to push and pull to your remote.
+[^2]: You have set up your local mycode repo and are able to pull starter code.
 
 [^3]: You are comfortable with finding information on the course website.
 
