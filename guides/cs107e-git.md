@@ -1,5 +1,5 @@
 ---
-title: "Guide: Git Workflow for CS107e"
+title: "Guide: Git workflow for CS107e"
 toc: true
 ---
 
@@ -26,7 +26,7 @@ The following instructions are used to configure your local `mycode` repo.  Do t
 
 ### Step 1: Accept GitHub invitations
 
-- You should have received two email invitations from GitHub: an invitation for read-only access to the starter code repo <https://github.com/cs107e/code-mirror.git> and another invitation for read-write access to your personal repo. Once you receive and accept both invitations, you're ready to proceed.
+- You should have received two email invitations from GitHub: an invitation for read-only access to the starter code repo <https://github.com/cs107e/code-mirror.git> and another invitation for read-write access to your personal repo (named `quarter-YourGitHubUsername`). Once you receive and accept both invitations, you're ready to proceed.
 
 ### Step 2: Create SSH key and add to GitHub account
 
@@ -55,8 +55,7 @@ The following instructions are used to configure your local `mycode` repo.  Do t
     private key and should never be shared. `id_rsa.pub` is your public key and can
     (and should) be shared.
 
-    Now add your new SSH key to your GitHub account by following [these
-    instructions](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account).
+    Now follow [these instructions](https://docs.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) to add your SSH key to your GitHub account.
 
 
 ### Step 3: Clone repo
@@ -69,9 +68,9 @@ In your browser, visit the page
 It should have only a single file: `README.md`, which lists the name of your
 repo and nothing more.
 
-- After accepting the GitHub invitation and setting up your SSH key, you can now set up a local clone of your repo. 
+- After accepting the GitHub invitation and setting up your SSH key, you can make a local clone of your repo. 
    This is a copy of the remote repo that lives locally on your computer.
-   We recommend that you store your local repo in the parent directory `cs107e_home` that you made during the install process.
+   We recommend that you store your repo in the parent directory `cs107e_home` that you made during the install process.
    Execute the following terminal commands to make your local `mycode` repo.
 
     ```console
@@ -79,7 +78,7 @@ repo and nothing more.
     $ git clone git@github.com:cs107e/spring22-[YOUR-GITHUB-USERNAME].git mycode
     ```
 
-    Confirm that the local repo matches the remote repo by cd'ing and and examining its contents.
+    Change to your repo and use `ls` confirm the files match those you see when browsing your remote repo on GitHub.
 
     ```console
     $ cd mycode
@@ -120,7 +119,7 @@ repo and nothing more.
 
 ### Step 5: Add starter-code remote
 
-- Now you will configure your local repo to have an additional remote connection to the starter code repo so that it can also synchronize with that repo. Execute the following commands to add a remote for `starter-code` on the `code-mirror` repository for which you early accepted the invitation.
+- Now you will configure your local repo to have an additional remote connection to the starter code repo so that it can synchronize with it. Execute the following commands to add a `starter-code` on the `code-mirror` repository for which you early accepted the invitation.
 
     ```console
     $ git remote -v
@@ -153,7 +152,6 @@ a lab or assignment will add a subdirectory named `labX` or `assignX` that conta
 associated starter code. Follow the steps below to get the starter code in your `mycode` repo. 
 
 ## Lab workflow
-### Get lab starter code
 
 When starting a new lab, do a `git pull` in your `cs107e.github.io` repository to ensure your courseware files are up to date.
 
@@ -208,17 +206,17 @@ The commands below add a changed file to the staging index, commit staged change
 ```console
 $ git status
 ```
-The 'git status' command will show you the files you have edited locally that have 
-not yet been pushed to your remote repo. Now, let's add them to staging index for commit using 
-the command 'git add'. 
+The `git status` command will show you the files you have edited locally that have 
+not yet been pushed to your remote repo. Now, let's add two edited files to the staging index
+using `git add`, then commit and push those changes.
 
 ```console
-$ git add 'filename1'.txt 'filename2'.c
-$ git commit -m "Short but descriptive message about the changes you are commiting"
+$ git add filename.c other.c
+$ git commit -m "Short but descriptive message about the changes you are committing"
 $ git push
 ```
 
-Note: using the command 'git add .' will add all changed files to be staged for commit. 
+Note: using the command `git add .` will add all changed files in the repo to the staging index.
 
 You can use `git log` to view the history of commits in your local repo. When
 you enter the log, you can exit out by pressing "q" on your keyboard.
@@ -250,47 +248,47 @@ that you write detailed commit messages.**
 > important messages about the state of your repo.
 > {: .callout-info}
 
-**Note:** GitHub will show commits for `Branch: master` by default. To see activity
-on the `dev` branch, switch to it by selecting from `Branch` drop-down menu :
+**Note:** GitHub will show commits for the `master` branch by default. To see activity
+on the `dev` branch, switch to it by selecting from the drop-down menu :
 
-<img title="Changing to another branch." src="../images/03-change-branch.png" width="400">
-
+![Github change to another branch](../images/github-change-branch.png){: .zoom .w-75}
 
 ### Assignment tags
 
 In order to grade your assignments, we'll run tests on your submission to verify that it works as
-expected. You identify which commit that we test by using a tag. We'll
-also use this tag to determine your submission time. Note that the submission time recorded
-will correspond to the time you pushed the tag commit, not the time the tag was 
-pushed. In Git, a tag is simply a way of giving a name to a particular commit. 
-Create a tag to identify this assignment's submission by doing the following:
+expected. You indicate which commit you want us to test by applying a tag.  
+In Git, a _tag_ is simply a way of giving a name to a particular commit. We'll
+also use this tag to determine your submission time. The submission time recorded
+will correspond to the time you pushed the tag commit.
+Create a tag to identify which commit if your submission by doing the following:
 
 ```console
 $ git tag assignX-submit
 $ git push --tags
 ```
 
-Be sure you always name your submission flag with the format `assignX-submit`
+A submission tag should always be of the format `assignX-submit`
 where X is the particular assignment number. Now, go to your repo on GitHub and
 verify that your newly created tag shows up in the "Tags" section of the branches
 dropdown menu.
 
-If you commit additional changes after creating the tag, you can
-move the tag to a later commit with the following command (note that you need to push `--force` when moving a tag that already exists).
+If after making your initial tag, you need to commit additional changes to include with
+your submission, you can move the tag to a later commit with the following command 
+(note that you need to push `--force` when moving a tag that already exists).
 
 ```console
 $ git tag -f assignx-submit
 $ git push --tags --force
 ```
 
-Additionally, if you complete the assignment extension, please tag the commit 
-corresponding to the extension with the tag `assignX-extension`. This can be the 
-same commit as your basic functionality, or it can be a different one. However, 
-we will only grade an extension if it has the proper tag. 
+Additionally, if you complete the assignment extension, mark the tag `assignX-extension`
+on the commit containing the code for the extension. Your extension commit can be the 
+same commit as your basic functionality, or it can be a different one. We use the extension
+tag to identify which submissions have attempted the extension. If there is no extension
+tag, we will not test/grade it and will assume the extension was not attempted.
 
 See the section below entitled 'Assignment Submission' for a checklist of steps to 
 complete when you submit your assignment. 
-
 
 ### Assignment pull request
 
@@ -311,7 +309,6 @@ commits into master. Team members use the pull request to review the
 proposed changes and provide comments. When a team member approves the pull request,
 GitHub automatically merges the commits back into the base branch.
 
-
 You will only have to make a pull request once. After you confirm you have done 
 it in this assignment, it will remain open throughout the quarter and allow us to 
 grade your assignments. If you accidentally close the pull request, just make 
@@ -321,100 +318,91 @@ View the contents of your remote repository on the web at `https://github.com/cs
 Switch to the branch `dev` by selecting it from the "Branch" drop-down
 menu.
 
-Click the 'Compare & Pull Request' button.
+Click 'Contribute', then 'Open pull request'. 
 
-<img title="We're on the right branch, so let's make a new pull request." src="../images/04-new-pull-request.png" width="500">
-
-If the 'Compare & Pull Request' button isn't available, click 'Contribute', then 
-'Open Pull Request'. 
+![Github open pull request](../images/github-open-pr.png){: .zoom .w-75}
 
 Now you will see text entry boxes for describing the pull request, followed by
 a list of the commits that you have made and a line-by-line comparison (`diff`)
 of the changed files.
 
-Set the Title to "Submission Pull Request" and leave the description blank. 
-<img title="Ready to create the pull request." src="../images/06-create-pull-request.png" width="500">
+In the title field, enter "Submission pull request" and leave the comment description blank. 
+![Github create pull request](../images/github-create-pr.png){: .zoom .w-75}
 
 Click 'Create pull request', which will submit the pull request and take you to
 a page to view it:
 
-<img title="Pull request page." src="../images/07-pull-request.png" width="500">
+![Github view pull request](../images/github-view-pr.png){: .zoom .w-75}
 
 The pull request page will update to reflect any changes that are pushed after
-the initial submission. This page will also be used by graders to provide feedback
+the initial submission. This page will also be used by the grader to provide feedback
 on your submissions.
 
-If you need to update your submission simply edit your files, commit, move the tag, and push to add
-it to the pull request. There is no need to make another pull request. Remember to only 
-retag with `assignX-submit` if you are resubmitting before the deadline to avoid 
-getting marked as late. 
+If you need to update your submission, simply edit your files, commit, re-tag with `assignX-submit`, and push to add
+it to the pull request. There is no need to make another pull request.
 
 ### Assignment submission
 
-This guide contains a lot of information. The following is a checklist to follow when 
+This guide contains a lot of information. Here is a checklist to follow when 
 you are submitting your assignments. 
 
-Submitting your assignments before the deadline, or during the grace period: 
-1. Ensure all of your code is committed and pushed (See section 'Assignment Commit')
-2. Tag with 'assignX-submit' (See Section 'Assignment Tags') 
-3. If you completed the extension to be graded, tag with 'assignX-extension' 
-4. Ensure you have an open Pull Request (See Section 'Assignment Pull Request', though 
-you do not have to follow the steps again as long as you have a pull request open) 
-5. If you edited your code before the grace period ends and want to replace a previous submission, commit again and move your 
-tags to the new commit as outlined in 'Assignment Commit' 
+Submitting your assignments before the deadline or during the grace period: 
+1. Ensure all of your code is committed and pushed (see [Assignment commit](#assignment-commit))
+1. Tag with `assignX-submit` and, if applicable, `assignX-extension` (see [Assignment tags](#assignment-tags))
+1. Ensure you have an open Pull Request (see [Assignment pull request](#assignment-pull-request)) 
+1. If you have already made a submission, but wish to make another before the grace period ends,
+    you may replace your previous submission. Edit your code, commit your changes, move your
+    tags to this new commit, and push. You do not need to change your open Pull Request.
+1. You can confirm what you have submitted by browsing your remote repo on GitHub. Choose `assignX-submit` tag from the dropdown menu to review the submitted files and their contents.
 
-Submitting your assignment after the grace period ends or resubmitting your code for re-test: 
+After receiving our grading feedback, you will have the opportunity to submit fixes
+ and request a re-test of open issues. To submit fixes for re-test:
 1. Ensure all of your code is committed and pushed. 
 2. Tag with `assignX-retest`
 3. Ensure you have an open Pull Request.  
 
 ### Assignment grading feedback
 
-Functionality Grades: 
+Feedback on __functionality__
 
-When your code is run through the autograder and released to your repo, the bugs in 
-your code will be recorded in the 'Issues' tab in your remote Github repository. 
-When you click on the tab, you will encounter a list of your open issues and a link 
-to your assignment logs. If you click on the logs, the output generated from your code by
-the autograder will be displayed to you. Additionally, your logs folder will contain 
-the output of the staff implementation generated by the autograder. Comparing the staff 
-output to your own will give you insight as to why your code failed the provided test. 
+To evaluate functionality, we run your code through a sequence of automated tests 
+and report any bugs found by posting 
+issues on your remote Github repository. 
+See the `Issues` tab for a list of your open issues (bugs). Each issue has
+a link to the log files. The 'student' log file is the output generated when running
+your code and the 'staff' log file is the output generated by our staff solution.  Comparing the staff 
+output to your own will give you insight as to why your code failed the test. 
 As you fix your bugs and submit your debugged code, the issues will be closed in the 'Issues' 
 tab and the logs will disappear from your logs folder. Your goal will be to close all 
-high priority issues. The next section will describe how to resubmit your code when you 
-have fixed your bugs. 
+high priority issues. Below we discuss the process for submitting your code for re-testing after 
+fixing bugs. 
 
-You will be able to see your grades for each assignment in the README.md document 
-of your master branch. 
+Feedback on __quality__ (code style and tests)
 
-Style grades: 
+To evaluate quality, the grader reviews your code and test coverage. To read the grader comments,
+view your submission pull request on the 'Pull Requests' tab of your remote Github repo. The grader
+comments will be added on the 'Conversation' tab.
 
-In order to view your style grades, you will click on the 'Pull Requests' tab of your remote 
-Github repo, then click on the open pull request. The CAs will have left comments on your style in tests 
-that you will be able to find in the 'Conversation' tab of the Pull Request landing page. 
+### Assignment bug fixes/re-test
 
-###Assignment retest
+After receiving our grading feedback, you may resubmit bug fixes to resolve 
+open issues. To request a re-test after making fixes, tag the commit with `assignX-retest`.
+You may do this as multiple times as you make further changes, simply keep moving the
+`assignX-retest` tag to the commit that you want re-tested. 
+We will do one re-test run per week on all repos with updated retest tags.
+We communicate the re-test results by updating your repo 'Issues' and logs folder
+to show which issues are now closed by your fixes. 
 
-After the assignment deadline, you may resubmit your code in order to correct 
-your bugs. In order to do so, please tag the updated commit 
-that you would like us to grade with the format `assignX-retest`.
-This will be the only tag we grade for assignments past their deadline.
-You may do this as multiple times as you make further changes. 
-Note that every time you make additional changes after creating the tag you must move the tag 
-to the commit that you want graded as outlined above in the section 'Assignment Tags'
-. Each time we run your code, we will check if the tag has been updated and if so, run your submission through the 
-grader and communicate the updated grade to you. This will update your 'Issues' as well 
-as your logs folder as you 'close' issues by fixing the bugs. 
+Note that not all code is eligible for re-test. 
 
-Note that not all code is eligible for resubmission. 
+Code that is eligible for re-test: 
+- Core functionality for assignments 2-7. 
 
-Code that is eligible for resubmission: 
-1. Basic functionality for assignments 2-7. 
+Code that is not eligible for re-test: 
+- Extensions 
+- Quality (code style/tests)
+- Assignment 1 larson scanner and Assignment 2 clock functionality ( 
+you may re-test bug fixes for assign2 gpio and timer modules). 
 
-Code that is not eligible for resubmission: 
-1. Extensions 
-2. Style/Tests 
-3. Assignment 1 code and clock functionality code for assign2 (note that for assign2, 
-you may resubmit code to fix your GPIO library, but your clock functionality will
-only be graded at the deadline). 
+Code ineligible for re-test will only be graded on what was committed at the time of the original submission.
 
