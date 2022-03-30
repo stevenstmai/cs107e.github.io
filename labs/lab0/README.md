@@ -82,6 +82,14 @@ To prepare, please do the following before coming to this lab:
     - [emacs](https://cs107.stanford.edu/resources/emacs.html)
     - [vim](https://cs107.stanford.edu/resources/vim.html)
 
+## Lab Cadence
+
+Usually, this section will contain information about 'Must Finish' sections of lab 
+and 'Nice to Have' in order to inform your cadence and let you know how to budget your time. 
+'Must Finish' sections should be completed during lab, but 'Nice to Have' sections 
+can be done on your own time or during OH. 
+Lab0 is all imporant to get you all set up, so let's get started!
+
 ## Lab exercises
 
 <a name="step1"></a>
