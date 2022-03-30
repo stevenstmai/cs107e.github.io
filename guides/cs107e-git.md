@@ -184,6 +184,7 @@ After these commands, your repo is on `dev` branch and all files are up to date.
 
 You don't need to commit or submit lab code to be graded. The staff will review your code during lab and check off your participation. 
 
+<a name="assign-workflow"></a>
 ## Assignment workflow
 ### Get assignment starter code
 
