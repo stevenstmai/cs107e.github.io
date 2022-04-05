@@ -105,7 +105,7 @@ to help you improve your code quality.
 Please incorporate our feedback into future assignments;
 it will improve your grade and more importantly your coding style.
 
-Effectively managing your time to hit deadlines with working code is an accomplishment that we reward in the __timeliness__ category. Your timeliness score is boosted by making your submissions on-time and resolving outstanding GitHub issues in a timely manner. 
+Effectively managing your time to hit deadlines with working code is an accomplishment that we reward in the __timeliness__ category. Your timeliness score is boosted by making your submissions pass tests on-time (or within the grace period).
 
 
 For details on overall course grades, see our [course grading
