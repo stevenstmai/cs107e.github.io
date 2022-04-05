@@ -14,35 +14,36 @@ Your course grade comes from your efforts in lab, assignments, and the final pro
 
 
 If you have your sights set on earning an __A__ course grade, you will need consistently __outstanding__ work:
-+ Attend and participate in all labs
++ Attend and participate in all labs.
 + Assignments ([how assignments are graded](/assignments#grading))
-    - Core functionality is complete/correct
-        - Passing all Priority 1 and Priority 2 tests for all assignments (revise and resubmit ok)
-    - Code quality (style and tests) trending to `+`
-    - Consistent good timeliness (on-time submissions, swift resolution of issues)
-    - 3 or more assignment extensions successfully completed
-    - Earn the full system bonus for using all your own code on the last assignment
-+ Outstanding final project, excellent execution
+    - Core functionality is complete/correct:
+        - Passing all Priority 1 and Priority 2 tests for all assignments (revise and resubmit ok).
+    - Significant Core functionality is completed on time:
+        - By end-of-grace-period for a given assignment, >70% P1s must be passing.
+    - Code quality (style and tests) trending to `+`.
+    - 3 or more assignment extensions successfully completed.
+    - Earn the full system bonus for using all your own code on the last assignment.
++ Outstanding final project, excellent execution.
 
 For a __B__ course grade, we expect consistently __solid__ work:
-+ Attend and participate in all labs
++ Attend and participate in all labs.
 + Assignments
-    - Core functionality is mostly complete/correct
-        - Passing all Priority 1 tests for all assignments (revise and resubmit ok)
-    - Code quality (style and tests) trending to `ok`
-    - Ok timeliness (within grace period, all Priority 1 issues eventually resolved by Assignment 7)
-    - One extension attempted or full system bonus earned
-+ Good final project, satisfactory execution
+    - Core functionality is mostly complete/correct:
+        - Passing all Priority 1 tests for all assignments (revise and resubmit ok).
+    - Code quality (style and tests) trending to `ok`.
+    - One extension attempted or full system bonus earned.
++ Good final project, satisfactory execution.
 
 Work that is not completed satisfactorily will earn grades **C and below**.
 
+**NOTE:** The metrics above will guarantee that you receive an  A range  or B range respectively. However, they are guidelines and it is possible to get an A in other ways – the course staff may decide on areas of flexibility to apply to all students at the end of the quarter. In other words, these are “sufficient but not necessary.” 
 
 ## Late Policy
 
 The course moves at a steady clip and the weekly assignments build on one other. In our experience, one of the strongest factors in student success has been the dedication to stay on pace. Learning to set a schedule and manage your time to hit deadlines is a valuable skill to develop and an accomplishment you can be proud of.  We designed our policy to encourage and reward good habits, but knowing that things come up, we have a standing grace period that provides a little flexibility if you need it. 
 
-- The submission deadline for the weekly assignments is 5pm Tuesday. An ontime submission earns a small bonus in timeliness. Kudos to you for pacing your work and shipping on schedule! 
-- There is also a 48-hour grace period after the deadline in which we accept late submissions. There is no penalty or cap applied to late submissions within the grace period, but they do not earn the timeliness bonus. 
+- The submission deadline for the weekly assignments is 5pm Tuesday.
+- There is also a 48-hour grace period after the deadline in which we accept late submissions. There is no penalty or cap applied to late submissions within the grace period.
 - Late submissions beyond the grace period are arranged with the course staff as warranted for exceptional circumstances.
 - The final project must be submitted on time without exception.
 
