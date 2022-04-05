@@ -53,14 +53,6 @@ To prepare, please do the following before coming to lab:
     -  [using the bootloader](/guides/bootloader) to send programs to the Pi
     -  [one page of ARM](/guides/arm) assembly
 
-
-## Virtual lab
-- Revew the instructions from [Lab0](../lab0/#the-ohyay-virtual-lab) on the setup for the ohyay virtual lab.
-
-> This lab has a few activities that use a multimeter. If one of your table group has access to a multimeter, please use it! If your table has more than one person with a multimeter, consider swapping an extra multimeter-owner into a different group. If your group has no multimeter, work through what you expect the experimental result to be and check-in with one of the staff to confirm your understanding.
-{: .callout-info}
-
-
 ## Lab exercises
 
 ### 0. Pull lab starter code
