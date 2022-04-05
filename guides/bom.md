@@ -31,8 +31,8 @@ Each student is given a CS107e parts kit containing the materials needed for the
     - four __caps__ for the pushbuttons (we give 1 each of 4 different colors): [blue](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-blue-color.html), [yellow](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-yellow-color.html), [red](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-red-color.html), [green](https://www.taydaelectronics.com/electromechanical/switches-key-pad/tact-switch/round-tactile-push-button-cap-green-color.html)
     - four 2N3904 __transistors__ (BJTs) <https://www.taydaelectronics.com/2n3904-npn-general-propose-transistor.html>
     - a USB MicroSD __card reader__ <https://www.aliexpress.com/item/1005002286511762.html>
-    - a 2-4 pin __header strip__ <https://www.taydaelectronics.com/40-pin-2-54-mm-single-row-pin-header-strip.html>
-    - mini __claw clips__ (for cable management) <https://www.amazon.com/gp/product/B089R9R8MH>
+    - a 2-4 pin __header strip__ <https://www.taydaelectronics.com/40-pin-2-54-mm-single-row-pin-header-strip.html> (spring 2022 these will not be in the kits -- if you want to to add reset pins to your board, we will give you the header strip!)
+    - mini __claw clips__ (for cable management) <https://www.amazon.com/gp/product/B089R9R8MH> (spring 2022 these will not be in the kits, but if you want some to organize your cables, let us know)
 
 
 
