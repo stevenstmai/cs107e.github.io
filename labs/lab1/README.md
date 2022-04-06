@@ -82,7 +82,7 @@ To confirm that your developer tools are installed correctly, build the
 the lab subdirectory that contains the `blink` example and build the
 `blink` program using these commands:
 ```console
-$ cd lab1/code/blink
+$ cd lab1/blink
 $ arm-none-eabi-as blink.s -o blink.o
 $ arm-none-eabi-objcopy blink.o -O binary blink.bin
 ```
