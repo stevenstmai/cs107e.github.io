@@ -336,7 +336,7 @@ This script sends a binary file to the Raspberry Pi bootloader. Version 2.0
 ...
 ```
 
-Let's try bootloading a program. On your laptop, change to the `lab1/code/blink/`
+Let's try bootloading a program. On your laptop, change to the `lab1/blink/`
 directory where you built `blink.bin` in exercise 1.
 
 Use this command to send `blink.bin` to the bootloader:
@@ -363,7 +363,7 @@ Reset your Pi now and re-run the blink program. Hoorah, hoorah, hoorah!! 👏 Sh
 
 ### 7. Study the blink program
 
-Below is the blink program that Pat wrote in Monday's lecture. This code is available in the file `lab1/code/blink/blink.s` and also reproduced below.
+Below is the blink program that Pat wrote in Monday's lecture. This code is available in the file `lab1/blink/blink.s` and also reproduced below.
 
 ```
 .equ DELAY, 0x3F0000
@@ -435,7 +435,7 @@ of 2.
 
 <A name="button"></A>
 ### 8.  Adding a button
-The final lab exercise is to study the `button` program and build a breadboard circuit to test the program. This button program is in the file `lab1/code/button/button.s`.
+The final lab exercise is to study the `button` program and build a breadboard circuit to test the program. This button program is in the file `lab1/button/button.s`.
 
 The button program reads the state of a button connected to GPIO 10 and turns off the LED on GPIO 20 when the button is pressed.
 
