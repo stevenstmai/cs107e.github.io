@@ -55,9 +55,9 @@ First things first: join a lab table and make introductions. Congratulate each o
 
 This lab has four exercises and we recommend that you spend no more than 20 minutes each on the first three, reserving the second hour of lab for the breadboarding task. We want you to leave lab with a solid start on the hardware setup needed for your next assignment.
 
-## Lab Cadence: 
+### Lab Cadence: 
 
-# Nice to have:
+#### Nice to have:
 
 1. C to Assembly 
 2. Makefiles 
@@ -65,7 +65,7 @@ This lab has four exercises and we recommend that you spend no more than 20 minu
 home. That is, when you reach the recommended time, move on so you have time for the 
 mandatory lab sections). 
 
-# Obligatory: 
+#### Obligatory: 
 3. Testing 
 4. Wire up display breadboard 
 (These two sections will be crucial in getting started with Assignment 2. Exercise 3
