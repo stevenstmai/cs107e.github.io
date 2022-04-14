@@ -9,6 +9,7 @@
 1.1     Updated Winter 2020 (python3, wsl)
 2.0     Bump major version number when rename to rpi-run.py Winter 2021
 2.1     Add exit code for integration with auto-test Spring 2022
+2.2     Removed awkward timeout handling, better for lsi to handle
 -----------------------------------
 
 This bootloader client is used to upload binary image to execute on
@@ -18,10 +19,8 @@ Communicates over serial port using xmodem protocol.
 
 Should work with:
 - Python 3
-- any version of the on-Pi bootloader
-- macOS and Linux
-
-Maybe Cygwin and Ubuntu on Windows as well.
+- macOS, linux, WSL/ubuntu on Windows
+- on-Pi bootloader distributed by cs107e
 
 Dependencies:
 
@@ -29,15 +28,15 @@ Dependencies:
 
 Defaults to CP2102 device that matches specified vendor/product id.
 See below for where to set these IDs to match unit in use.
-
 """
+
 from __future__ import print_function
 import argparse, errno, logging, os, platform, re, select, serial, subprocess, sys, time
 from serial.tools import list_ports
 from xmodem import XMODEM
 
 # See VERSION numbering above
-VERSION = "2.1"
+VERSION = "2.2"
 
 # Set the vendor and product ID of the serial unit.
 # The CP2102 units used during years 2018 - 2022 all have
@@ -57,22 +56,23 @@ class bcolors:
     FAILRED = BOLD + RED
     ENDC = '\033[0m'
 
+# if stdout is not a terminal, don't output color codes, set them to empty string
+if not sys.stdout.isatty():
+    [setattr(bcolors, v,'') for v in vars(bcolors) if not v.startswith('_')]
+
 # Added code to communicate exit status
 class exitcode:
     OK = 0
     EOT = 0
     USAGE = 2
-    ERROR = 3
-    USER_CANCEL = 4
-    BOOTLOAD_FAIL = 5
-    SERIAL_ERROR = 6
-    TIMEOUT = 7
+    USER_CANCEL = 3
+    BOOTLOAD_FAIL = 4
+    SERIAL_ERROR = 5
 
-def error(shortmsg, msg="", code=exitcode.ERROR):
-    sys.stderr.write("\n%s: %s\n" % (
-        args.exename,
-        bcolors.FAILRED + shortmsg + bcolors.ENDC + "\n" + msg
-    ))
+def error(shortmsg, explanation="", code=1):
+    sys.stderr.write(f"\n{args.exename}: {bcolors.FAILRED}{shortmsg}{bcolors.ENDC}")
+    # only output long-winded explanation at terminal
+    if sys.stderr.isatty(): sys.stderr.write(f"\n\n{explanation}\n")
     sys.exit(code)
 
 # We used to just have a preset list --
@@ -102,25 +102,19 @@ def find_serial_port():
     if portname is not None:
         return portname
     else:
-        error("Could not find CP2102 serial device.", """
-I looked through the serial devices on this computer, and did not
-find a device associated with a CP2102 USB-to-serial adapter. Is
-your Pi plugged in?
-""", code=exitcode.SERIAL_ERROR)
+        error("Could not find CP2102 serial device.",
+              "I looked through the serial devices on this computer, and did not\n"
+              "find a device associated with a CP2102 USB-to-serial adapter. Is\n"
+              "your Pi plugged in?",
+              code=exitcode.SERIAL_ERROR)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="This script sends a binary file to the Raspberry Pi bootloader. Version %s" % VERSION)
+    parser = argparse.ArgumentParser(description=f"This script sends a binary file to the Raspberry Pi bootloader. Version {VERSION}")
 
     parser.add_argument('file', help="binary file to upload", type=argparse.FileType('rb'), nargs='?')
     parser.add_argument('-d', help="serial device (e.g. /dev/ttyUSB0), otherwise search for CP2102 device", type=str, dest="port", metavar="device")
     parser.add_argument('-v', help="verbose logging of serial activity", action="store_true")
     parser.add_argument('-q', help=argparse.SUPPRESS, action="store_true")
-
-    timeout = parser.add_mutually_exclusive_group()
-    # -t specifies read imeout since last receiving a byte
-    timeout.add_argument('-t', help=argparse.SUPPRESS, action="store", type=int, default=-1)
-    # -T specifies total amount of time to read before closing channel
-    timeout.add_argument('-T', help=argparse.SUPPRESS, action="store", type=int, default=-1)
 
     after = parser.add_mutually_exclusive_group()
     after.add_argument('-p', help="open serial connection and print output received from Pi",
@@ -177,17 +171,17 @@ if __name__ == "__main__":
 
     except (OSError, serial.serialutil.SerialException) as e:
         if e.errno in [errno.EBUSY, errno.EWOULDBLOCK]:
-            error("The serial device `%s` is busy." % portname, """
-Do you have a `screen` or `rpi-run.py` currently active on that device?
-""", code=exitcode.SERIAL_ERROR)
+            error(f"The serial device `{portname}` is busy.",
+                    "Do you have a `screen` or `rpi-run.py` currently active on that device?",
+                    code=exitcode.SERIAL_ERROR)
         else:
-            error("Unable to open serial device `%s`.\n%s." % (portname, str(e)), code=exitcode.SERIAL_ERROR)
+            error(f"Unable to open serial device `{portname}`, {str(e)}", code=exitcode.SERIAL_ERROR)
 
     if not args.file:   # if no file to send, report status of serial device and exit
         sys.exit(exitcode.OK)
 
     stream = args.file
-    printq("Sending `%s` (%d bytes): " % (stream.name, os.stat(stream.name).st_size), end='')
+    printq(f"Sending `{stream.name}` ({os.stat(stream.name).st_size} bytes): ", end='')
 
     success = False
 
@@ -209,59 +203,46 @@ Do you have a `screen` or `rpi-run.py` currently active on that device?
         xmodem = XMODEM(getc, putc)
         success = xmodem.send(stream, retry=5)
         if not success:
-            error("Send failed (bootloader not listening?)", """
-I waited a few seconds for an acknowledgement from the bootloader
-and didn't hear anything. Do you need to reset your Pi?
-
-Further help at https://cs107e.github.io/guides/bootloader/#troubleshooting
-""", code=exitcode.BOOTLOAD_FAIL)
+            error("Send failed (bootloader not listening?)",
+                  "I waited a few seconds for an acknowledgement from the bootloader\n"
+                  "and didn't hear anything. Do you need to reset your Pi?\n\n"
+                  "Further help at https://cs107e.github.io/guides/bootloader/#troubleshooting",
+                  code=exitcode.BOOTLOAD_FAIL)
     except serial.serialutil.SerialException as ex:
         error(str(ex), code=exitcode.SERIAL_ERROR)
     except KeyboardInterrupt:
-        error("Canceled by user pressing Ctrl-C.", """
-You should probably restart the Pi, since you interrupted it mid-load.
-""", code=exitcode.USER_CANCEL)
+        error("Canceled by user pressing Ctrl-C.",
+              "You should probably restart the Pi, since you interrupted it mid-load.",
+              code=exitcode.USER_CANCEL)
 
     printq(bcolors.OKGREEN + "\nSuccessfully sent!" + bcolors.ENDC)
     stream.close()
 
-    initial_comm = last_comm = time.time()
     if args.p:  # after sending, -p will loop and echo every char received
         try:
             while True:
-                if args.t > 0 and time.time() - last_comm > args.t:
-                    printq("\n%s: waited %d seconds with no data received from Pi. Detaching." % (args.exename, args.t))
-                    sys.exit(exitcode.TIMEOUT)
-                if args.T != -1 and time.time() - initial_comm > args.T:
-                    printq("\n%s: ran for a total of %d seconds. Detaching." % (args.exename, args.T))
-                    sys.exit(exitcode.TIMEOUT)
-                #  grade scripts invoke -T, don't print this message during autograde
-                if args.T == -1 and select.select([sys.stdin,],[],[],0.0)[0]:  # user has typed something on stdin
+                if sys.stdout.isatty() and select.select([sys.stdin,],[],[],0.0)[0]:  # user has typed something on stdin
                     sys.stdin.readline()  # consume input and discard
                     print(bcolors.FAILRED + "Huh? Did you intend to type that on your PS/2 keyboard?" + bcolors.ENDC)
                 c = getc(1)
                 if c == b'\x04':   # End of transmission.
-                    printq("\n%s: received EOT from Pi. Detaching." % args.exename)
+                    printq(f"\n{args.exename}: received EOT from Pi. Detaching.")
                     sys.exit(exitcode.EOT)
                 if c is None: continue
-                last_comm = time.time()
-
                 print(c.decode('ascii', 'replace'), end='')
                 sys.stdout.flush()
         except KeyboardInterrupt:
-            printq("\n%s: received Ctrl-C from user. Detaching." % args.exename)
+            printq(f"\n{args.exename}: received Ctrl-C from user. Detaching.")
             sys.exit(exitcode.USER_CANCEL)
-        except Exception as ex:
-            print(ex)
-            pass
+        except serial.serialutil.SerialException as ex:
+            error(str(ex), code=exitcode.SERIAL_ERROR)
 
     elif args.s:  # after sending, -s will exec `screen`, name the session so can find it later
-        screen_cmd = "screen -S rpi %s 115200" % (portname)
-        print("\n%s" % screen_cmd)
-        ans = input("Start screen? [y/n] ")
+        screen_cmd = f"screen -S rpi {portname} 115200"
+        ans = input(f"{args.exename}: ({screen_cmd}) Start screen now? [y/n] ")
         if ans.lower() == "y":
             sys.exit(os.system(screen_cmd))
         else:
-            printq("%s: screen canceled." % args.exename)
+            printq(f"{args.exename}: screen canceled.")
 
     sys.exit(exitcode.OK)  # successful bootload, nothing further is known
