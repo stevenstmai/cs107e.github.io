@@ -159,7 +159,7 @@ After implementing the functions, you are ready to test. The test program `test_
 
 Now bathed in the green light of your now-comprehensive test cases for the gpio module, you have completed your first Raspberry Pi module -- __Congratulations!__ 🏆
 
-The `gpio` module is a key component of the library you are building. Several of the modules you will implement in later assignments will layer on `gpio`. Given your efforts to throughly test and vet the module, you will be able to confidently rely on it going forward!
+The `gpio` module is a key component of the library you are building. Several of the modules you will implement in later assignments will layer on `gpio`. Given your efforts to thoroughly test and vet the module, you will be able to confidently rely on it going forward!
 
 >__A note on volatile__
 Writing code that correctly interacts with a peripheral will require understanding of the `volatile` keyword. Consider this pointer to the memory-mapped GPIO device register LEV0:
@@ -336,11 +336,10 @@ __Note: Build warnings/errors__ We expect your code to compile cleanly with no w
   + __P1 "Essential"__ tests exercise core functionality that is critical to the system's operation. Your system won't be fully usable until these high priority issues are addressed. 
   + __P2 "Comprehensive"__ tests thoroughly exercise the full range of functionality including lesser-traveled features. 
   + __P3 "Just Mention__" is used for small concerns as a misbehavior in an obscure edge case or minor issue of polish. 
-  + __P4 "Extension"__ tests evaluate functionality of the extension if you attempt it. 
 
 - We have a __revise and retest__ policy for library modules. We will file GitHub issues for each test failure that is eligible for revision, and you may submit bug fixes for retest. Commit and push changes to your repo on your `dev` branch and tag the finished commit with `assignX-retest` (Do __not__ move the original `assignX-submit` tag!)  Once a week, the staff will re-run the automated tests on submissions tagged `assignX-retest` and update to show passing results on issues that were corrected.
 
-- We accept revisions for priority 1, 2, and 3 automated tests on your library modules. We do not accept revisions for extensions (Priority 4 tests), or tests that are manually evaluated (all of A1 and the clock tests for A2). These tests will only be run against your original submission, marked with the `assignX-submit` tag. 
+- We accept revisions for priority 1, 2, and 3 automated tests on your library modules. We do not accept revisions for extensions or tests that are manually evaluated (all of A1 and the clock tests for A2). These tests will only be run against your original submission, marked with the `assignX-submit` tag. 
 
 By the end of the quarter, we expect your library modules to have passing results on all Priority 1 tests. Lower priority tests and tests on non-library modules can be fixed at your discretion, but are also taken into consideration when determining final grades.
 
