@@ -10,6 +10,7 @@
 2.0     Bump major version number when rename to rpi-run.py Winter 2021
 2.1     Add exit code for integration with auto-test Spring 2022
 2.2     Removed awkward timeout handling, better for lsi to handle
+2.3     Added handling for receive termination code from Pi (assert/abort)
 -----------------------------------
 
 This bootloader client is used to upload binary image to execute on
@@ -36,7 +37,7 @@ from serial.tools import list_ports
 from xmodem import XMODEM
 
 # See VERSION numbering above
-VERSION = "2.2"
+VERSION = "2.3"
 
 # Set the vendor and product ID of the serial unit.
 # The CP2102 units used during years 2018 - 2022 all have
@@ -226,10 +227,10 @@ if __name__ == "__main__":
                     sys.stdin.readline()  # consume input and discard
                     print(bcolors.FAILRED + "Huh? Did you intend to type that on your PS/2 keyboard?" + bcolors.ENDC)
                 c = getc(1)
-                if c == b'\x04':   # ascii control char for end of transmission
+                if c == b'\x04':   # ascii control char for end of transmission sent by Pi on normal exit
                     printq(f"\n{args.exename}: received EOT from Pi. Detaching.")
                     sys.exit(exitcode.EOT)
-                elif c == b'\x18':  # ascii control char for cancel sent as termination signal from Pi
+                elif c == b'\x18':  # ascii control char for cancel sent by Pi as termination signal
                     printq(f"\n{args.exename}: received termination code from Pi, program forcibly exited. Detaching.")
                     sys.exit(exitcode.PI_TERMINATE)
                 if c is None: continue
