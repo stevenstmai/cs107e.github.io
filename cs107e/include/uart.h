@@ -11,8 +11,9 @@
  */
 
 enum {
-    EOT = 4,  // Output end of transmission to indicate uart communication complete
-    EOF = -1  // Receive end of file when no more data to read
+    EOT = 4,        // Ascii end of transmission control char, putchar to indicate uart communication complete
+    EOF = -1,       // Ascii end of file control char, returned by getchar to indicate no more data to read
+    TERMINATE = 24  // Ascii cancel control char, putchar to indicate program forcibly exited
 };
 
 /*

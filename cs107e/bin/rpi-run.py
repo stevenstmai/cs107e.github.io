@@ -68,6 +68,7 @@ class exitcode:
     USER_CANCEL = 3
     BOOTLOAD_FAIL = 4
     SERIAL_ERROR = 5
+    PI_TERMINATE = 15   # SIGTERM
 
 def error(shortmsg, explanation="", code=1):
     sys.stderr.write(f"\n{args.exename}: {bcolors.FAILRED}{shortmsg}{bcolors.ENDC}")
@@ -225,9 +226,12 @@ if __name__ == "__main__":
                     sys.stdin.readline()  # consume input and discard
                     print(bcolors.FAILRED + "Huh? Did you intend to type that on your PS/2 keyboard?" + bcolors.ENDC)
                 c = getc(1)
-                if c == b'\x04':   # End of transmission.
+                if c == b'\x04':   # ascii control char for end of transmission
                     printq(f"\n{args.exename}: received EOT from Pi. Detaching.")
                     sys.exit(exitcode.EOT)
+                elif c == b'\x18':  # ascii control char for cancel sent as termination signal from Pi
+                    printq(f"\n{args.exename}: received termination code from Pi, program forcibly exited. Detaching.")
+                    sys.exit(exitcode.PI_TERMINATE)
                 if c is None: continue
                 print(c.decode('ascii', 'replace'), end='')
                 sys.stdout.flush()
