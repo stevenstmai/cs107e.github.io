@@ -29,6 +29,7 @@ typedef enum {
     KEYBOARD_MOD_ALT = 1 << 1,
     KEYBOARD_MOD_CTRL = 1 << 2,
     KEYBOARD_MOD_CAPS_LOCK = 1 << 3,
+     // scroll and num lock listed for completeness, not implemented for assign5 basic
     KEYBOARD_MOD_SCROLL_LOCK = 1 << 4,
     KEYBOARD_MOD_NUM_LOCK = 1 << 5,
 } keyboard_modifiers_t;
@@ -59,7 +60,7 @@ void keyboard_init(unsigned int clock_gpio, unsigned int data_gpio);
  * `keyboard_read_next`: Top level keyboard interface.
  *
  * This function reads (blocking) the next key typed on the keyboard.
- * The character returned reflects the current keyboard modifier settings.
+ * The character returned reflects the current keyboard modifiers in effect.
  *
  * Return values in the range 0 - 0x7f indicate the typed key is an ordinary
  * Ascii character. For a typed key not associated with an Ascii character,
@@ -78,15 +79,17 @@ unsigned char keyboard_read_next(void);
  *
  * The function reads (blocking) the next key event.
  * Returns a `key_event_t` struct that represents the key event.
- * A key event is a press or release of a single key. The returned
- * struct includes the key that was pressed or released and the state
- * of the modifier flags.
+ * A key event is a press or release of a single key. The
+ * returned struct includes the ps2 key that was pressed or released
+ * and the keyboard modifiers in effect.
  *
- * Returned key events do not include modifier keys. Pressing shift,
- * for example, will not result in a key event being returned, but if a key
- * that does produce a key event (e.g., 'a') is pressed before the shift
- * is released, `keyboard_read_event` will return an event for this
- * key with the shift modifier set.
+ * Key events are only produced for non-modifier keys. Actions on
+ * modifier keys do not generate key events of their own, but can
+ * change the modifier state of other key events. Pressing shift,
+ * for example, does not produce a key event, but if a non-modifier
+ * key (e.g., 'a') is pressed before the shift key is released,
+ * the key event returned by `keyboard_read_event` will have
+ * the shift modifier set.
  *
  * This function calls `keyboard_read_sequence` to read a sequence.
  *

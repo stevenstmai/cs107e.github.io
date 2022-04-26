@@ -8,6 +8,10 @@
 
 #define UNUSED { PS2_KEY_NONE, PS2_KEY_NONE }
 
+// For completeness, array lists all keys on the full PS/2 keyboard.
+// Refer to the assign5 writeup for spec on which keys are required
+// to be implemented by your keyboard driver.
+
 ps2_key_t const ps2_keys[] = {
     /* scan code */
     /* 00 */      UNUSED,
