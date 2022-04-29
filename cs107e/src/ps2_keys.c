@@ -116,7 +116,7 @@ ps2_key_t const ps2_keys[] = {
     /* 63 */      UNUSED,
     /* 64 */      UNUSED,
     /* 65 */      UNUSED,
-    /* 66 */   { '', '' },
+    /* 66 */   { '', '' },  // delete key produces backspace (= ascii 0x08 = \b)
     /* 67 */      UNUSED,
     /* 68 */      UNUSED,
     /* 69 */   { PS2_KEY_END, '1' },
