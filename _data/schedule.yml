@@ -39,10 +39,10 @@ weeks:
     assign: /assignments/assign6/
     wed: /lectures/Interrupts2/
   -
-    mon:  tbd
+    mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    wed: /lectures/Sensors/
+    wed: tbd
   -
     mon: /lectures/Matt/
     lab: /labs/projectlab1/
