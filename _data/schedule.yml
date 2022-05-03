@@ -42,14 +42,13 @@ weeks:
     mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    wed: tbd
+    wed:  /lectures/Performance/
   -
     mon: /lectures/Matt/
     lab: /labs/projectlab1/
     assign: /project/
     wed: /lectures/Arithmetic/
   -
-    mon: /lectures/Performance/
     lab: /labs/projectlab2/
     wed: tbd
   - 
