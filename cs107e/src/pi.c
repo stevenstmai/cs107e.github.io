@@ -12,6 +12,7 @@
 #include "pi.h"
 #include <stdint.h>
 #include "timer.h"
+#include "uart.h"
 
 void pi_reboot(void) {
     static const int PM_RSTC = 0x2010001c;
@@ -22,6 +23,7 @@ void pi_reboot(void) {
     volatile uint32_t * reg_pm_wdog = (uint32_t *)PM_WDOG;
     volatile uint32_t * reg_pm_rstc = (uint32_t *)PM_RSTC;
 
+    uart_putchar(EOT);
     // give output time to flush.
     for (int i = 0; i < 100000; i++) {
         __asm__("nop");
