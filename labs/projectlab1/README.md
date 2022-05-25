@@ -48,8 +48,7 @@ The initial project repository is empty.  Choose __one (and only one!)__ team me
 $ cd ~/cs107e_home
 $ git clone git@github.com:cs107e/[YOUR-GITHUB_USERNAMES]-project.git project
 $ cd project
-$ git remote add starter-code git@github.com:cs107e/project-mirror.git
-$ git pull --allow-unrelated-histories starter-code master
+$ git pull --allow-unrelated-histories starter-code project-starter
 $ git push 
 ```
 
