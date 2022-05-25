@@ -1,0 +1,34 @@
+For midi:
+
+1. files in staff/lectures/C-mastery/code/midi
+2. Makefile:
+  make on its own will make midi-beat (drums on the drum kit)
+  make install will make and install midi-beat
+  
+  make install midi-lamb will make and install midi-lamb
+  
+3. MIDI-in pins:
+  white wire to 220ohm resistor to 5V on Pi
+  red wire to 220ohm resistor to pin BCM/GPIO 25
+
+4. For PulseView logic analyzer with DreamSourceLab DSLogic Pro:
+  a. Ground goes to Pi ground
+  b. Signal pin goes to red MIDI (pin 25 on Pi)
+  c. Set voltage range on PulseView to 1.6V for 0/1
+  d. Set UART as decoder, with 31250 baud rate (8n1)
+  e. In UART, choose "Stack Decoder" and select MIDI
+  
+5. Actual pinout of MIDI connector:
+
+            silver (unshielded), gnd when using logic analyzer
+                    _____
+                 .-'     '-.
+        red    .'     o     '.  white
+      (signal)/   o       o   \ (5V)
+             ;                 ;
+     yellow  |  o           o  |   black
+   (no conn) ;                 ; (no conn)
+              \               /
+               '.           .'
+                 '-._____.-'
+
