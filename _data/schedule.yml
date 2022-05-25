@@ -50,6 +50,7 @@ weeks:
     wed: /lectures/Arithmetic/
   -
     lab: /labs/projectlab2/
+    mon: /lectures/Sound/
     wed: tbd
   - 
     project_demo: "2022-06-05 2:00 PM"
