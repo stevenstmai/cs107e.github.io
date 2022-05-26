@@ -52,6 +52,7 @@ weeks:
     lab: /labs/projectlab2/
     mon: No lecture (public holiday)
     wed: tbd
+    thurs: /lectures/Sound
   - 
     project_demo: "2022-06-05 2:00 PM"
     project_due: "2022-06-06 11:59 PM"
