@@ -2,8 +2,8 @@
 weeks:
     # start is date of first lecture (a Monday)
     # assign0_duedate is second week Tuesday 5pm (assume weekly repeat for assign1-7)
-  - start_date: "2022-03-28"
-    assign0_duedate: "2022-04-05 5:00 PM"
+  - start_date: "2022-09-26"
+    assign0_duedate: "2022-10-04 5:00 PM"
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/
@@ -55,6 +55,6 @@ weeks:
   - 
     mon: /lectures/Sound/
   -
-    project_demo: "2022-06-05 2:00 PM"
-    project_due: "2022-06-06 11:59 PM"
+    project_demo: "2022-12-13 3:30 PM"
+    project_due: "2022-12-14 11:59 PM"
   -

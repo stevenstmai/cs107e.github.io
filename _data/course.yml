@@ -1,20 +1,20 @@
 # Top-level information about course
 id: CS107e
 title: Computer Systems From the Ground Up
-quarter: Spring 2022
+quarter: Fall 2022
 instructors:
-  - name: Christos Kozyrakis
-    img: /_assets/img/christos.jpg
+  - name: Chris Gregg 
+    img: /_assets/img/chris.jpg
 cas:
   - name: Maria Fernandez
     img: /_assets/img/maria.png
-  - name: Matt Trost
-    img: /_assets/img/matt.png
+  - name: Blake Jones 
+    img: /_assets/img/blake.png
 sls:
   - name: Liana Keesing
     img: /_assets/img/liana.jpg
   - name: Anna Mistele
     img: /_assets/img/anna.jpg
-lecture_schedule: Mon and Wed 3:15pm - 4:45pm
-lab_schedule: Tues 7:00-9:00pm
-forum: https://edstem.org/us/courses/21299/discussion/
+lecture_schedule: Mon and Fri 1:30pm - 3:20pm
+lab_schedule: Wed 10:30am-12:30pm and Wed 1:30pm-3:30pm
+forum: https://edstem.org/us/courses/?????/discussion/
