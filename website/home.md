@@ -29,9 +29,7 @@ See [schedule for entire quarter](/schedule/).
 #### Meet the CS107E team
 {% include gallery.html %}
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBpyHM3qfbxmkqtXfjLDHyoIucF2K-4xtjehzIqUE3NUkBZg/viewform?embedded=true" width="640" height="519" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-
-
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfPCxxESX_1pLiW4WiL3Hoz04GQiGAGpbmiLVHI2AjtALa29w/viewform?embedded=true" width="640" height="534" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/_assets/js/gcal.js"></script>
