@@ -40,10 +40,10 @@ Work that is not completed satisfactorily will earn grades **C and below**.
 
 ## Late Policy
 
-The course moves at a steady clip and the weekly assignments build on one other. In our experience, one of the strongest factors in student success has been the dedication to stay on pace. Learning to set a schedule and manage your time to hit deadlines is a valuable skill to develop and an accomplishment you can be proud of.  We designed our policy to encourage and reward good habits, but knowing that things come up, we have a standing grace period that provides a little flexibility if you need it. 
+The course moves at a steady clip and the weekly assignments build on one other. In our experience, one of the strongest factors in student success has been the dedication to stay on pace. Learning to set a schedule and manage your time to hit deadlines is a valuable skill to develop and an accomplishment you can be proud of.  We designed our policy to encourage and reward good habits, but knowing that things come up, you may use the grace period (48hrs) twice. 
 
-- The submission deadline for the weekly assignments is 5pm Tuesday.
-- There is also a 48-hour grace period after the deadline in which we accept late submissions. There is no penalty or cap applied to late submissions within the grace period.
+- The submission deadline for the weekly assignments is 10pm Tuesday.
+- You may use 2 extensions throughout the quarter to submit the assignments no more than 48hrs after the original due date. This means you may submit two assignments by Thursday at 10pm. 
 - Late submissions beyond the grace period are arranged with the course staff as warranted for exceptional circumstances.
 - The final project must be submitted on time without exception.
 
