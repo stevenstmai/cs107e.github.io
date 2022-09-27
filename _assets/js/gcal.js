@@ -67,7 +67,7 @@ $().ready(function() {
             inner = '<span style="float:left; width:10em;">' + when + '</span><span>' + descr + '</span>';
             html += '<li class="list-group-item" style="padding: 1px 20px;border-top:none;">' + inner + "</li>";
             prevDate = start.getDate();
-      });
-    $('#upcoming ul').html(html ? html : '<li>None found</li>');
+	});
+	$('#upcoming ul').html(html ? html : '<li>None found</li>');
     });
 });
