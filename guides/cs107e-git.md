@@ -63,7 +63,7 @@ The following instructions are used to configure your local `mycode` repo.  Do t
 {: .callout-warning}
 
 In your browser, visit the page
-`https://github.com/cs107e/spring22-[YOUR-GITHUB-USERNAME]` to see the contents of your remote repo.
+`https://github.com/cs107e/fall22-[YOUR-GITHUB-USERNAME]` to see the contents of your remote repo.
 It should have only a single file: `README.md`, which lists the name of your
 repo and nothing more.
 
@@ -74,7 +74,7 @@ repo and nothing more.
 
     ```console
     $ cd ~/cs107e_home
-    $ git clone git@github.com:cs107e/spring22-[YOUR-GITHUB-USERNAME].git mycode
+    $ git clone git@github.com:cs107e/fall22-[YOUR-GITHUB-USERNAME].git mycode
     ```
 
     Change to your repo and use `ls` confirm the files match those you see when browsing your remote repo on GitHub.
@@ -326,7 +326,7 @@ it in this assignment, it will remain open throughout the quarter and allow us t
 grade your assignments. If you accidentally close the pull request, just make 
 sure to open a new one following the steps below. 
 
-View the contents of your remote repository on the web at `https://github.com/cs107e/spring22-[YOUR-GITHUB-USERNAME]`.
+View the contents of your remote repository on the web at `https://github.com/cs107e/fall22-[YOUR-GITHUB-USERNAME]`.
 Switch to the branch `dev` by selecting it from the "Branch" drop-down
 menu.
 
