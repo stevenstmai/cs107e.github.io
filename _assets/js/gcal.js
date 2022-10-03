@@ -29,8 +29,9 @@ $().ready(function() {
     // var request1 = $.getJSON(url.replace('WHICH', b21));
     // var request2 = $.getJSON(url.replace('WHICH', ours));
     
-    var fall2021 = 'h15bjedfkcdpfa17tdf5d0l2j8@group.calendar.google.com';
-    var request = $.getJSON(url.replace('WHICH', fall2021));
+    // var fall2021 = 'h15bjedfkcdpfa17tdf5d0l2j8@group.calendar.google.com';
+    var fall2022 = '6322149c62091bb771aa4b675047a0005612c1794e17767efff8c10166242ee4@group.calendar.google.com'
+    var request = $.getJSON(url.replace('WHICH', fall2022));
 
     // $.when(request1, request2).done(function(data1, data2) {
     $.when(request).done(function(data) {
