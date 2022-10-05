@@ -44,7 +44,7 @@ To prepare, please do the following before coming to lab:
 
 1. Read this SparkFun tutorial on [using a breadboard](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard#history). Pay special attention to the section labeled "Anatomy of a Breadboard" to learn about the internal connections. 
 1. Organize your supplies to bring with you to lab. This week you will need:
-    -  Raspberry Pi __parts kit__ (plastic box with Pi and all components) 
+    -  Raspberry Pi __parts kit__ (plastic box with Pi and all components). You should check that it has all of the [required materials](/guides/bom).
     -  If you have access to a multimeter, bring it along.
 1. You will need an open USB-A port on your laptop to connect to the Pi. If your laptop requires a USB hub or adapter, pack one into your parts kit so that you'll always have it with you.
 1. From our course guides, please review:
