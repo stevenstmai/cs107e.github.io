@@ -64,7 +64,7 @@ The course follows a weekly cadence where material is introduced in the Monday-W
 
 Each assignment is structured into a core/basic part and one or more proposed extensions. Completing the core part is required for all students; the extensions are the optional "stretch goals" for those students aiming to go further. We encourage everyone to try the extensions; they're a great way to challenge yourself and solidify your understanding.
 
-> **YEAH = Your Early Assignment Help**  Each Wednesday at 5pm we'll hold a YEAH session as a kickoff for the week's assignment and more quality time with the CS107e family! We can answer your questions, pump you up for the neat things you'll be learning, and facilitate a group brainstorm on practices for success. YEAH Hours for Assignment 1 will take place Wednesday 5-6pm in B02. Everyone welcome!
+> **YEAH = Your Early Assignment Help**  Each Thursday at 4:30pm we'll hold a YEAH session as a kickoff for the week's assignment and more quality time with the CS107e family! We can answer your questions, pump you up for the neat things you'll be learning, and facilitate a group brainstorm on practices for success. YEAH Hours for Assignment 1 will take place Thursday 4:30-5:30pm in B02. Everyone welcome!
 {: .callout-success}
 
 Please refer to the [Grading and Late Policies](/policies) for detailed information about the grading policy. Additionally, you can take a look at [Assignments FAQ](/assignments/#faq) for more information about how your assignments are graded. 
