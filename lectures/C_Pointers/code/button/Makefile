@@ -3,6 +3,8 @@
 all : button.bin c_button.bin c_button.list
 
 CFLAGS = -g -Wall -Og -std=c99 -ffreestanding
+LDFLAGS = -nostdlib -T memmap -L$(CS107E)/lib
+LDLIBS = -lpi -lgcc
 
 %.bin: %.o
 	arm-none-eabi-objcopy $< -O binary $@
@@ -21,6 +23,9 @@ clean:
 
 run: c_button.bin
 	rpi-run.py $<
+
+elf: c_button.o
+	arm-none-eabi-gcc $(LDFLAGS) $^ $(LDLIBS) -o $@
 
 .PHONY: all clean run
 .PRECIOUS: %.o
