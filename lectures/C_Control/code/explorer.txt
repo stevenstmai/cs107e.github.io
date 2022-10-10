@@ -43,3 +43,4 @@ int pinky(int arg)
         result *= i;
     return result;
 }
+
