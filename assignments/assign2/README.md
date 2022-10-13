@@ -24,6 +24,8 @@ _Written by Pat Hanrahan; updated by Julie Zelenski_
 
 {% include duedate.html n=2 %}
 
+**If you plan on submitting your assignment during the late period, please email mapau@stanford.edu and blakemj@stanford.edu to let us know. This is so that we can get you your grades out as fast as possible :)** 
+
 ## Goals
 
 Your next assignment is to build a clock using a 4-digit 7-segment
@@ -301,6 +303,8 @@ When submitting, your `assign2` directory should contain:
 
 Submit your finished code by commit, tag `assign2-submit`, push to remote, and ensure you have an open pull request.
 The steps to follow are given in the [git workflow guide](/guides/cs107e-git#assignment-submission).
+
+
 
 ## Grading
 
