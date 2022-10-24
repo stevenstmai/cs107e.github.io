@@ -6,7 +6,7 @@ title: Assignments
 {% include itemlist.html type="assign" %}
 
 ## Assignment schedule
-The quarter starts with a set of 7 weekly assignments. Each week's assignment is released after lab each week and due before the next week's lab. These assignments fit together to construct a complete working computer system of your very own -- so cool! You will use the final weeks of the quarter to design and complete a final project of your own choosing.
+The quarter starts with a set of 7 weekly assignments. Each week's assignment is released roughly after lab each week and due roughly before the next week's lab (actual release and due dates vary by quarter, so please refer to posted deadlines). These assignments fit together to construct a complete working computer system of your very own -- so cool! You will use the final weeks of the quarter to design and complete a final project of your own choosing.
 
 <A name="faq"></A>
 ## Common questions about assignments
