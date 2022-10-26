@@ -34,7 +34,7 @@ During this lab you will:
 ## Prelab preparation
 To prepare for lab, do the following: 
 
-- Read this [recap of stack frames and the APCS full frame](/lectures/Memory/stack_notes) from Monday's lecture. 
+- Read this [recap of stack frames and the APCS full frame](/lectures/Memory/stack_notes) from last Friday's lecture. 
 - Review the example program we will use in the stack exercise [code/simple/simple.c](code/simple/simple.c) and look over the [memory diagram](images/stack_abs.html) of the program mid-execution. You will examine the diagram in more detail in lab.
 
 ## Lab exercises
