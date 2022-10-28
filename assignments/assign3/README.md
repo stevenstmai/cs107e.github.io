@@ -239,9 +239,15 @@ For example, the call `sum(4, 100, 0, 5, 2)` contains one fixed argument, 4
 The implementation of the `sum` function demonstrates how to use `stdarg.h`.
 
 The variable `ap` is declared of type `va_list`.  This variable is initialized
-using `va_start`, which is passed the last named argument. In this case, we
+using the `va_start` macro ([https://www.tutorialspoint.com/c_standard_library/c_macro_va_start.htm](not exactly a function)), which is **passed the last named argument**. In this case, we
 tell `va_start` that `n` is the last argument before the variable arguments
-begin.
+begin. Said another way: we literally pass in the *name* of the last argument
+before the variable arguments. In the example above, we pass in `n` because
+that is the name of the argument. The type of the argument doesn't matter --
+the `va_start` macros needs to know the name to know where to start looking
+for the variable arguments (the fact that it is an `int` is
+irrelevant. The macro isn't using the value of `n`, it's using the name `n`
+to locate the variable arguements). 
 
 Then we loop over the `n` arguments, fetching each argument using `va_arg(ap,
 type)`. In the `sum` example, the variable arguments are all of `int` type, but
