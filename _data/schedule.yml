@@ -7,51 +7,51 @@ weeks:
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/
-    wed: /lectures/ARM/
+    fri: /lectures/ARM/
   -
     mon: /lectures/ASM/
     lab: /labs/lab1/
     assign: /assignments/assign1/
-    wed: /lectures/C_Control/
+    fri: /lectures/C_Control/
   -
     mon: /lectures/C_Pointers/
     lab: /labs/lab2/
     assign: /assignments/assign2/
-    wed: /lectures/C_Functions/
+    fri: /lectures/C_Functions/
   -
     mon: /lectures/Serial/
     lab: /labs/lab3/
     assign: /assignments/assign3/
-    wed: /lectures/Linking/
+    fri: /lectures/Linking/
   -
     mon: /lectures/Memory/
     lab: /labs/lab4/
     assign: /assignments/assign4/
-    wed: /lectures/C_Mastery/
+    fri: /lectures/C_Mastery/
   -
     mon: /lectures/Keyboard/
     lab: /labs/lab5/
     assign: /assignments/assign5/
-    wed: /lectures/Framebuffer/
+    fri: /lectures/Framebuffer/
   -
     mon: /lectures/Interrupts1/
     lab: /labs/lab6/
     assign: /assignments/assign6/
-    wed: /lectures/Interrupts2/
+    fri: /lectures/Interrupts2/
   -
     mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    wed:  /lectures/Performance/
+    fri:  /lectures/Performance/
   -
     mon: /lectures/Matt/
     lab: /labs/projectlab1/
     assign: /project/
-    wed: /lectures/Arithmetic/
+    fri: /lectures/Arithmetic/
   -
     lab: /labs/projectlab2/
     mon: No lecture (public holiday)
-    wed: No lecture (project lab time, office hours available)
+    fri: No lecture (project lab time, office hours available)
   - 
     mon: /lectures/Sound/
   -
