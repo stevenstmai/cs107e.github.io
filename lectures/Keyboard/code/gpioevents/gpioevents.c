@@ -11,6 +11,8 @@
 #include "gpio.h"
 #include "gpio_extra.h"
 #include "pi.h"
+#include "uart.h"
+#include "printf.h"
 
 const int CLK = GPIO_PIN3;
 
@@ -27,11 +29,14 @@ void main(void) {
     gpio_set_input(CLK);
     gpio_set_pullup(CLK);
 
+    uart_init();
+
     // generate event on falling edge of clock
     gpio_enable_event_detection(CLK, GPIO_DETECT_FALLING_EDGE);
 
-    while (1) {
+    for (;;) {
         wait_for_clock();
-        pi_led_toggle(PI_ACT_LED);
+        printf("Clock triggered!\n");
+        // pi_led_toggle(PI_ACT_LED);
     }
 }
