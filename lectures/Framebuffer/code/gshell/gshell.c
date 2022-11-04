@@ -26,6 +26,7 @@ void main(void)
 
     gl_draw_rect(10, 470, 630, 5, GL_RED);
     gl_draw_line(10, 10, 630, 480, GL_GREEN);
+    gl_draw_string(20, 20, "hello, monitor!", GL_WHITE);
 
     printf("\nStarting %s\n", __FILE__);
     printf("Frame buffer is at 0x%x\n", (unsigned int)fb_get_draw_buffer());
