@@ -85,13 +85,14 @@ void main(void) {
     printf ("depth (bits): %d\n", (int)fb.bit_depth);
     printf ("total bytes: %d\n", (int)fb.total_bytes);
     printf ("pitch (bytes): %d\n", (int)fb.pitch);
-
-    clear_char_by_char();
-    timer_delay(1);
-    clear_int_by_int();
-    timer_delay(1);
-    clear_2d();
-    timer_delay(1);
+    while (1) {
+        clear_char_by_char();
+        timer_delay(1);
+        clear_int_by_int();
+        timer_delay(1);
+        clear_2d();
+        timer_delay(1);
+    }
 
     uart_putchar(EOT);
 }
