@@ -10,7 +10,7 @@
  * If the keyboard is not using interrupts, it drops events
  * because the screen refresh is so time consuming.
  */
-
+// #define USE_INTERRUPTS
 void main(void)
 {
     gpio_init();
