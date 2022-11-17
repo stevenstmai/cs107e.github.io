@@ -5,11 +5,8 @@
 #include "printf.h"
 #include "assert.h"
 
-const unsigned int signal = GPIO_PIN2;
-const unsigned int discharge = GPIO_PIN3;
-
-// const unsigned int signal = GPIO_PIN7;
-// const unsigned int discharge = GPIO_PIN1;
+const unsigned int signal = GPIO_PIN20;
+const unsigned int discharge = GPIO_PIN21;
 
 unsigned int get_charge_time(void)
 {

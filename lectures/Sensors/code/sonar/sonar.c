@@ -16,8 +16,8 @@
 #include "uart.h"
 #include "printf.h"
 
-const unsigned int trigger = GPIO_PIN3;
-const unsigned int echo = GPIO_PIN2;
+const unsigned int trigger = GPIO_PIN6;
+const unsigned int echo = GPIO_PIN13;
 
 unsigned int get_distance(void) {
 	// write hi for 10usec
@@ -36,7 +36,9 @@ unsigned int get_distance(void) {
 	unsigned end = timer_get_ticks();
 
     // speed of sound is 340M/sec
-	// ((340M/S / 2) * 39.37inch / meter) / 10^6 = inch/usec = 149
+	// 1 / (((340M/S / 2) * 39.37inch / meter)) / 10^6usec/sec) = usec/inch = 149
+    // Note: this calculation is correct, but to get actual distance, you may
+    // have to resort to empirical testing
 	return (end - start) / 149;
 }
 

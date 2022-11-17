@@ -17,8 +17,8 @@
 #define CLEAR_SCREEN "[2J[1;1H"
 
 const unsigned int CLOCK = GPIO_PIN16;
-const unsigned int DT = GPIO_PIN20;
-const unsigned int SW = GPIO_PIN21;
+const unsigned int DT = GPIO_PIN19;
+const unsigned int SW = GPIO_PIN26;
 volatile int rotary_status = 0; // 0 == none, -1 == ccw, 1 == cw
 volatile int rotary_button = 1; // 0 = pushed, 1 = not pushed
 

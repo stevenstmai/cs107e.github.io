@@ -4,6 +4,8 @@
 #include "printf.h"
 #include "string.h"
 
+// GPIO Pins for I2C are SDA = GPIO2, SCL = GPIO3
+
 const unsigned int RTC_ADDR = 0x68;
 
 const char *days[] = {"", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
@@ -107,9 +109,9 @@ void main(void) {
     memset(data, 0, 64);
     struct raw_rtc_time_info raw_time_info;
     struct time_info_t time_info;
-    // set_time(23, 59, 50);
-    // set_day(4);
-    //set_date(12, 31, 1999);
+    // set_time(12, 35, 00);
+    // set_day(4); // Sunday = 1, Monday = 2, etc.
+    // set_date(11, 16, 2022);
     
     while (1) {
         char reg = sec;
