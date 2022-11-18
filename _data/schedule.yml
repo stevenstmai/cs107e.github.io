@@ -39,6 +39,7 @@ weeks:
     assign: /assignments/assign6/
     wed: /lectures/Interrupts2/
   -
+    assign7_duedate: "2022-11-29 10:00 PM"
     mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
