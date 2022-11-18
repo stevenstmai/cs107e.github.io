@@ -43,18 +43,18 @@ weeks:
     mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    wed:  /lectures/Performance/
+    wed:  /lectures/Sound/
   -
-    mon: /lectures/Matt/
+    mon: /lectures/MakingEngineering/
     lab: /labs/projectlab1/
     assign: /project/
-    wed: /lectures/Arithmetic/
+    wed: /lectures/Performance/
   -
     lab: /labs/projectlab2/
     mon: No lecture (public holiday)
     wed: No lecture (project lab time, office hours available)
   - 
-    mon: /lectures/Sound/
+    mon: /lectures/Arithmetic/
   -
     project_demo: "2022-12-14 3:30 PM"
     project_due: "2022-12-15 11:59 PM"
