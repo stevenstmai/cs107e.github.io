@@ -12,6 +12,6 @@ void main(void)
     mcp3008_init();
     while (1) {
         // read channel 0
-        printf("%d\n", mcp3008_read(0)); 
+        printf("Channel 0: %d, Channel 1: %d\n", mcp3008_read(0), mcp3008_read(1)); 
     }
 }

@@ -1,5 +1,7 @@
 The MCP3008 is a 8-channel 10-bit analog to digital converter (ADC). 
 
+It is set up to read the x,y coordinates from an analog joystick.
+
 See 
 - https://learn.adafruit.com/raspberry-pi-analog-to-digital-converters/mcp3008
 - http://blog.falafel.com/mcp3008-analog-to-digital-conversion
