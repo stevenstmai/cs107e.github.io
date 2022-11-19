@@ -22,8 +22,11 @@ __To prep for assign7:__
 
 *Written by Philip Levis, updated by Julie Zelenski*
 
+{% comment %}
+**Changing due to thanksgiving**
 {% include duedate.html n=7 %}
-
+{% endcomment %}
+{% include duedate.html n=8 %}
 ---
 ## Goals
 
