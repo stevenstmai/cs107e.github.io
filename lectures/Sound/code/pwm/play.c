@@ -3,8 +3,8 @@
 
 #define FREQ (19200000/16) // clock is 19.2MHz, and this divider gives us
                               // a pretty good range for musical notes
-#define LEFT_HZ 440 
-#define RIGHT_HZ 220 
+#define LEFT_HZ 220 
+#define RIGHT_HZ 440 
 
 void main ( void )
 {

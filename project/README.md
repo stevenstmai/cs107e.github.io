@@ -22,11 +22,11 @@ and do something creative with your Raspberry Pi. We hope you find the project a
 
 ## Project schedule and deliverables
 
-### Team formation due __Wed May 25__
+### Team formation due __Wed Nov 30__
 
 Form a team of 1 to 3 people. We've observed that a 2-person team works out the best, so that is our recommendation. If you have a project in mind that would be better run as a solo effort or requires a team of 3, come talk it through with us to understand the tradeoffs and challenges for the different arrangements.
 
-Agree on a general direction for your project with your teammate and submit this [Google form](https://forms.gle/6UN8zxnHXGsJHWRXA) with your team information. We will create a new repository for your team's project on GitHub. Your team will use this shared repo to work together on the project code.
+Agree on a general direction for your project with your teammate and submit this [Google form](https://docs.google.com/forms/d/e/1FAIpQLScClcMu6aZi6wiAipSNRCl6biRJi5mXICIRfzWnzyQJxjMKbg/viewform) with your team information. We will create a new repository for your team's project on GitHub. Your team will use this shared repo to work together on the project code.
 
 ### Project lab 1 (Week 9)
 
@@ -35,7 +35,7 @@ The labs in the final two weeks are used as working meetings for your team. You 
 In the first project lab, your team will brainstorm project options and refine those ideas into a specific project. Review your plan with us to confirm your direction, scope, and schedule are aligned for a great outcome.  You're now ready to draft your project proposal!
 
 <a name="proposal">
-### Proposal due __Thu May 26 11:59pm__
+### Proposal due __Thu Dec 1 11:59pm__
 
 In your project repository, there is a template file `Proposal.md`. Edit to update with your project proposal. Submit by committing and pushing to Github.
 
@@ -59,11 +59,11 @@ In the second project lab, we will review your team's progress on meeting  midpo
 
 Please take advantage of this check-in with the course staff; we are eager for you to succeed with your project and want to help resolve any snags you encounter.
 
-### Demo session __Sunday June 5th 2-5pm__
+### Demo session __Wednesday December 14th 3:30pm-6:30pm__
 
 We schedule the demo session for the final projects during the [final exam slot](https://registrar.stanford.edu/students/final-exams) assigned to us by the registrar. Each group should prepare a short demo of the project to deliver to the class. This is a fun event where you get to show off your work and see all the cool things done by your peers. There is much to celebrate!
 
-### Code submission due __Monday June 6th 11:59pm__
+### Code submission due __Thursday December 15th 11:59pm__
 
 Your team's github repository is used for coordinating the work throughout the project. Be sure to keep up regular commits as you progress. You must make the final submission of all of the code for your project by end of day.
 

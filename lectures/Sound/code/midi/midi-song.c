@@ -2,8 +2,8 @@
 #include "timer.h"
 #include "midi.h"
 #include "pi.h"
-#include "twinkle-guitar.h"
-//#include "nggyu.h"
+// #include "twinkle-guitar.h"
+#include "nggyu.h"
 
 
 #define CHANNEL_KEY    0
