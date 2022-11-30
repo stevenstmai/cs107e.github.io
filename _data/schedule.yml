@@ -7,54 +7,54 @@ weeks:
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/
-    wed: /lectures/ARM/
+    fri: /lectures/ARM/
   -
     mon: /lectures/ASM/
     lab: /labs/lab1/
     assign: /assignments/assign1/
-    wed: /lectures/C_Control/
+    fri: /lectures/C_Control/
   -
     mon: /lectures/C_Pointers/
     lab: /labs/lab2/
     assign: /assignments/assign2/
-    wed: /lectures/C_Functions/
+    fri: /lectures/C_Functions/
   -
     mon: /lectures/Serial/
     lab: /labs/lab3/
     assign: /assignments/assign3/
-    wed: /lectures/Linking/
+    fri: /lectures/Linking/
   -
     mon: /lectures/Memory/
     lab: /labs/lab4/
     assign: /assignments/assign4/
-    wed: /lectures/C_Mastery/
+    fri: /lectures/C_Mastery/
   -
     mon: /lectures/Keyboard/
     lab: /labs/lab5/
     assign: /assignments/assign5/
-    wed: /lectures/Framebuffer/
+    fri: /lectures/Framebuffer/
   -
     mon: /lectures/Interrupts1/
     lab: /labs/lab6/
     assign: /assignments/assign6/
-    wed: /lectures/Interrupts2/
+    fri: /lectures/Interrupts2/
   -
     assign7_duedate: "2022-11-29 10:00 PM"
     mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    wed:  /lectures/Sound/
+    fri:  /lectures/Sound/
   -
-    mon: TBA 
+    mon: no class, thanksgiving
+    fri: no class, thanksgiving 
+  -
     lab: /labs/projectlab1/
+    mon: Projects and future courses 
     assign: /project/
-    wed: /lectures/Performance/
-  -
-    lab: /labs/projectlab2/
-    mon: TBA 
-    wed: TBA 
+    fri: /lectures/Performance 
   - 
     mon: /lectures/Arithmetic/
+    lab: /labs/projectlab1/
   -
     project_demo: "2022-12-14 3:30 PM"
     project_due: "2022-12-15 11:59 PM"
