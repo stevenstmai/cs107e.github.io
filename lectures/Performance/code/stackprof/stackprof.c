@@ -123,7 +123,8 @@ void stackprof_handler(unsigned pc, void *aux) {
 
         uintptr_t *cur_fp;
         __asm__("mov %0, fp" : "=r" (cur_fp));
-        struct apcs *prev = (struct apcs *)(cur_fp - 12);
+        struct apcs *prev = (struct apcs *)(cur_fp - 4);
+        // printf("%p\n%x\n%x\n%x\n%x\n\n", cur_fp, prev->fp, prev->ip, prev->lr, prev->pc);
 
         // Save anomalous 'current frame'. May not be strictly correct.
         // Close enough.

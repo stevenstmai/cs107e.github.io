@@ -12,6 +12,8 @@ OBJECTS = stackprof.o
 LIBPI_STUDENT_MODULES =
 
 CFLAGS = -I$(CS107E)/include -g -Wall -O0 -std=c99 -ffreestanding -finline-functions
+CFLAGS += -mapcs-frame -fno-omit-frame-pointer -mpoke-function-name
+
 LDFLAGS = -nostdlib -T memmap -L$(CS107E)/lib
 LDLIBS = -lpi -lpiextra -lgcc
 
