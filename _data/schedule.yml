@@ -7,51 +7,51 @@ weeks:
     mon: /lectures/Intro/
     lab: /labs/lab0/
     assign: /assignments/assign0/
-    fri: /lectures/ARM/
+    wed: /lectures/ARM/
   -
     mon: /lectures/ASM/
     lab: /labs/lab1/
     assign: /assignments/assign1/
-    fri: /lectures/C_Control/
+    wed: /lectures/C_Control/
   -
     mon: /lectures/C_Pointers/
     lab: /labs/lab2/
     assign: /assignments/assign2/
-    fri: /lectures/C_Functions/
+    wed: /lectures/C_Functions/
   -
     mon: /lectures/Serial/
     lab: /labs/lab3/
     assign: /assignments/assign3/
-    fri: /lectures/Linking/
+    wed: /lectures/Linking/
   -
     mon: /lectures/Memory/
     lab: /labs/lab4/
     assign: /assignments/assign4/
-    fri: /lectures/C_Mastery/
+    wed: /lectures/C_Mastery/
   -
     mon: /lectures/Keyboard/
     lab: /labs/lab5/
     assign: /assignments/assign5/
-    fri: /lectures/Framebuffer/
+    wed: /lectures/Framebuffer/
   -
     mon: /lectures/Interrupts1/
     lab: /labs/lab6/
     assign: /assignments/assign6/
-    fri: /lectures/Interrupts2/
+    wed: /lectures/Interrupts2/
   -
     assign7_duedate: "2022-11-29 10:00 PM"
     mon:  /lectures/Sensors/
     lab: /labs/lab7/
     assign: /assignments/assign7/
-    fri:  /lectures/Sound/
+    wed:  /lectures/Sound/
   -
     mon: no class, thanksgiving
-    fri: no class, thanksgiving 
+    wed: no class, thanksgiving 
   -
     lab: /labs/projectlab1/
     mon: Projects and future courses 
     assign: /project/
-    fri: /lectures/Performance 
+    wed: /lectures/Performance 
   - 
     mon: /lectures/Arithmetic/
     lab: /labs/projectlab1/
