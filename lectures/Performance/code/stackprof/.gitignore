@@ -1,0 +1,6 @@
+node_modules
+FlameGraph
+*.cpuprofile
+*.stackprof
+*.svg
+package-lock.json
