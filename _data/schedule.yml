@@ -53,8 +53,9 @@ weeks:
     assign: /project/
     wed: /lectures/Performance/
   - 
-    mon: /lectures/Arithmetic/
-    lab: /labs/projectlab1/
+    lab: /labs/projectlab2/
+    mon: /lectures/Wrap/
+    wed: /lectures/FloatingPoint/
   -
     project_demo: "2022-12-14 3:30 PM"
     project_due: "2022-12-15 11:59 PM"
