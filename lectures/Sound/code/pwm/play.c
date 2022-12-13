@@ -9,8 +9,8 @@
 void main ( void )
 {
     gpio_init();
-    gpio_set_function( 40, GPIO_FUNC_ALT0 ); // Stereo left
-    gpio_set_function( 45, GPIO_FUNC_ALT0 ); // Stereo right
+    gpio_set_function( 12, GPIO_FUNC_ALT0 ); // Stereo left
+    gpio_set_function( 13, GPIO_FUNC_ALT0 ); // Stereo right
 
     pwm_init();
     pwm_set_clock( FREQ ); // 9,600,000
